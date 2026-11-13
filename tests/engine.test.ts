@@ -1,0 +1,118 @@
+import { describe, it, expect } from 'vitest';
+import { pascoa, pascoaMeeus, feriados, emDiaUtil, aoFimDeSemana, carnaval, horaVerao, dataRegra, municipalCoincide } from '../src/lib/engine/feriados';
+import { otimiza, pontes, pontesDeUmDia, diasUteis, isoWeek, weeksInYear, segundaDaSemana } from '../src/lib/engine/pontes';
+import { CONCELHOS, CONFIRMADOS, concelhoById } from '../src/lib/engine/concelhos';
+import { lisboaInstant } from '../src/lib/zeit';
+import { runTool, SPECS } from '../src/lib/tool-specs';
+import { GUIDES } from '../src/lib/pages';
+import { PLANNED_GUIDES } from '../src/lib/planned';
+
+const sum = (a: number[]) => a.reduce((x, y) => x + y, 0);
+
+describe('Páscoa', () => {
+  it('datas conhecidas', () => {
+    expect(pascoa(2024)).toBe('2024-03-31');
+    expect(pascoa(2025)).toBe('2025-04-20');
+    expect(pascoa(2026)).toBe('2026-04-05');
+    expect(pascoa(2027)).toBe('2027-03-28');
+    expect(pascoa(2028)).toBe('2028-04-16');
+  });
+  it('Gauss = Meeus de 1600 a 2600, sempre entre 22 de março e 25 de abril', () => {
+    for (let y = 1600; y <= 2600; y++) {
+      const p = pascoa(y); expect(p).toBe(pascoaMeeus(y));
+      const md = p.slice(5); expect(md >= '03-22' && md <= '04-25').toBe(true);
+    }
+  });
+});
+
+describe('Feriados nacionais (CT art. 234.º)', () => {
+  it('13 feriados obrigatórios por ano, Domingo de Páscoa incluído', () => {
+    for (const y of [2026, 2027, 2028, 2040]) expect(feriados(y).length).toBe(13);
+  });
+  it('2027: Corpo de Deus a 27 de maio, Sexta-Feira Santa a 26 de março', () => {
+    const f = feriados(2027);
+    expect(f.find((x) => x.id === 'corpo-deus')!.date).toBe('2027-05-27');
+    expect(f.find((x) => x.id === 'sexta-santa')!.date).toBe('2027-03-26');
+  });
+  it('2027: 25 de abril, 1 de maio, 15 de agosto e Natal ao fim de semana', () => {
+    expect(aoFimDeSemana(feriados(2027)).map((f) => f.id).sort()).toEqual(['assuncao', 'liberdade', 'natal', 'trabalhador'].sort());
+    expect(emDiaUtil(feriados(2027)).length).toBe(8);
+  });
+  it('regionais: Açores P+50, Madeira 2 de abril só desde 2025', () => {
+    expect(feriados(2027, { local: { nome: 'x', regiao: 'acores' } }).find((f) => f.id === 'dia-acores')!.date).toBe('2027-05-17');
+    expect(feriados(2024, { local: { nome: 'x', regiao: 'madeira' } }).some((f) => f.id === 'autonomia-madeira')).toBe(false);
+    expect(feriados(2027, { local: { nome: 'x', regiao: 'madeira' } }).length).toBe(16);
+  });
+  it('o feriado municipal não se soma quando coincide', () => {
+    const l = { nome: 'x', regiao: 'continente' as const, feriado: { regra: '06-10', nome: 'y' } };
+    expect(feriados(2027, { local: l }).length).toBe(13);
+    expect(municipalCoincide(2027, l)?.id).toBe('portugal');
+  });
+});
+
+describe('Datas móveis', () => {
+  it('Carnaval, hora de verão, regras', () => {
+    expect(carnaval(2027)).toEqual({ domingo: '2027-02-07', terca: '2027-02-09', cinzas: '2027-02-10' });
+    expect(horaVerao(2027)).toEqual({ inicio: '2027-03-28', fim: '2027-10-31' });
+    expect(dataRegra(2026, 'P+51')).toBe('2026-05-26');
+    expect(dataRegra(2027, 'P+39')).toBe('2027-05-06');
+    expect(dataRegra(2027, '06-13')).toBe('2027-06-13');
+  });
+});
+
+describe('Pontes e dias úteis', () => {
+  it('otimizador: nunca acima do orçamento, mais férias nunca dão menos dias', () => {
+    for (const y of [2026, 2027, 2028]) {
+      let prev = 0;
+      for (let b = 0; b <= 30; b++) { const p = otimiza(y, b); expect(p.ferie).toBeLessThanOrEqual(b); expect(p.liberi).toBeGreaterThanOrEqual(prev); prev = p.liberi; }
+    }
+  });
+  it('2027: pontes de um dia (quintas e terças)', () => {
+    expect(pontesDeUmDia(2027).map((p) => p.ferieDal).sort()).toEqual(['2027-05-28', '2027-06-11', '2027-10-04']);
+    expect(pontes(2027).length).toBeGreaterThan(5);
+  });
+  it('dias úteis e semanas ISO', () => {
+    expect(sum(diasUteis(2027))).toBe(253);
+    expect(isoWeek('2027-01-01')).toEqual({ year: 2026, week: 53 });
+    expect(weeksInYear(2027)).toBe(52);
+    expect(segundaDaSemana(2027, 1)).toBe('2027-01-04');
+  });
+});
+
+describe('Concelhos', () => {
+  it('308 concelhos, ids únicos, cada data confirmada tem fonte https/http, extrato e data de leitura', () => {
+    expect(CONCELHOS.length).toBe(308);
+    expect(new Set(CONCELHOS.map((c) => c.id)).size).toBe(308);
+    expect(CONCELHOS.filter((c) => c.regiao === 'acores').length).toBe(19);
+    expect(CONCELHOS.filter((c) => c.regiao === 'madeira').length).toBe(11);
+    for (const c of CONFIRMADOS) {
+      expect(c.feriado!.url).toMatch(/^https?:\/\//);
+      expect(c.feriado!.extrato.length).toBeGreaterThan(20);
+      expect(c.feriado!.lido).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+      expect(Number.isNaN(Date.parse(dataRegra(2027, c.feriado!.regra)))).toBe(false);
+    }
+  });
+  it('Lisboa 13 de junho, Porto 24 de junho, Matosinhos terça a seguir ao Pentecostes', () => {
+    expect(concelhoById('lisboa')!.feriado!.regra).toBe('06-13');
+    expect(concelhoById('porto')!.feriado!.regra).toBe('06-24');
+    expect(dataRegra(2026, concelhoById('matosinhos')!.feriado!.regra)).toBe('2026-05-26');
+  });
+});
+
+describe('Hora de Lisboa', () => {
+  it('meia-noite e mudanças de hora', () => {
+    expect(lisboaInstant('2027-01-01')).toBe('2027-01-01T00:00:00.000Z');
+    expect(lisboaInstant('2027-06-10')).toBe('2027-06-09T23:00:00.000Z');
+  });
+});
+
+describe('Ferramentas e páginas', () => {
+  it('cada ferramenta produz um resultado nas duas línguas', () => {
+    for (const k of Object.keys(SPECS)) for (const l of ['pt', 'en'] as const) { const o = runTool(k, l); expect(o.value, `${k} ${l}`).toBeTruthy(); }
+  });
+  it('todas as páginas previstas existem, uma só vez', () => {
+    const ids = GUIDES.map((g) => g.id);
+    expect(new Set(ids).size).toBe(ids.length);
+    for (const id of PLANNED_GUIDES) expect(ids, id).toContain(id);
+  });
+});

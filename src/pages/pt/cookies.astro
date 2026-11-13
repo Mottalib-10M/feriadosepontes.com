@@ -1,0 +1,33 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { CLARITY_ID, CONTACT_EMAIL, GA4_ID, LAST_UPDATED, SITE_NAMES } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+const lang = 'pt';
+const title = `Cookies – ${SITE_NAMES[lang]}`;
+const description = GA4_ID ? 'Só os cookies de medição de audiência do Google Analytics: nomes, finalidade, duração máxima de 13 meses, fornecedor e como se opor a eles.' : 'O sítio não deposita cookies: o que escreve fica no seu navegador e nada é guardado no seu dispositivo.';
+---
+{/* Página escrita à mão segundo o modelo de scripts/gen-legal-pages.py (o português não é gerido pelo
+     gerador), com os mesmos factos das páginas inglesas e os dois estados GA4 / sem GA4. */}
+<PageLayout title={title} description={description} lang={lang} noindex={true} breadcrumbs={[{ label: 'Cookies' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none">
+    <h1>Cookies</h1>
+    {GA4_ID ? (<>
+    <p>O sítio deposita os cookies de medição de audiência do Google Analytics e só esses: nenhum cookie publicitário, nenhum cookie de redes sociais. O tratamento está descrito na <a href={route('privacy', lang)}>política de privacidade</a>.</p>
+    <h2>Cookies depositados</h2>
+    <table><thead><tr><th>Nome</th><th>Fornecedor</th><th>Finalidade</th><th>Duração</th></tr></thead><tbody>
+    <tr><td><code>_ga</code></td><td>Google Analytics</td><td>Distinguir os visitantes com um identificador aleatório</td><td>13 meses no máximo (390 dias)</td></tr>
+    <tr><td><code>_ga_{GA4_ID.replace('G-', '')}</code></td><td>Google Analytics</td><td>Guardar o estado da visita em curso</td><td>13 meses no máximo (390 dias)</td></tr>
+    </tbody></table>
+    <p>Estas durações não se prolongam a cada visita; a duração predefinida da Google é de 2 anos e o sítio encurta-a. Finalidade: medição de audiência (páginas vistas, origem, dispositivo, país aproximado). O endereço IP não é registado nem guardado pelo Google Analytics 4. Nenhuma publicidade e nenhuma partilha publicitária: armazenamento publicitário, personalização de anúncios e sinais Google estão desativados.</p>
+    <p>Fornecedor: Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irlanda. Os dados podem ser transferidos para a Google LLC nos Estados Unidos ao abrigo do EU–U.S. Data Privacy Framework e das cláusulas contratuais-tipo da Comissão Europeia. Conservação na Google: 14 meses. Fundamento jurídico: interesse legítimo do editor (artigo 6.º, n.º 1, alínea f), do RGPD).</p>
+    <h2>Opor-se a estes cookies</h2>
+    <p>Bloqueie ou apague os cookies nas definições do navegador, ou instale o <a href="https://tools.google.com/dlpage/gaoptout" rel="nofollow noopener" target="_blank">extra de desativação do Google Analytics</a>. O sítio e as ferramentas funcionam da mesma forma.</p>
+    </>) : (<>
+    <p>O sítio <strong>não deposita cookies</strong>. O tratamento está descrito na <a href={route('privacy', lang)}>política de privacidade</a>.</p>
+    </>)}
+    {CLARITY_ID && (<><h2>Microsoft Clarity, sem cookies</h2><p>A estabilidade das páginas é verificada com o Microsoft Clarity em modo sem cookies: o Clarity não deposita cookies, cada página vista recebe um identificador usado uma só vez, e o texto das páginas e o que escreve ficam ocultos. Bloquear <code>clarity.ms</code> desativa-o.</p></>)}
+    <h2>O que escreve</h2>
+    <p>Os cálculos fazem-se no seu navegador: o que escreve não é enviado a nenhum servidor e desaparece quando fecha a página.</p>
+    <p>Perguntas: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. Última atualização: {LAST_UPDATED}.</p>
+  </div>
+</PageLayout>

@@ -1,0 +1,20 @@
+{
+  "_lisezmoi": "Parâmetros datados do sítio. As datas dos feriados não estão aqui: calculam-se no motor (src/lib/engine). Cada fonte foi lida na data indicada em retrieved_at.",
+  "year": 2027,
+  "retrieved_at": "2026-11-13",
+  "valid_from": "2026-01-01",
+  "valid_to": "2028-12-31",
+  "anos": [2026, 2027, 2028],
+  "ferias": { "minimoAnual": 22, "porMesAdmissao": 2, "maxAdmissao": 20, "mesesEspera": 6, "renunciaAcima": 20, "maxMesmoAno": 30 },
+  "sources": {
+    "ct234": { "url": "https://diariodarepublica.pt/dr/legislacao-consolidada/lei/2009-34546475-73982045", "label": { "pt": "Código do Trabalho, artigo 234.º: feriados obrigatórios (Diário da República, versão consolidada)", "en": "Labour Code, article 234: compulsory public holidays (Diário da República, consolidated text)" } },
+    "ct": { "url": "https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=1047&tabela=leis", "label": { "pt": "Código do Trabalho, artigos 234.º a 239.º: feriados e férias (Procuradoria-Geral Distrital de Lisboa)", "en": "Labour Code, articles 234 to 239: holidays and annual leave (Lisbon District Prosecutor's Office)" } },
+    "l8-2016": { "url": "https://files.diariodarepublica.pt/1s/2016/04/06400/0111201112.pdf", "label": { "pt": "Lei n.º 8/2016, de 1 de abril: repõe o Corpo de Deus, o 5 de outubro, o 1 de novembro e o 1 de dezembro (Diário da República)", "en": "Law 8/2016 of 1 April: restores Corpus Christi, 5 October, 1 November and 1 December (Diário da República)" } },
+    "dr13-80-a": { "url": "https://diariodarepublica.pt/dr/detalhe/decreto-regional/13-1980-470865", "label": { "pt": "Decreto Regional n.º 13/80/A: segunda-feira do Espírito Santo, Dia da Região Autónoma dos Açores (Diário da República)", "en": "Regional Decree 13/80/A: Whit Monday as Azores Day (Diário da República)" } },
+    "dr27-79-m": { "url": "https://diariodarepublica.pt/dr/detalhe/decreto-regional/27-1979-363277", "label": { "pt": "Decreto Regional n.º 27/79/M: 1 de julho, feriado da Região Autónoma da Madeira (Diário da República)", "en": "Regional Decree 27/79/M: 1 July, Madeira Day (Diário da República)" } },
+    "dlr18-2002-m": { "url": "https://diariodarepublica.pt/dr/detalhe/diario-republica/258-2002-118636", "label": { "pt": "Decreto Legislativo Regional n.º 18/2002/M: 26 de dezembro, feriado regional da Madeira (Diário da República)", "en": "Regional Legislative Decree 18/2002/M: 26 December, Madeira regional holiday (Diário da República)" } },
+    "dlr17-2024-m": { "url": "https://joram.madeira.gov.pt/joram/1serie/Ano%20de%202024/ISerie-206-2024-12-16sup.pdf", "label": { "pt": "Decreto Legislativo Regional n.º 17/2024/M: Dia da Autonomia, 2 de abril (JORAM, I Série, n.º 206, 16/12/2024)", "en": "Regional Legislative Decree 17/2024/M: Autonomy Day, 2 April (Madeira Official Journal, 16 December 2024)" } },
+    "anmp": { "url": "https://anmp.pt/municipios/municipios/contactos/", "label": { "pt": "Associação Nacional de Municípios Portugueses: as 308 câmaras municipais e os seus sítios", "en": "National Association of Portuguese Municipalities: the 308 councils and their websites" } },
+    "hora": { "url": "https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32000L0084", "label": { "pt": "Diretiva 2000/84/CE: hora de verão na União Europeia (EUR-Lex)", "en": "Directive 2000/84/EC: summer time in the European Union (EUR-Lex)" } }
+  }
+}

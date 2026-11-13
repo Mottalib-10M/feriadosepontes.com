@@ -1,0 +1,26 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { AUTHOR_NAME, CONTACT_EMAIL, LAST_UPDATED, REVIEW_CYCLE_MONTHS, SITE_NAMES } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+const lang = 'pt';
+---
+<PageLayout title={`Política editorial – ${SITE_NAMES[lang]}`} description="De onde vêm os feriados nacionais, regionais e municipais publicados aqui, por que ordem lemos as fontes, como as ferramentas são testadas e o que acontece quando há um erro." lang={lang} noindex={true} breadcrumbs={[{ label: 'Política editorial' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none">
+    <h1>Política editorial e de correções</h1>
+    <p>Quem marca férias à volta de um feriado que não existe encontra o escritório aberto ou gasta um dia de férias. Eis de onde vem cada data e o que fazemos quando uma está errada.</p>
+    <h2>Responsabilidade</h2><p>A {AUTHOR_NAME} responde por cada data, regra e cálculo das ferramentas. Um dado que não corresponda à sua fonte comunica-se para <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
+    <h2>Ordem das fontes</h2>
+    <ol>
+      <li><strong>Leis e decretos</strong> na redação em vigor, no Diário da República e no Jornal Oficial da Região Autónoma da Madeira: Código do Trabalho (artigos 234.º a 239.º), Lei n.º 8/2016, Decreto Regional n.º 13/80/A, Decreto Regional n.º 27/79/M, DLR n.º 18/2002/M, DLR n.º 17/2024/M, Diretiva 2000/84/CE;</li>
+      <li><strong>Sítios das câmaras municipais</strong> para o feriado municipal: uma página da câmara (ou da assembleia municipal) onde a data está escrita junto às palavras « feriado municipal », guardada com o extrato e a data de leitura;</li>
+      <li><strong>Regras de cálculo</strong>: a fórmula de Gauss para a Páscoa e a norma ISO 8601 para as semanas.</li>
+    </ol>
+    <p>Sítios de calendários, agências de viagens, enciclopédias em linha e notícias não são fonte de um feriado. Para um concelho cuja data não encontrámos no sítio da câmara mostramos « Por confirmar » e a ligação para a câmara, nunca uma data adivinhada.</p>
+    <h2>Calculadas, não copiadas</h2><p>Nenhuma data deste sítio é escrita à mão. Um motor obtém cada feriado a partir da sua regra (dia fixo, distância à Páscoa, ano de entrada em vigor). Testes automáticos comparam a Páscoa com um segundo algoritmo independente, contam os feriados de cada ano e verificam o otimizador a cada alteração.</p>
+    <h2>Releituras</h2><p>Uma revisão completa pelo menos a cada {REVIEW_CYCLE_MONTHS} meses e depois de cada lei que mexa nos feriados. Um novo feriado só entra no cálculo depois de publicado no Diário da República.</p>
+    <h2>Tratamento dos erros</h2>
+    <ol><li>Verificação na fonte.</li><li>Regra ou dado corrigido, um teste acrescentado.</li><li>Nova data nas páginas afetadas.</li></ol>
+    <h2>Independência</h2><p>Nenhum dinheiro de agências de viagens, hotéis ou administrações. Nenhuma ligação de afiliação, nenhum conteúdo pago, nenhum formulário de recolha de contactos.</p>
+    <p>Veja também o <a href={route('method', lang)}>método</a>. Versão: {LAST_UPDATED}.</p>
+  </div>
+</PageLayout>

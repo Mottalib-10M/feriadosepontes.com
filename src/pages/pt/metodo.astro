@@ -1,0 +1,49 @@
+---
+/** Método: feriados nacionais, regionais e municipais, Páscoa, otimizador, dias úteis, férias, testes, limites. Cada número vem do motor. */
+import PageLayout from '../../layouts/PageLayout.astro';
+import { route } from '../../i18n/routes';
+import { KIT as K } from '../../lib/kit';
+import { srcLink } from '../../lib/helpers';
+import { breadcrumbSchema, webPageSchema } from '../../lib/seo';
+import { displayDate } from '../../lib/format';
+const lang = 'pt';
+const path = route('method', lang);
+const title = 'Feriados e pontes 2027: como calculamos e verificamos';
+const description = 'Como calculamos feriados e pontes 2027: Código do Trabalho, decretos regionais, Páscoa por Gauss, feriado municipal lido na câmara, otimizador e testes.';
+const s = (k: string, t: string) => srcLink(k, lang, t);
+const d = (x: string) => displayDate(x, 'pt-PT');
+const p10 = K.otimiza(2027, 10);
+const n27 = K.feriados(2027).length;
+---
+<PageLayout title={title} description={description} lang={lang} jsonLd={[webPageSchema({ name: 'Método', description, path, lang }), breadcrumbSchema([{ name: 'Início', path: route('home', lang) }, { name: 'Método', path }])]} breadcrumbs={[{ label: 'Método' }]}>
+  <article class="prose prose-slate max-w-none">
+    <h1>Como as ferramentas calculam feriados e pontes</h1>
+    <p>Todas as ferramentas deste sítio correm no seu navegador. O que indica, ano, concelho, dias de férias, fica no seu dispositivo. A base são as leis portuguesas sobre feriados e regras de cálculo publicadas. Última releitura das fontes: {d(K.P.retrieved_at)}.</p>
+
+    <h2>Os feriados nacionais</h2>
+    <p>A lista vem do <Fragment set:html={s('ct234', 'artigo 234.º, n.º 1, do Código do Trabalho')} />, na redação da <Fragment set:html={s('l8-2016', 'Lei n.º 8/2016, de 1 de abril')} />, que repôs o Corpo de Deus, o 5 de outubro, o 1 de novembro e o 1 de dezembro, suprimidos entre 2013 e 2015. São treze dias, contando o Domingo de Páscoa: para 2027 o motor devolve {n27}. Um feriado que calhe ao sábado ou ao domingo não passa para outro dia; o mesmo artigo só admite que um feriado seja observado na segunda-feira seguinte por lei especial, e nenhuma o faz hoje.</p>
+    <p>A terça-feira de Carnaval e o feriado municipal são feriados facultativos (<Fragment set:html={s('ct', 'artigo 235.º do Código do Trabalho')} />): só valem se o contrato ou a convenção coletiva os prevê. Nas ferramentas entram apenas quando os escolhe.</p>
+
+    <h2>Os feriados regionais</h2>
+    <p>Nos Açores, a segunda-feira do Espírito Santo é o Dia da Região, feriado regional pelo <Fragment set:html={s('dr13-80-a', 'Decreto Regional n.º 13/80/A')} />: calculamo-la como Páscoa mais cinquenta dias. Na Madeira há três: 1 de julho, Dia da Região (<Fragment set:html={s('dr27-79-m', 'Decreto Regional n.º 27/79/M')} />), 26 de dezembro (<Fragment set:html={s('dlr18-2002-m', 'DLR n.º 18/2002/M')} />) e, desde 2025, 2 de abril, Dia da Autonomia (<Fragment set:html={s('dlr17-2024-m', 'DLR n.º 17/2024/M')} />). Entram quando escolhe um concelho do arquipélago.</p>
+
+    <h2>Páscoa e datas móveis</h2>
+    <p>O Domingo de Páscoa é calculado com a fórmula de Gauss (cômputo gregoriano). A Sexta-Feira Santa é dois dias antes, o Corpo de Deus sessenta dias depois, a terça de Carnaval quarenta e sete dias antes. Um segundo algoritmo independente (Meeus, Jones, Butcher) refaz o cálculo para cada ano de 1600 a 2600 nos testes: os dois coincidem em todos os anos.</p>
+
+    <h2>O feriado municipal</h2>
+    <p>Não existe uma lista oficial central dos feriados municipais: cada concelho escolhe o seu e publica-o à sua maneira. Partimos da lista dos {K.CONCELHOS.length} municípios e dos sítios das câmaras da <Fragment set:html={s('anmp', 'ANMP')} />, e só publicamos a data de um concelho quando a lemos numa página da própria câmara (ou da assembleia municipal), com as palavras « feriado municipal » junto à data. Hoje são {K.CONFIRMADOS.length}. Cada um guarda a ligação, um extrato curto e o dia em que o lemos. Para os outros mostramos « Por confirmar » e a ligação para a câmara: nunca uma data copiada de outro sítio. Uma festa ligada à Páscoa (Ascensão, Pentecostes) é calculada como distância ao Domingo de Páscoa.</p>
+
+    <h2>Como funciona o otimizador de pontes</h2>
+    <p>O ano é dividido em blocos: blocos livres feitos de sábados, domingos e feriados, blocos de trabalho de segunda a sexta. Tirando férias em todos os dias de um bloco de trabalho, os dois blocos livres vizinhos juntam-se. O otimizador procura, entre todas as combinações, a que com as suas férias dá mais dias livres seguidos e, em caso de empate, a que gasta menos férias. É uma programação dinâmica sobre os blocos do ano: um resultado exato, não uma regra prática. Exemplo para 2027, no continente e sem feriado municipal: com {p10.ferie} dias de férias obtêm-se {p10.liberi} dias livres em {p10.blocchi.length} blocos.</p>
+    <p>O 24 e o 31 de dezembro são dias úteis por lei; quem os tem livres por contrato ou por tolerância de ponto indica-o em « Mais opções ».</p>
+
+    <h2>Dias úteis, semanas e férias</h2>
+    <p>Os dias úteis são os dias de segunda a sexta (ou a sábado, à escolha) sem os feriados. As semanas seguem a norma ISO 8601: a semana 1 é a que contém a primeira quinta-feira do ano. As férias seguem os <Fragment set:html={s('ct', 'artigos 237.º a 239.º do Código do Trabalho')} />: 22 dias úteis por ano; no ano de admissão, 2 dias por mês completo, até 20, gozados depois de seis meses de contrato. A mudança da hora segue a <Fragment set:html={s('hora', 'Diretiva 2000/84/CE')} />.</p>
+
+    <h2>Limites</h2>
+    <p>As ferramentas não conhecem encerramentos da empresa, turnos, tolerâncias de ponto do Governo ainda não publicadas nem convenções coletivas. As tolerâncias de ponto valem para a função pública e só são conhecidas quando o Governo as publica.</p>
+
+    <h2>Atualização</h2>
+    <p>Relemos as leis sobre feriados e as fontes das câmaras a intervalos regulares. Cada alteração só vai para o ar quando todos os testes passam de novo. Os erros comunicam-se pela página de <a href={route('contact', lang)}>contacto</a>; como corrigimos está na <a href={route('editorial', lang)}>política editorial</a>.</p>
+  </article>
+</PageLayout>

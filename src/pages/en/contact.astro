@@ -1,0 +1,22 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { CONTACT_EMAIL, SITE_NAMES } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+import { contactPageSchema } from '../../lib/seo';
+const lang = 'en';
+const description = 'Write to us if a Portuguese public holiday or date looks wrong, if your municipality’s holiday is missing or wrong, or if you would like to embed the long-weekend planner.';
+---
+<PageLayout title={`Contact ${SITE_NAMES[lang]}: report an error, embed the planner`} description={description} lang={lang} noindex={true} jsonLd={[contactPageSchema({ name: 'Contact', description, path: route('contact', lang), lang })]} breadcrumbs={[{ label: 'Contact' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none">
+    <h1>Contact</h1>
+    <p>Email: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. We usually reply within a week.</p>
+    <h2>A holiday or date looks wrong</h2>
+    <p>Tell us the page, the year and, if you can, the article of law or the act that contradicts the site. We check against the source and correct within a few days.</p>
+    <h2>Your municipality's holiday is missing or wrong</h2>
+    <p>Send us the municipality's name and a link to the page of the câmara municipal (or municipal assembly) website where the date of the feriado municipal is written. We only publish dates read on a source from the municipality itself.</p>
+    <h2>Embed the planner</h2>
+    <p>HR teams, unions, associations and local newspapers can embed the long-weekend planner and the municipal holiday finder for free: <a href={route('widget', lang)}>Embed</a>.</p>
+    <h2>What we do not do</h2>
+    <p>No advice on leave requests or contracts, no travel or hotel booking.</p>
+  </div>
+</PageLayout>

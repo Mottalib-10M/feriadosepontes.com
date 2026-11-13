@@ -1,0 +1,20 @@
+{
+ "accent": "#9A3412",
+ "symbol": "FP",
+ "variants": [
+  {
+   "file": "og-pt.png",
+   "title": "Feriados 2027\nmenos férias, mais dias livres",
+   "subtitle": "Feriados nacionais · Feriado municipal por concelho · Pontes 2027",
+   "badge": "Código do Trabalho, art. 234.º e 235.º · câmaras municipais",
+   "brand": "Feriados e Pontes"
+  },
+  {
+   "file": "og-en.png",
+   "title": "Portugal holidays 2027\nmore days off, fewer leave days",
+   "subtitle": "National holidays · Municipal holiday by town · Long weekends 2027",
+   "badge": "Labour Code, art. 234 and 235 · municipal councils",
+   "brand": "Feriados e Pontes"
+  }
+ ]
+}

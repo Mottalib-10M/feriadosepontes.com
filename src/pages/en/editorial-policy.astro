@@ -1,0 +1,27 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { AUTHOR_NAME, CONTACT_EMAIL, LAST_UPDATED, REVIEW_CYCLE_MONTHS } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+import { displayDate } from '../../lib/format';
+const lang = 'en';
+---
+<PageLayout title="Editorial policy: sources, testing and corrections" description="Where Portugal's national, regional and municipal holidays on this site come from, in what order we read sources, how the tools are tested and what happens when we are wrong." lang={lang} noindex={true} breadcrumbs={[{ label: 'Editorial policy' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none">
+    <h1>Editorial policy and corrections</h1>
+    <p>Book your leave around a holiday that does not exist and you either find the office open or waste a leave day. This page explains where every date comes from and what happens when something is wrong.</p>
+    <h2>Responsibility</h2><p>Content and tools are the responsibility of {AUTHOR_NAME}. Contact: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
+    <h2>Order of sources</h2>
+    <ol>
+      <li><strong>Acts and decrees</strong> as in force, in the Diário da República and the Madeira Official Journal: Labour Code (articles 234 to 239), Law 8/2016, Regional Decree 13/80/A, Regional Decree 27/79/M, DLR 18/2002/M, DLR 17/2024/M, Directive 2000/84/EC;</li>
+      <li><strong>Council websites</strong> for the municipal holiday: a page of the câmara municipal (or municipal assembly) where the date is written next to the words "feriado municipal", saved with the extract and the date we read it;</li>
+      <li><strong>Computation rules</strong>: Gauss's Easter formula and ISO 8601 week numbering.</li>
+    </ol>
+    <p>Calendar sites, travel agencies, online encyclopaedias and newspaper articles are not a source for a holiday. For a municipality whose date we have not found on the council website we show "not yet confirmed" and a link to the council, never a guessed date.</p>
+    <h2>Computed, not copied</h2><p>No date on this site is typed by hand. An engine derives each holiday from its rule (fixed day, offset from Easter, year it took effect). Automated tests compare Easter with a second, independent algorithm over a thousand years, count each year's holidays and check the planner on every change.</p>
+    <h2>Review cycle</h2><p>A full review at least every {REVIEW_CYCLE_MONTHS} months and after every law that touches public holidays. A new holiday is added only once it is published in the Diário da República.</p>
+    <h2>Handling errors</h2>
+    <ol><li>Check against the source.</li><li>Fix the rule or data and add a test.</li><li>New date on every page affected.</li></ol>
+    <h2>Independence</h2><p>No money from travel companies, hotels or authorities. No affiliate links, no paid content, no lead forms.</p>
+    <p>See also <a href={route('method', lang)}>Method</a>. Version of {displayDate(LAST_UPDATED, 'en-GB')}.</p>
+  </div>
+</PageLayout>

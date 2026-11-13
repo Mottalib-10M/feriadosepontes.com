@@ -1,0 +1,33 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import LegalIdentity from '../../components/LegalIdentity.astro';
+import { route } from '../../i18n/routes';
+import { AUTHOR_NAME, AUTHOR_DESC, CONTACT_EMAIL } from '../../data/site-config';
+import { srcLink } from '../../lib/helpers';
+import { KIT as K } from '../../lib/kit';
+import { profilePageSchema, breadcrumbSchema } from '../../lib/seo';
+const lang = 'pt';
+const path = route('about', lang);
+const title = 'Quem publica os feriados e pontes 2027 e de onde vêm';
+const description = 'Quem publica o sítio dos feriados e pontes 2027: a Radif Partners, independente, sem viagens para vender. De onde vêm os feriados, as datas municipais e Páscoa.';
+const s = (k: string, t: string) => srcLink(k, lang, t);
+---
+<PageLayout title={title} description={description} lang={lang} jsonLd={[profilePageSchema({ path, lang }), breadcrumbSchema([{ name: 'Início', path: route('home', lang) }, { name: 'Quem somos', path }])]} breadcrumbs={[{ label: 'Quem somos' }]}>
+  <article class="prose prose-slate max-w-none">
+    <h1>Quem somos</h1>
+    <p>{AUTHOR_DESC.pt}</p>
+    <h2>Porque existe este sítio</h2>
+    <p>No outono marcam-se as férias do ano seguinte e procuram-se os dias em que um só dia de férias se transforma num fim de semana prolongado. As listas de feriados aparecem muitas vezes em páginas que depois querem vender uma viagem, ou copiam umas das outras o feriado municipal sem fonte, às vezes com a data errada. Aqui o cálculo parte da lei e do seu concelho, e diz exatamente quantos dias livres obtém com as férias que quer usar.</p>
+    <h2>Quem o publica</h2>
+    <p>O editor é a {AUTHOR_NAME}, uma sociedade que constrói ferramentas a partir de regras e dados públicos. A {AUTHOR_NAME} não é uma administração nem um gabinete de consultoria, não tem ligação ao Governo, às regiões autónomas ou às câmaras municipais e não usa brasões nem logótipos oficiais. O sítio não vende viagens, hotéis nem calendários e não tem ligações de afiliação.</p>
+    <LegalIdentity lang={lang} />
+    <h2>De onde vêm os dados</h2>
+    <p>Os feriados nacionais vêm do <Fragment set:html={s('ct234', 'artigo 234.º do Código do Trabalho')} />, na redação da <Fragment set:html={s('l8-2016', 'Lei n.º 8/2016')} />. Os regionais vêm do <Fragment set:html={s('dr13-80-a', 'Decreto Regional n.º 13/80/A')} /> (Açores) e, para a Madeira, do <Fragment set:html={s('dr27-79-m', 'Decreto Regional n.º 27/79/M')} />, do <Fragment set:html={s('dlr18-2002-m', 'DLR n.º 18/2002/M')} /> e do <Fragment set:html={s('dlr17-2024-m', 'DLR n.º 17/2024/M')} />. A lista dos {K.CONCELHOS.length} concelhos vem da <Fragment set:html={s('anmp', 'Associação Nacional de Municípios Portugueses')} />; o feriado municipal de cada um dos {K.CONFIRMADOS.length} concelhos publicados foi lido no sítio da própria câmara, com a data de leitura. Como se calculam as pontes está no <a href={route('method', lang)}>método</a>; como corrigimos erros, na <a href={route('editorial', lang)}>política editorial</a>.</p>
+    <h2>Os seus dados</h2>
+    <p>Cada ferramenta corre no seu navegador. O ano, o concelho e os dias de férias que escreve não são enviados nem guardados. Não há conta nem formulário. Os pormenores estão na <a href={route('privacy', lang)}>política de privacidade</a>.</p>
+    <h2>O que o sítio não faz</h2>
+    <p>Não aprova férias e não conhece o seu contrato. Se a terça de Carnaval, o feriado municipal ou o 24 de dezembro são dias livres para si, dizem-no o contrato, a convenção coletiva ou o seu empregador.</p>
+    <h2>Escreva-nos</h2>
+    <p><a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> se um feriado, uma data ou um concelho lhe parecerem errados.</p>
+  </article>
+</PageLayout>

@@ -1,0 +1,49 @@
+---
+/** Method: national, regional and municipal holidays, Easter, planner, working days, leave, tests, limits. Every figure from the engine. */
+import PageLayout from '../../layouts/PageLayout.astro';
+import { route } from '../../i18n/routes';
+import { KIT as K } from '../../lib/kit';
+import { srcLink } from '../../lib/helpers';
+import { breadcrumbSchema, webPageSchema } from '../../lib/seo';
+import { displayDate } from '../../lib/format';
+const lang = 'en';
+const path = route('method', lang);
+const title = 'Holidays and long weekends 2027 in Portugal: our method';
+const description = 'How we compute the 2027 holidays and long weekends: Labour Code, regional decrees, Easter by Gauss, municipal holidays read on council sites, planner, tests.';
+const s = (k: string, t: string) => srcLink(k, lang, t);
+const d = (x: string) => displayDate(x, 'en-GB');
+const p10 = K.otimiza(2027, 10);
+const n27 = K.feriados(2027).length;
+---
+<PageLayout title={title} description={description} lang={lang} jsonLd={[webPageSchema({ name: 'Method', description, path, lang }), breadcrumbSchema([{ name: 'Home', path: route('home', lang) }, { name: 'Method', path }])]} breadcrumbs={[{ label: 'Method' }]}>
+  <article class="prose prose-slate max-w-none">
+    <h1>How the tools work out Portugal's holidays and long weekends</h1>
+    <p>Every tool on this site runs in your browser. What you enter, year, municipality, leave days, stays on your device. The basis is Portuguese law on public holidays and published computation rules. Sources last read on {d(K.P.retrieved_at)}.</p>
+
+    <h2>National holidays</h2>
+    <p>The list comes from <Fragment set:html={s('ct234', 'article 234(1) of the Labour Code')} />, as worded by <Fragment set:html={s('l8-2016', 'Law 8/2016 of 1 April')} />, which restored Corpus Christi, 5 October, 1 November and 1 December after they were suspended from 2013 to 2015. That makes thirteen days, Easter Sunday included: for 2027 the engine returns {n27}. A holiday that falls on a Saturday or Sunday is not moved; the same article allows a holiday to be observed on the following Monday only under a specific law, and none exists today.</p>
+    <p>Carnival Tuesday and the municipal holiday are optional holidays (<Fragment set:html={s('ct', 'article 235 of the Labour Code')} />): they apply only if your contract or collective agreement provides for them. In the tools they count only when you choose them.</p>
+
+    <h2>Regional holidays</h2>
+    <p>In the Azores, Whit Monday is Azores Day, a regional holiday under <Fragment set:html={s('dr13-80-a', 'Regional Decree 13/80/A')} />: we compute it as Easter plus fifty days. Madeira has three: 1 July, Madeira Day (<Fragment set:html={s('dr27-79-m', 'Regional Decree 27/79/M')} />), 26 December (<Fragment set:html={s('dlr18-2002-m', 'DLR 18/2002/M')} />) and, since 2025, 2 April, Autonomy Day (<Fragment set:html={s('dlr17-2024-m', 'DLR 17/2024/M')} />). They apply when you choose a municipality on the islands.</p>
+
+    <h2>Easter and movable dates</h2>
+    <p>Easter Sunday is computed with Gauss's formula for the Gregorian calendar. Good Friday is two days earlier, Corpus Christi sixty days later, Carnival Tuesday forty-seven days earlier. A second, independent algorithm (Meeus, Jones, Butcher) redoes the calculation for every year from 1600 to 2600 in the tests: the two agree on every year.</p>
+
+    <h2>The municipal holiday</h2>
+    <p>There is no central official list of municipal holidays: each municipality picks its own and publishes it in its own way. We start from the list of the {K.CONCELHOS.length} municipalities and council websites kept by the <Fragment set:html={s('anmp', 'national association of municipalities (ANMP)')} />, and we publish a municipality's date only once we have read it on a page of that council (or its municipal assembly), with the words "feriado municipal" next to the date. Today that covers {K.CONFIRMADOS.length}. Each keeps the link, a short extract and the day we read it. For the others we show "not yet confirmed" and a link to the council: never a date copied from another website. A feast tied to Easter (Ascension, Pentecost) is computed as a distance from Easter Sunday.</p>
+
+    <h2>How the long-weekend planner works</h2>
+    <p>The year is split into blocks: free blocks made of Saturdays, Sundays and holidays, and working blocks from Monday to Friday. Taking leave on every day of a working block joins the two free blocks on either side. Among all combinations, the planner looks for the one that gives the most consecutive days off for your leave and, on a tie, the one that uses the least leave. It is dynamic programming over the year's blocks: an exact result, not a rule of thumb. Example for 2027, mainland, without a municipal holiday: {p10.ferie} leave days give {p10.liberi} days off in {p10.blocchi.length} blocks.</p>
+    <p>24 and 31 December are working days by law; if your contract or a government tolerância de ponto gives them off, set it under "More options".</p>
+
+    <h2>Working days, weeks and leave</h2>
+    <p>Working days are Monday to Friday (or Saturday, if you choose) without public holidays. Weeks follow ISO 8601: week 1 is the one containing the year's first Thursday. Leave follows <Fragment set:html={s('ct', 'articles 237 to 239 of the Labour Code')} />: 22 working days a year; in the year you are hired, 2 days per full month, up to 20, usable after six months under contract. The clock change follows <Fragment set:html={s('hora', 'Directive 2000/84/EC')} />.</p>
+
+    <h2>Limits</h2>
+    <p>The tools do not know company closures, shifts, government tolerâncias de ponto not yet published or collective agreements. Tolerâncias de ponto apply to the civil service and are only known once the government publishes them.</p>
+
+    <h2>Updates</h2>
+    <p>We re-read the holiday laws and council sources at regular intervals. Every change goes live only once all tests pass again. Report errors on the <a href={route('contact', lang)}>contact</a> page; how we correct them is in the <a href={route('editorial', lang)}>editorial policy</a>.</p>
+  </article>
+</PageLayout>

@@ -1,0 +1,31 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import LegalIdentity from '../../components/LegalIdentity.astro';
+import { AUTHOR_NAME, CLARITY_ID, CONTACT_EMAIL, GA4_ID, LAST_UPDATED, LEGAL, SITE_NAMES, SITE_URL } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+const lang = 'pt';
+---
+<PageLayout title={`Informação legal – ${SITE_NAMES[lang]}`} description="Editor, diretor da publicação, alojamento, propriedade intelectual, textos legais e páginas oficiais citados, limites de responsabilidade e lei aplicável ao sítio." lang={lang} noindex={true} breadcrumbs={[{ label: 'Informação legal' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none">
+    <h1>Informação legal</h1>
+    <p>Informação publicada nos termos do artigo 6 III-1 da lei francesa n.º 2004-575, de 21 de junho de 2004, sobre a confiança na economia digital (LCEN), por o editor estar estabelecido em França, e do artigo 10.º do Decreto-Lei n.º 7/2004, de 7 de janeiro, sobre o comércio eletrónico.</p>
+    <h2>Editor</h2>
+    <LegalIdentity lang={lang} />
+    <p>Diretor da publicação: {AUTHOR_NAME}, responsável pelos conteúdos publicados em {SITE_URL}.</p>
+    <h2>Alojamento</h2>
+    <LegalIdentity mode="hosting" lang={lang} />
+    <h2>Objeto do sítio, nenhum aconselhamento</h2>
+    <p>O sítio calcula gratuitamente os feriados nacionais e regionais de Portugal, a data da Páscoa, o feriado municipal dos concelhos confirmados, as pontes, os dias úteis, as semanas e as datas da mudança da hora. Estes resultados são informação geral, não um aconselhamento jurídico ou laboral nem um compromisso de uma administração: para os dias livres valem o seu contrato, a convenção coletiva e o seu empregador. O sítio é independente: não está ligado ao Governo, a ministérios, às regiões autónomas ou às câmaras municipais, não usa brasões nem logótipos oficiais e não vende viagens nem hotéis. Método e limites: <a href={route('method', lang)}>método</a>.</p>
+    <h2>Fontes citadas</h2>
+    <p>Regras: leis e decretos publicados no Diário da República e no Jornal Oficial da Região Autónoma da Madeira; os textos oficiais não são protegidos por direito de autor (artigo 8.º do Código do Direito de Autor e dos Direitos Conexos). Feriados municipais: sítios das câmaras municipais, de que o sítio retoma só o nome da festa e a data, com uma ligação para a fonte e um extrato curto.</p>
+    <h2>Limites de responsabilidade</h2>
+    <p>A informação é relida nos textos oficiais e verificada, sem garantia de que esteja livre de erros ou sempre atualizada. O editor não responde por uma decisão tomada só com base numa data indicada aqui. Os erros comunicam-se pela página de <a href={route('contact', lang)}>contacto</a>.</p>
+    <h2>Propriedade intelectual</h2>
+    <p>Textos, grafismo e código são protegidos e pertencem ao editor; são permitidas citações curtas com uma ligação para a página original. As fontes citadas pertencem aos respetivos titulares.</p>
+    <h2>Incorporar a ferramenta</h2><p>O otimizador de pontes e a pesquisa do feriado municipal podem ser incorporados gratuitamente com um iframe, deixando visível a ligação: veja a <a href={route('widget', lang)}>página do widget</a>.</p>
+    <h2>Dados pessoais e cookies</h2>
+    {GA4_ID ? (<p>O que escreve nas ferramentas fica no seu navegador. O sítio deposita os cookies de medição de audiência do Google Analytics (<code>_ga</code>, <code>_ga_{GA4_ID.replace('G-', '')}</code>, 13 meses no máximo), sem publicidade{CLARITY_ID && '; a estabilidade das páginas é verificada com o Microsoft Clarity, sem cookies'}. Pormenores, fundamento jurídico e oposição: <a href={route('privacy', lang)}>política de privacidade</a> e página de <a href={route('cookies', lang)}>cookies</a>.</p>) : (<p>O que escreve nas ferramentas fica no seu navegador e o sítio não deposita cookies{CLARITY_ID && '; a estabilidade das páginas é verificada de forma anónima com o Microsoft Clarity, sem cookies'}. Veja a <a href={route('privacy', lang)}>política de privacidade</a> e a página de <a href={route('cookies', lang)}>cookies</a>.</p>)}
+    <h2>Denúncias</h2><p>Conteúdos ilícitos: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>, com o endereço da página e o motivo.</p>
+    <h2>Lei aplicável</h2><p>Lei francesa, por o editor estar estabelecido em França, sem prejuízo dos direitos imperativos do consumidor do país de residência. Na falta de acordo, são competentes os tribunais de {LEGAL.jurisdiction}. Atualização: {LAST_UPDATED}.</p>
+  </div>
+</PageLayout>

@@ -1,0 +1,2666 @@
+{
+ "fonte_lista": "Associação Nacional de Municípios Portugueses, contactos das câmaras municipais (anmp.pt), lida em 2026-11-13",
+ "lido": "2026-11-13",
+ "concelhos": [
+  {
+   "id": "abrantes",
+   "nome": "Abrantes",
+   "regiao": "continente",
+   "camara": "http://www.cm-abrantes.pt",
+   "feriado": null
+  },
+  {
+   "id": "agueda",
+   "nome": "Águeda",
+   "regiao": "continente",
+   "camara": "http://www.cm-agueda.pt",
+   "feriado": {
+    "regra": "P+50",
+    "nome": "Segunda-feira de Pentecostes",
+    "url": "http://www.cm-agueda.pt/viver/cultura-educacao-e-associativismo/cultura/feriado-municipal",
+    "extrato": "elando a decisão tomada. Assim, a Comissão Administrativa, considerando que o dia 15 de Agosto era realmente inadequado, por cair em período de férias, deliberou por maioria, com a abstenção do vogal proponente, fixar o feriado municipal “na segunda-feira do Espírito Santo, vulgarmente conhecida em ",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "aguiar-da-beira",
+   "nome": "Aguiar da Beira",
+   "regiao": "continente",
+   "camara": "http://www.cm-aguiardabeira.pt",
+   "feriado": null
+  },
+  {
+   "id": "alandroal",
+   "nome": "Alandroal",
+   "regiao": "continente",
+   "camara": "https://www.cm-alandroal.pt/",
+   "feriado": null
+  },
+  {
+   "id": "albergaria-a-velha",
+   "nome": "Albergaria-a-Velha",
+   "regiao": "continente",
+   "camara": "http://www.cm-albergaria.pt",
+   "feriado": null
+  },
+  {
+   "id": "albufeira",
+   "nome": "Albufeira",
+   "regiao": "continente",
+   "camara": "http://www.cm-albufeira.pt",
+   "feriado": null
+  },
+  {
+   "id": "alcacer-do-sal",
+   "nome": "Alcácer do Sal",
+   "regiao": "continente",
+   "camara": "http://www.cm-alcacerdosal.pt",
+   "feriado": null
+  },
+  {
+   "id": "alcanena",
+   "nome": "Alcanena",
+   "regiao": "continente",
+   "camara": "http://cm-alcanena.pt/",
+   "feriado": null
+  },
+  {
+   "id": "alcobaca",
+   "nome": "Alcobaça",
+   "regiao": "continente",
+   "camara": "http://www.cm-alcobaca.pt",
+   "feriado": null
+  },
+  {
+   "id": "alcochete",
+   "nome": "Alcochete",
+   "regiao": "continente",
+   "camara": "http://www.cm-alcochete.pt",
+   "feriado": {
+    "regra": "06-24",
+    "nome": "São João Baptista",
+    "url": "https://www.cm-alcochete.pt/Detalhe/festas-de-sao-joao-batista",
+    "extrato": "les populares são algumas das componentes que integram a programação. Em Junho, por ocasião dos Santos Populares, realizam-se em Alcochete as Festas Populares em Honra de São Baptista, que congregam nos dias em redor do feriado municipal, assinalado a 24 de Junho, momentos de alegria e de grande rel",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "alcoutim",
+   "nome": "Alcoutim",
+   "regiao": "continente",
+   "camara": "http://www.cm-alcoutim.pt",
+   "feriado": null
+  },
+  {
+   "id": "alenquer",
+   "nome": "Alenquer",
+   "regiao": "continente",
+   "camara": "http://www.cm-alenquer.pt",
+   "feriado": null
+  },
+  {
+   "id": "alfandega-da-fe",
+   "nome": "Alfândega da Fé",
+   "regiao": "continente",
+   "camara": "https://www.cm-alfandegadafe.pt/",
+   "feriado": {
+    "regra": "05-08",
+    "nome": "Carta de Foral (feriado municipal)",
+    "url": "https://www.cm-alfandegadafe.pt/viver/municipio/mensagem-do-presidente",
+    "extrato": "s os alfandeguenses! Temos ainda a destacar a celebração do Feriado Municipal de Alfândega da Fé no dia 8 de maio. Este ano assinalamos 728 anos da atribuição da Carta de Foral ao concelho de Alfândega da Fé pelo Rei D. Dinis, com um",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "alijo",
+   "nome": "Alijó",
+   "regiao": "continente",
+   "camara": "http://www.cm-alijo.pt",
+   "feriado": null
+  },
+  {
+   "id": "aljezur",
+   "nome": "Aljezur",
+   "regiao": "continente",
+   "camara": "http://www.cm-aljezur.pt",
+   "feriado": null
+  },
+  {
+   "id": "aljustrel",
+   "nome": "Aljustrel",
+   "regiao": "continente",
+   "camara": "http://www.mun-aljustrel.pt",
+   "feriado": null
+  },
+  {
+   "id": "almada",
+   "nome": "Almada",
+   "regiao": "continente",
+   "camara": "http://www.m-almada.pt",
+   "feriado": null
+  },
+  {
+   "id": "almeida",
+   "nome": "Almeida",
+   "regiao": "continente",
+   "camara": "http://www.cm-almeida.pt",
+   "feriado": {
+    "regra": "07-02",
+    "nome": "Batalha do Côa (1810)",
+    "url": "https://www.cm-almeida.pt/?s=feriado+municipal",
+    "extrato": "roteção Civil, Floresta e Agricultura Recursos Humanos Regulamentos Outros Documentos Contactos Click to open the search input field Click to open the search input field Pesquisa Menu Menu 69 resultados encontrado para: feriado municipal Está aqui: Página Inicial 1 / Comemorações Feriado Municipal -",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "almeirim",
+   "nome": "Almeirim",
+   "regiao": "continente",
+   "camara": "http://www.cm-almeirim.pt",
+   "feriado": null
+  },
+  {
+   "id": "almodovar",
+   "nome": "Almodôvar",
+   "regiao": "continente",
+   "camara": "http://www.cm-almodovar.pt",
+   "feriado": {
+    "regra": "06-24",
+    "nome": "São João Baptista",
+    "url": "https://cm-almodovar.pt/municipio-celebra-feriado-arraial-sao-joao/",
+    "extrato": "rismo Contactos Início • Notícias • Município celebra Feriado com Arraial de São João Município celebra Feriado com Arraial de São João publicado a 21 de Junho de 2022 O Município de Almodôvar prepara-se para celebrar o Feriado Municipal no dia 24 de junho, dia de São João. Desta forma, a autarquia ",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "alpiarca",
+   "nome": "Alpiarça",
+   "regiao": "continente",
+   "camara": "http://www.cm-alpiarca.pt",
+   "feriado": null
+  },
+  {
+   "id": "alter-do-chao",
+   "nome": "Alter do Chão",
+   "regiao": "continente",
+   "camara": "http://www.cm-alter-chao.pt",
+   "feriado": null
+  },
+  {
+   "id": "alvaiazere",
+   "nome": "Alvaiázere",
+   "regiao": "continente",
+   "camara": "https://www.cm-alvaiazere.pt/",
+   "feriado": null
+  },
+  {
+   "id": "alvito",
+   "nome": "Alvito",
+   "regiao": "continente",
+   "camara": "http://www.cm-alvito.pt",
+   "feriado": null
+  },
+  {
+   "id": "amadora",
+   "nome": "Amadora",
+   "regiao": "continente",
+   "camara": "http://www.cm-amadora.pt",
+   "feriado": null
+  },
+  {
+   "id": "amarante",
+   "nome": "Amarante",
+   "regiao": "continente",
+   "camara": "http://www.cm-amarante.pt",
+   "feriado": null
+  },
+  {
+   "id": "amares",
+   "nome": "Amares",
+   "regiao": "continente",
+   "camara": "https://amares.pt/",
+   "feriado": null
+  },
+  {
+   "id": "anadia",
+   "nome": "Anadia",
+   "regiao": "continente",
+   "camara": "http://www.cm-anadia.pt/",
+   "feriado": null
+  },
+  {
+   "id": "angra-do-heroismo",
+   "nome": "Angra do Heroísmo",
+   "regiao": "acores",
+   "camara": "http://www.cmah.pt",
+   "feriado": null
+  },
+  {
+   "id": "ansiao",
+   "nome": "Ansião",
+   "regiao": "continente",
+   "camara": "http://www.cm-ansiao.pt",
+   "feriado": null
+  },
+  {
+   "id": "arcos-de-valdevez",
+   "nome": "Arcos de Valdevez",
+   "regiao": "continente",
+   "camara": "http://www.cmav.pt",
+   "feriado": null
+  },
+  {
+   "id": "arganil",
+   "nome": "Arganil",
+   "regiao": "continente",
+   "camara": "https://www.cm-arganil.pt/",
+   "feriado": {
+    "regra": "09-07",
+    "nome": "Nossa Senhora do Mont`Alto",
+    "url": "https://www.cm-arganil.pt/?s=feriado+municipal",
+    "extrato": "s de Acolhimento Empresarial Área de Acolhimento Empresarial da Relvinha Zona Industrial de Côja Zona Industrial de Vale de Zebras Zona Industrial de Vale Fôjo Empresas Plano Diretor Municipal Menu Menu Resultados para \"feriado municipal\" 55 resultados encontrados 7 Setembro, 2026 Dez distinções e a",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "armamar",
+   "nome": "Armamar",
+   "regiao": "continente",
+   "camara": "https://www.cm-armamar.pt/",
+   "feriado": null
+  },
+  {
+   "id": "arouca",
+   "nome": "Arouca",
+   "regiao": "continente",
+   "camara": "http://www.cm-arouca.pt",
+   "feriado": null
+  },
+  {
+   "id": "arraiolos",
+   "nome": "Arraiolos",
+   "regiao": "continente",
+   "camara": "http://www.cm-arraiolos.pt ",
+   "feriado": {
+    "regra": "P+39",
+    "nome": "Quinta-feira da Ascensão (Dia da Espiga)",
+    "url": "https://www.cm-arraiolos.pt/?s=feriado+municipal",
+    "extrato": "radição Unidade Especial de Recolha de Resíduos Perigosos da GESAMB Vote na Sobreira Grande Filtros Todos os anos 2026 2025 2024 2023 2022 2021 2020 2019 2018 2017 2016 Todos os meses 01 02 03 04 05 06 07 08 09 10 11 12 Feriado Municipal – Arraiolos Evento | 15 May 2023 Feriado Municipal 2019 Notíci",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "arronches",
+   "nome": "Arronches",
+   "regiao": "continente",
+   "camara": "http://www.cm-arronches.pt",
+   "feriado": null
+  },
+  {
+   "id": "arruda-dos-vinhos",
+   "nome": "Arruda dos Vinhos",
+   "regiao": "continente",
+   "camara": "http://www.cm-arruda.pt",
+   "feriado": null
+  },
+  {
+   "id": "aveiro",
+   "nome": "Aveiro",
+   "regiao": "continente",
+   "camara": "http://www.cm-aveiro.pt",
+   "feriado": {
+    "regra": "05-12",
+    "nome": "Santa Joana Princesa",
+    "url": "https://www.cm-aveiro.pt/",
+    "extrato": "aio 5149 Quinta 07 maio 5400 Sexta 08 maio 2969 Sábado 09 maio 1425 Domingo 10 maio 193 Segunda 11 maio 577 Terça 12 maio 8904 Quarta 13 maio 2957 Quinta 14 maio 9108 Sexta 15 maio 933 Sábado 16 maio 3093 Comemoração do Feriado Municipal | Festividades de Santa Joana 2025 9799 Sexta 02 maio 8168 Sáb",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "avis",
+   "nome": "Avis",
+   "regiao": "continente",
+   "camara": "http://www.cm-avis.pt",
+   "feriado": {
+    "regra": "P+1",
+    "nome": "Segunda-feira de Páscoa",
+    "url": "https://cm-avis.pt/?s=feriado+municipal",
+    "extrato": "”Competências SECÇÃO IIAssembleia municipal SUBSECÇÃO ICompetências Lei Nº 75/2013 de 12 de SetembroCapítulo III, Secção... Segunda-feira de Páscoa’25 em Benavila Abr 14, 2025 | Uncategorized No próximo dia 21 de abril, feriado municipal, a tarde é de festa junto ao Santuário de N. Sra. D’ Entre Águ",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "azambuja",
+   "nome": "Azambuja",
+   "regiao": "continente",
+   "camara": "http://www.cm-azambuja.pt",
+   "feriado": null
+  },
+  {
+   "id": "baiao",
+   "nome": "Baião",
+   "regiao": "continente",
+   "camara": "http://www.cm-baiao.pt",
+   "feriado": {
+    "regra": "08-24",
+    "nome": "São Bartolomeu",
+    "url": "https://cm-baiao.pt/baiao-celebrou-o-dia-do-municipio-com-distincoes-honorificas-e-evocacao-da-identidade-local/",
+    "extrato": "milho e as faixas ondadas, associados ao territÃ³rio, Ã produÃ§Ã£o agrÃ­cola e Ã ligaÃ§Ã£o ao rio. Trata-se de um sÃ­mbolo habitualmente guardado, sendo apresentado publicamente apenas em ocasiÃµes especÃ­ficas, como o feriado municipal de 24 de agosto, durante a procissÃ£o em honra de SÃ£o Bartolom",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "barcelos",
+   "nome": "Barcelos",
+   "regiao": "continente",
+   "camara": "http://www.cm-barcelos.pt",
+   "feriado": null
+  },
+  {
+   "id": "barrancos",
+   "nome": "Barrancos",
+   "regiao": "continente",
+   "camara": "http://www.cm-barrancos.pt",
+   "feriado": null
+  },
+  {
+   "id": "barreiro",
+   "nome": "Barreiro",
+   "regiao": "continente",
+   "camara": "http://www.cm-barreiro.pt",
+   "feriado": {
+    "regra": "06-28",
+    "nome": "Elevação a cidade (1984)",
+    "url": "http://www.cm-barreiro.pt/?s=feriado+municipal",
+    "extrato": "Todos os anos 2026 2025 2024 2023 2022 2021 2020 2019 2018 2017 2016 2015 2014 2013 2012 2011 2010 2009 2008 2007 Escolha o mês Todos os meses 05 06 07 08 09 10 11 12 01 02 03 04 Loja do Cidadão do Barreiro encerrada no Feriado Municipal a 28 de junho Notícias | 26 Jun 2025 TCB | Horários 13 de junh",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "batalha",
+   "nome": "Batalha",
+   "regiao": "continente",
+   "camara": "http://www.cm-batalha.pt",
+   "feriado": null
+  },
+  {
+   "id": "beja",
+   "nome": "Beja",
+   "regiao": "continente",
+   "camara": "http://www.cm-beja.pt",
+   "feriado": null
+  },
+  {
+   "id": "belmonte",
+   "nome": "Belmonte",
+   "regiao": "continente",
+   "camara": "http://www.cm-belmonte.pt",
+   "feriado": {
+    "regra": "04-26",
+    "nome": "Primeira missa no Brasil",
+    "url": "https://www.cm-belmonte.pt/?s=feriado+municipal",
+    "extrato": "na vila. Junto ao Pedro, se marcam encontros; a intimidade e cumplicidade que emergem de uma longa vivência em comum, permitem a familiaridade. Não há comemoração, festa, que não inclua uma romagem à estátua. A data do feriado municipal foi escolhida para celebrar a primeira missa celebrada em terra",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "benavente",
+   "nome": "Benavente",
+   "regiao": "continente",
+   "camara": "http://www.cm-benavente.pt",
+   "feriado": {
+    "regra": "P+39",
+    "nome": "Quinta-feira da Ascensão (Dia da Espiga)",
+    "url": "https://www.cm-benavente.pt/?s=feriado+municipal",
+    "extrato": "s da República em 1910 No dia da Ver mais » 5 de Novembro, 2021 Festejos do Dia da Espiga em Monte de Santo Isidro, Samora Correia Cumpriram-se as tradições em Monte de Santo Isidro, em Samora Correia, no Dia da Espiga (Feriado Municipal). Ver mais » 30 de Maio, 2025 Serviços de apoio à família EDUC",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "bombarral",
+   "nome": "Bombarral",
+   "regiao": "continente",
+   "camara": "http://www.cm-bombarral.pt/",
+   "feriado": null
+  },
+  {
+   "id": "borba",
+   "nome": "Borba",
+   "regiao": "continente",
+   "camara": "http://www.cm-borba.pt",
+   "feriado": null
+  },
+  {
+   "id": "boticas",
+   "nome": "Boticas",
+   "regiao": "continente",
+   "camara": "http://www.cm-boticas.pt",
+   "feriado": {
+    "regra": "11-06",
+    "nome": "Criação do município",
+    "url": "https://www.cm-boticas.pt:443/",
+    "extrato": "ticas, através do Serviço Municipal de Proteção Civil, alerta para o agravamento das condições meteorológicas, associado à passagem da Depressão Charles, com previsão de chuva intensa, vento forte e possibilidade de ... Feriado Municipal de Boticas O dia do Município de Boticas é comemorado, anualme",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "braga",
+   "nome": "Braga",
+   "regiao": "continente",
+   "camara": "http://www.cm-braga.pt",
+   "feriado": {
+    "regra": "06-24",
+    "nome": "São João",
+    "url": "https://www.cm-braga.pt/pt/1201/conhecer/historia-e-patrimonio/museus/item/item-1-662",
+    "extrato": "Encerrado ao público à 2.ª feira e nos feriados de 1 de Janeiro, Domingo de Páscoa, 1 de Maio, 24 de junho (Feriado Municipal) e 25 de Dezembro.",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "braganca",
+   "nome": "Bragança",
+   "regiao": "continente",
+   "camara": "http://www.cm-braganca.pt",
+   "feriado": null
+  },
+  {
+   "id": "cabeceiras-de-basto",
+   "nome": "Cabeceiras de Basto",
+   "regiao": "continente",
+   "camara": "http://www.cabeceirasdebasto.pt",
+   "feriado": {
+    "regra": "09-29",
+    "nome": "São Miguel Arcanjo",
+    "url": "https://cabeceirasdebasto.pt/13607",
+    "extrato": "Cabeceiras de Basto Informações úteis | Fale connosco | Livro de Reclamações | Contactos Concelho Município Turismo Cultura Outros Balcão Online × Resultados da pesquisa Conteúdo Alterações na recolha de lixo devido ao feriado municipal Aviso aos cabeceirenses 28 de setembro, 2016 A Câmara Municipal",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "cadaval",
+   "nome": "Cadaval",
+   "regiao": "continente",
+   "camara": "http://www.cm-cadaval.pt",
+   "feriado": null
+  },
+  {
+   "id": "caldas-da-rainha",
+   "nome": "Caldas da Rainha",
+   "regiao": "continente",
+   "camara": "http://www.mcr.pt",
+   "feriado": null
+  },
+  {
+   "id": "calheta-acores",
+   "nome": "Calheta (Açores)",
+   "regiao": "acores",
+   "camara": "http://www.cm-calheta.pt",
+   "feriado": null
+  },
+  {
+   "id": "calheta-madeira",
+   "nome": "Calheta (Madeira)",
+   "regiao": "madeira",
+   "camara": "http://www.cmcalheta.pt",
+   "feriado": {
+    "regra": "06-24",
+    "nome": "São João Baptista",
+    "url": "https://www.cmcalheta.pt/pt/municipio/concelho/historia",
+    "extrato": "Mar Prazeres Fajã da Ovelha Ponta do Pargo Com uma população atual de cerca de 11521 habitantes (Censos de 2011), este Concelho foi talvez o que maior número de emigrantes enviou para quase todos os recantos do mundo. O feriado Municipal comemora-se a 24 de Junho, dia de São João, de acordo com a de",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "camara-de-lobos",
+   "nome": "Câmara de Lobos",
+   "regiao": "madeira",
+   "camara": "http://www.cm-camaradelobos.pt",
+   "feriado": {
+    "regra": "10-04",
+    "nome": "Criação do município",
+    "url": "https://www.cm-camaradelobos.pt/informacoes/concelho/heraldica-e-comemoracoes",
+    "extrato": "ob proposta do então presidente Dr. Vasco Reis Gonçalves, mediante parecer do Arquivo Regional da Madeira, que considerou a data da instalação do concelho como acontecimento relevante, a fixação do dia 4 de outubro como feriado municipal, tendo para o efeito sido publicados os respetivos editais, no",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "caminha",
+   "nome": "Caminha",
+   "regiao": "continente",
+   "camara": "http://www.cm-caminha.pt",
+   "feriado": null
+  },
+  {
+   "id": "campo-maior",
+   "nome": "Campo Maior",
+   "regiao": "continente",
+   "camara": "http://www.cm-campo-maior.pt",
+   "feriado": null
+  },
+  {
+   "id": "cantanhede",
+   "nome": "Cantanhede",
+   "regiao": "continente",
+   "camara": "https://www.cm-cantanhede.pt",
+   "feriado": null
+  },
+  {
+   "id": "carrazeda-de-ansiaes",
+   "nome": "Carrazeda de Ansiães",
+   "regiao": "continente",
+   "camara": "http://www.cm-carrazedadeansiaes.pt",
+   "feriado": null
+  },
+  {
+   "id": "carregal-do-sal",
+   "nome": "Carregal do Sal",
+   "regiao": "continente",
+   "camara": "http://www.carregal-digital.pt",
+   "feriado": null
+  },
+  {
+   "id": "cartaxo",
+   "nome": "Cartaxo",
+   "regiao": "continente",
+   "camara": "http://www.cm-cartaxo.pt",
+   "feriado": {
+    "regra": "P+39",
+    "nome": "Quinta-feira da Ascensão (Dia da Espiga)",
+    "url": "https://www.cm-cartaxo.pt:443/pesquisa?q=feriado+municipal",
+    "extrato": "uintes 8 resultados. A Festa do Vinho vai ser digital https://www.cm-cartaxo.pt:443/informacao/noticias/a-festa-vai-ser-digital 20 maio 2020 Com publicação no Facebook, a Festa do Vinho & Pão tem abertura marcada para o Feriado Municipal - Quinta-Feira da Ascenção • A Festa do Vinho & Pão, que foi c",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "cascais",
+   "nome": "Cascais",
+   "regiao": "continente",
+   "camara": "http://www.cascais.pt",
+   "feriado": {
+    "regra": "06-13",
+    "nome": "Santo António",
+    "url": "https://www.cascais.pt/sub-area/feriado-municipal",
+    "extrato": "a de festas tradicionais e características do concelho e recordando que as únicas celebrações deste tipo eram as dos santos populares e a Festa do Mar, a autarquia alterou de novo, por deliberação, o feriado municipal para 13 de junho , dia de Santo António, que ainda hoje se mantém. De 30 de agosto",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "castanheira-de-pera",
+   "nome": "Castanheira de Pera",
+   "regiao": "continente",
+   "camara": "http://www.cm-castanheiradepera.pt",
+   "feriado": {
+    "regra": "07-04",
+    "nome": "Fundação do município",
+    "url": "https://www.cm-castanheiradepera.pt/PT/concelho-histria",
+    "extrato": "seus lugares nos cargos administrativos os cidadãos atualmente eleitos. Artigo 4º Fica revogada a legislação em contrário. A 4 de Julho de 1914 tomou assento a Comissão Instaladora da Câmara Municipal Data assinalada no feriado municipal, que celebra a elevação de Castanheira de Pera a sede de conce",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "castelo-branco",
+   "nome": "Castelo Branco",
+   "regiao": "continente",
+   "camara": "http://www.cm-castelobranco.pt",
+   "feriado": null
+  },
+  {
+   "id": "castelo-de-paiva",
+   "nome": "Castelo de Paiva",
+   "regiao": "continente",
+   "camara": "http://www.cm-castelo-paiva.pt",
+   "feriado": {
+    "regra": "06-24",
+    "nome": "São João Baptista",
+    "url": "http://www.cm-castelo-paiva.pt/pt/pesquisa?q=feriado+municipal",
+    "extrato": "Festejos de S. João (...)os santos populares no mês de junho. A par das várias festas de aldeia em honra de Sto. António e de S. Pedro, os festejos de S. João são os que merecem maior destaque, justificando inclusive o feriado municipal no dia 24 de junho. Dentro do espirito sanjoanino, as coloridas",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "castelo-de-vide",
+   "nome": "Castelo de Vide",
+   "regiao": "continente",
+   "camara": "http://www.cm-castelo-vide.pt",
+   "feriado": null
+  },
+  {
+   "id": "castro-daire",
+   "nome": "Castro Daire",
+   "regiao": "continente",
+   "camara": "http://www.cm-castrodaire.pt",
+   "feriado": null
+  },
+  {
+   "id": "castro-marim",
+   "nome": "Castro Marim",
+   "regiao": "continente",
+   "camara": "http://www.cm-castromarim.pt",
+   "feriado": null
+  },
+  {
+   "id": "castro-verde",
+   "nome": "Castro Verde",
+   "regiao": "continente",
+   "camara": "http://www.cm-castroverde.pt",
+   "feriado": null
+  },
+  {
+   "id": "celorico-da-beira",
+   "nome": "Celorico da Beira",
+   "regiao": "continente",
+   "camara": "http://www.cm-celoricodabeira.pt",
+   "feriado": {
+    "regra": "05-23",
+    "nome": "Nascimento de Sacadura Cabral",
+    "url": "https://www.cm-celoricodabeira.pt/?s=feriado+municipal",
+    "extrato": "quisar Comemoração do Feriado Municipal de Celorico da Beira Tipo de Conteúdo: Artigo Feriado Municipal | Centro Cultural | Apresentação do Livro | Teatro, Performance e Comunidades | 22 de maio Tipo de Conteúdo: Artigo Feriado Municipal | Visita Guiada | Forno Telheiro, Baraçal e Açores | 24 de mai",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "celorico-de-basto",
+   "nome": "Celorico de Basto",
+   "regiao": "continente",
+   "camara": "http://www.mun-celoricodebasto.pt/",
+   "feriado": {
+    "regra": "07-25",
+    "nome": "São Tiago",
+    "url": "https://www.mun-celoricodebasto.pt/festas-do-concelho-em-celorico-de-basto/",
+    "extrato": "uma singularidade ímpar, voltou a não desiludir os milhares de pessoas presentes. Carlão, Ágata e fogo-de-artifício proporcionaram noite memorável As festas do Concelho em honra de S. Tiago começaram no dia 25 de julho, Feriado Municipal e terminaram este domingo, 30 de Julho. Foram 6 dias de intens",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "chamusca",
+   "nome": "Chamusca",
+   "regiao": "continente",
+   "camara": "http://www.cm-chamusca.pt",
+   "feriado": null
+  },
+  {
+   "id": "chaves",
+   "nome": "Chaves",
+   "regiao": "continente",
+   "camara": "http://www.chaves.pt",
+   "feriado": null
+  },
+  {
+   "id": "cinfaes",
+   "nome": "Cinfães",
+   "regiao": "continente",
+   "camara": "http://www.cm-cinfaes.pt",
+   "feriado": {
+    "regra": "06-24",
+    "nome": "São João Baptista",
+    "url": "https://cm-cinfaes.pt/pesquisar?q=feriado+municipal",
+    "extrato": "esidenciais 2026 . Pesquisa Pesquisar Encerramento das Festas de São João 2026 em Cinfães 24 junho 2026 uma vez mais, como um enorme sucesso e um dos momentos mais marcantes da vida do nosso concelho. O dia 24 de junho, feriado municipal, foi vivido com particular solenidade e grande participação da",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "coimbra",
+   "nome": "Coimbra",
+   "regiao": "continente",
+   "camara": "http://www.cm-coimbra.pt       ",
+   "feriado": {
+    "regra": "07-04",
+    "nome": "Rainha Santa Isabel (Dia da Cidade)",
+    "url": "https://www.coimbra.pt/2025/03/casamentos-da-rainha-santa-isabel-regressam-a-coimbra-em-2025/",
+    "extrato": "a e Nora, o presidente da delegação de Coimbra da AHRESP, José Madeira, e o representante da Escola de Hotelaria e Turismo de Coimbra, Filipe Carvalho. A cerimónia vai decorrer no domingo seguinte ao feriado municipal de 4 de julho, data em que se assinala a Solenidade da Rainha Santa Isabel. A 6 de",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "condeixa-a-nova",
+   "nome": "Condeixa-a-Nova",
+   "regiao": "continente",
+   "camara": "http://www.cm-condeixa.pt",
+   "feriado": null
+  },
+  {
+   "id": "constancia",
+   "nome": "Constância",
+   "regiao": "continente",
+   "camara": "http://www.cm-constancia.pt",
+   "feriado": null
+  },
+  {
+   "id": "coruche",
+   "nome": "Coruche",
+   "regiao": "continente",
+   "camara": "http://www.cm-coruche.pt",
+   "feriado": null
+  },
+  {
+   "id": "corvo",
+   "nome": "Corvo",
+   "regiao": "acores",
+   "camara": "http://www.cm-corvo.pt",
+   "feriado": null
+  },
+  {
+   "id": "covilha",
+   "nome": "Covilhã",
+   "regiao": "continente",
+   "camara": "http://www.cm-covilha.pt",
+   "feriado": null
+  },
+  {
+   "id": "crato",
+   "nome": "Crato",
+   "regiao": "continente",
+   "camara": "http://www.cm-crato.pt",
+   "feriado": null
+  },
+  {
+   "id": "cuba",
+   "nome": "Cuba",
+   "regiao": "continente",
+   "camara": "http://www.cm-cuba.pt ",
+   "feriado": null
+  },
+  {
+   "id": "elvas",
+   "nome": "Elvas",
+   "regiao": "continente",
+   "camara": "http://www.cm-elvas.pt",
+   "feriado": {
+    "regra": "01-14",
+    "nome": "Batalha das Linhas de Elvas (1659)",
+    "url": "https://cm-elvas.pt/?s=feriado+municipal",
+    "extrato": "for \"feriado municipal\" | Município de Elvas Siga-nos: Follow Follow Follow Follow Follow Início Município Descobrir Viver Investir Informação Divulgação Agenda Contactos Resultados da Pesquisa Search for: Results for \"feriado municipal\" Discurso do Presidente da Câmara Municipal de Elvas no 14 de j",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "entroncamento",
+   "nome": "Entroncamento",
+   "regiao": "continente",
+   "camara": "http://www.cm-entroncamento.pt",
+   "feriado": null
+  },
+  {
+   "id": "espinho",
+   "nome": "Espinho",
+   "regiao": "continente",
+   "camara": "http://www.cm-espinho.pt",
+   "feriado": null
+  },
+  {
+   "id": "esposende",
+   "nome": "Esposende",
+   "regiao": "continente",
+   "camara": "http://www.municipio.esposende.pt",
+   "feriado": null
+  },
+  {
+   "id": "estarreja",
+   "nome": "Estarreja",
+   "regiao": "continente",
+   "camara": "http://www.cm-estarreja.pt",
+   "feriado": {
+    "regra": "06-13",
+    "nome": "Santo António",
+    "url": "https://www.cm-estarreja.pt/caracterizacao",
+    "extrato": "rras do Antuã Egas Moniz BioRia Inicio > O Município > Caracterização Município de Estarreja Área: 108.11 Km2 População: 27.474 Distrito: Aveiro Freguesias: Avanca, Beduído, Canelas e Fermelã, Pardilhó, Salreu e Veiros. Feriado Municipal - 13 de Junho Apresentação O Concelho de Estarreja, pertence a",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "estremoz",
+   "nome": "Estremoz",
+   "regiao": "continente",
+   "camara": "http://www.cm-estremoz.pt",
+   "feriado": null
+  },
+  {
+   "id": "evora",
+   "nome": "Évora",
+   "regiao": "continente",
+   "camara": "http://www.cm-evora.pt",
+   "feriado": {
+    "regra": "06-29",
+    "nome": "São Pedro",
+    "url": "https://www.cm-evora.pt/municipe/evora/concelho/feriado-municipal/",
+    "extrato": ", outros avisos Alertas – Proteção Civil Comunicação de Roturas Estacionamento para pessoas com mobilidade condicionada Parques de Estacionamento Remoção de Veículos da Via Pública Início > MUNÍCIPE > Évora > Concelho > Feriado Municipal facebook instagram youtube rss Feriado Municipal Atualizado em",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "fafe",
+   "nome": "Fafe",
+   "regiao": "continente",
+   "camara": "http://www.cm-fafe.pt",
+   "feriado": {
+    "regra": "05-16",
+    "nome": "Feiras Francas",
+    "url": "https://www.cm-fafe.pt/pesquisa?q=feriado+municipal",
+    "extrato": "planeamento e ordenamento do território, tendo desenvolvido a sua atividade neste… Noticia Estação Memória de Fafe abre ao público a 16 de maio 09/05/2024 A Estação Memória, inaugurada a 25 de Abril, abre ao público no feriado municipal de Fafe, 16 de maio. A Estação Memória é um museu interpretativ",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "faro",
+   "nome": "Faro",
+   "regiao": "continente",
+   "camara": "http://www.cm-faro.pt",
+   "feriado": {
+    "regra": "09-07",
+    "nome": "Dia da Cidade (elevação a cidade, 1540)",
+    "url": "https://www.cm-faro.pt/pt/832/festas-do-concelho.aspx",
+    "extrato": "s Claustros do Museu, 6ª feira, dia 2, às 22h00. No dia 6 de Setembro o Pedro e a Teresa Viola prestam “Homenagem aos Fadistas e ao Fado” com um espectáculo no palco da Doca com início pelas 22h00. O feriado Municipal, 7 de Setembro, ficará marcado pelos festejos oficiais: 09:35h – Hastear das Bande",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "felgueiras",
+   "nome": "Felgueiras",
+   "regiao": "continente",
+   "camara": "http://www.cm-felgueiras.pt",
+   "feriado": {
+    "regra": "06-29",
+    "nome": "São Pedro",
+    "url": "https://cm-felgueiras.pt/municipio/concelho-de-felgueiras/breve-historia-do-concelho/",
+    "extrato": "o seu nome, erguido em 1719. Também parte do seu património são as festas da Cidade que têm como padroeiro o apóstolo S. Pedro, desta festividade faz parte o tradicional e secular cortejo das flores, realizado no dia do feriado Municipal, 29 de Junho. As lendas, os produtos, os monumentos compõem ho",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "ferreira-do-alentejo",
+   "nome": "Ferreira do Alentejo",
+   "regiao": "continente",
+   "camara": "http://www.ferreiradoalentejo.pt",
+   "feriado": null
+  },
+  {
+   "id": "ferreira-do-zezere",
+   "nome": "Ferreira do Zêzere",
+   "regiao": "continente",
+   "camara": "http://www.cm-ferreiradozezere.pt",
+   "feriado": null
+  },
+  {
+   "id": "figueira-da-foz",
+   "nome": "Figueira da Foz",
+   "regiao": "continente",
+   "camara": "http://www.cm-figfoz.pt",
+   "feriado": null
+  },
+  {
+   "id": "figueira-de-castelo-rodrigo",
+   "nome": "Figueira de Castelo Rodrigo",
+   "regiao": "continente",
+   "camara": "http://www.cm-fcr.pt",
+   "feriado": {
+    "regra": "07-07",
+    "nome": "Batalha de Salgadela (1664)",
+    "url": "https://www.cm-fcr.pt/?s=feriado+municipal",
+    "extrato": "1 271 319 000 (chamada para a rede fixa nacional) Município Residir Visitar Investir Participar Click to open the search input field Click to open the search input field Pesquisa Menu Menu 47 resultados encontrado para: feriado municipal Está aqui: Home 1 / Resultado da pesquisa para \"feriado munici",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "figueiro-dos-vinhos",
+   "nome": "Figueiró dos Vinhos",
+   "regiao": "continente",
+   "camara": "http://www.cm-figueirodosvinhos.pt",
+   "feriado": null
+  },
+  {
+   "id": "fornos-de-algodres",
+   "nome": "Fornos de Algodres",
+   "regiao": "continente",
+   "camara": "http://www.cm-fornosdealgodres.pt",
+   "feriado": {
+    "regra": "09-29",
+    "nome": "São Miguel Arcanjo",
+    "url": "https://www.cm-fornosdealgodres.pt/comemoracoes-do-feriado-municipal-fornos-algodres/",
+    "extrato": "o Emigrante A Minha Rua Pedidos de Informação Provedor do Munícipe Sugestões / Reclamações / Elogios Transparência e Integridade Contactos Pesquisa Menu Menu Está aqui: Home 1 / Noticias 2 / Notícias 3 / Comemorações do Feriado Municipal de Fornos de Algodres Atualizado em 7 Outubro, 2016 / em Notíc",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "freixo-de-espada-a-cinta",
+   "nome": "Freixo de Espada à Cinta",
+   "regiao": "continente",
+   "camara": "http://www.cm-freixoespadacinta.pt",
+   "feriado": {
+    "regra": "P+1",
+    "nome": "Segunda-feira de Páscoa",
+    "url": "https://www.cm-freixoespadacinta.pt/evento.php?id=518",
+    "extrato": "a popular portuguesa Saúl. O Executivo Municipal deixa aqui o convite para que toda a população se junte na Praia Fluvial da Congida na segunda-feira de Páscoa, pretendendo, com esta iniciativa, dignificar e valorizar o Feriado Municipal, uma data importante para Freixo de Espada à Cinta, não deixan",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "fronteira",
+   "nome": "Fronteira",
+   "regiao": "continente",
+   "camara": "http://www.cm-fronteira.pt",
+   "feriado": null
+  },
+  {
+   "id": "funchal",
+   "nome": "Funchal",
+   "regiao": "madeira",
+   "camara": "http://www.cm-funchal.pt",
+   "feriado": {
+    "regra": "08-21",
+    "nome": "Dia da Cidade",
+    "url": "https://visit.funchal.pt/item/dia-da-cidade/",
+    "extrato": "namento Transportes Click to open the search input field Click to open the search input field Pesquisar Menu Menu Eventos Dia da Cidade No dia 21 de agosto, assinala-se o Dia da Cidade do Funchal, um feriado municipal que evoca a histórica elevação da vila a cidade, decretada por carta régia de D. M",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "fundao",
+   "nome": "Fundão",
+   "regiao": "continente",
+   "camara": "http://www.cm-fundao.pt",
+   "feriado": null
+  },
+  {
+   "id": "gaviao",
+   "nome": "Gavião",
+   "regiao": "continente",
+   "camara": "http://www.cm-gaviao.pt",
+   "feriado": null
+  },
+  {
+   "id": "gois",
+   "nome": "Góis",
+   "regiao": "continente",
+   "camara": "http://www.cm-gois.pt",
+   "feriado": {
+    "regra": "08-13",
+    "nome": "Doação de Góis a Anaia Vestrares",
+    "url": "https://www.cm-gois.pt:443/",
+    "extrato": "s eventos 3164 Todos os eventos 7748 50 anos do 25 de abril 3969 CULGóis - Agenda Cultural 4942 Espaços Culturais 2546 Exposições temporárias 8236 Góis Arte 1264 Edição 2022 4319 Edição 2023 4291 Festas do Concelho 4562 Feriado Municipal - 13 de agosto 2886 Largo das Tasquinhas 400 Feira Sem Regras ",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "golega",
+   "nome": "Golegã",
+   "regiao": "continente",
+   "camara": "http://www.cm-golega.pt",
+   "feriado": null
+  },
+  {
+   "id": "gondomar",
+   "nome": "Gondomar",
+   "regiao": "continente",
+   "camara": "http://www.cm-gondomar.pt",
+   "feriado": null
+  },
+  {
+   "id": "gouveia",
+   "nome": "Gouveia",
+   "regiao": "continente",
+   "camara": "http://www.cm-gouveia.pt",
+   "feriado": null
+  },
+  {
+   "id": "grandola",
+   "nome": "Grândola",
+   "regiao": "continente",
+   "camara": "http://www.cm-grandola.pt",
+   "feriado": null
+  },
+  {
+   "id": "guarda",
+   "nome": "Guarda",
+   "regiao": "continente",
+   "camara": "http://www.mun-guarda.pt",
+   "feriado": null
+  },
+  {
+   "id": "guimaraes",
+   "nome": "Guimarães",
+   "regiao": "continente",
+   "camara": "http://www.cm-guimaraes.pt",
+   "feriado": {
+    "regra": "06-24",
+    "nome": "Batalha de São Mamede (Dia Um de Portugal)",
+    "url": "https://www.cm-guimaraes.pt/areas-de-intervencao/noticia/ricardo-araujo-quer-24-de-junho-celebrado-como-feriado-nacional-em-2028",
+    "extrato": "idente da Câmara Municipal de Guimarães, Ricardo Araújo, expressou, hoje, ao Presidente da Assembleia da República, José Pedro Aguiar-Branco, o seu desejo e determinação em ver a data de 24 de Junho, feriado municipal evocativo do Dia Um de Portugal, celebrada como feriado nacional por ocasião das c",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "horta",
+   "nome": "Horta",
+   "regiao": "acores",
+   "camara": "http://www.cmhorta.pt",
+   "feriado": {
+    "regra": "06-24",
+    "nome": "São João Baptista",
+    "url": "https://www.cmhorta.pt/pesquisa?q=feriado+municipal",
+    "extrato": "ado é obrigatório , e municipal é obrigatório , foram encontrados os seguintes resultados. CMH promove festejos de São João da Caldeira A Câmara Municipal da Horta volta a promover os festejos de São João por ocasião do feriado municipal do 24 de junho. Os festejos decorrerão, como é hábito, no Larg",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "idanha-a-nova",
+   "nome": "Idanha-a-Nova",
+   "regiao": "continente",
+   "camara": "http://www.cm-idanhanova.pt",
+   "feriado": null
+  },
+  {
+   "id": "ilhavo",
+   "nome": "Ílhavo",
+   "regiao": "continente",
+   "camara": "http://www.cm-ilhavo.pt",
+   "feriado": null
+  },
+  {
+   "id": "lagoa-acores",
+   "nome": "Lagoa (Açores)",
+   "regiao": "acores",
+   "camara": "http://www.lagoa-acores.pt",
+   "feriado": null
+  },
+  {
+   "id": "lagoa-algarve",
+   "nome": "Lagoa (Algarve)",
+   "regiao": "continente",
+   "camara": "http://www.cm-lagoa.pt/",
+   "feriado": null
+  },
+  {
+   "id": "lagos",
+   "nome": "Lagos",
+   "regiao": "continente",
+   "camara": "http://www.cm-lagos.pt",
+   "feriado": {
+    "regra": "10-27",
+    "nome": "São Gonçalo de Lagos",
+    "url": "https://www.cm-lagos.pt/pesquisa?q=feriado+municipal",
+    "extrato": "imais de Companhia | 2020-12 | 2016-06 | O Canil Municipal de ... Conteúdo / Animais de Companhia / Animais de Companhia 05 Arco de São Gonçalo ... com honras de Santo em Portugal. Lagos comemora, a 27 de Outubro, o seu feriado municipal, em honra ... ... com honras de Santo em Portugal. Lagos comem",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "lajes-das-flores",
+   "nome": "Lajes das Flores",
+   "regiao": "acores",
+   "camara": "http://www.cmlajesdasflores.pt/",
+   "feriado": null
+  },
+  {
+   "id": "lajes-do-pico",
+   "nome": "Lajes do Pico",
+   "regiao": "acores",
+   "camara": "http://www.cm-lajesdopico.pt/",
+   "feriado": null
+  },
+  {
+   "id": "lamego",
+   "nome": "Lamego",
+   "regiao": "continente",
+   "camara": "http://www.cm-lamego.pt",
+   "feriado": {
+    "regra": "09-08",
+    "nome": "Nossa Senhora dos Remédios",
+    "url": "https://www.cm-lamego.pt:443/a-autarquia/historia-do-concelho",
+    "extrato": "s religiosos, dos quais se destacam a Sé Catedral, a Igreja de São Pedro de Balsemão e o Santuário da Nossa Senhora dos Remédios, que dá também o nome a Romaria anual cujo dia principal é o 8 de Setembro, que é também o feriado municipal. Conhecida também pela sua gastronomia, nas qual se destacam o",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "leiria",
+   "nome": "Leiria",
+   "regiao": "continente",
+   "camara": "http://www.cm-leiria.pt",
+   "feriado": {
+    "regra": "05-22",
+    "nome": "Criação da diocese (1545)",
+    "url": "https://www.cm-leiria.pt/municipio",
+    "extrato": "ona fulcral, suportada por diversas vias, e a inovação é receita diária para o seu crescimento e desenvolvimento, contando com o dinamismo de quem aqui mora e de quem nos visita. Leiria celebra o seu feriado municipal a 22 de maio, dia em que foi criada a diocese, no ano de 1545. A elevação a cidade",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "lisboa",
+   "nome": "Lisboa",
+   "regiao": "continente",
+   "camara": "http://www.cm-lisboa.pt",
+   "feriado": {
+    "regra": "06-13",
+    "nome": "Santo António",
+    "url": "https://www.am-lisboa.pt/101000/1/023623,062024/index.htm",
+    "extrato": "Procissão de Santo António 14-06-2024 No dia 13 de junho, feriado municipal e dia de Santo António em Lisboa decorreu a tradicional procissão (Assembleia Municipal de Lisboa).",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "loule",
+   "nome": "Loulé",
+   "regiao": "continente",
+   "camara": "http://www.cm-loule.pt",
+   "feriado": null
+  },
+  {
+   "id": "loures",
+   "nome": "Loures",
+   "regiao": "continente",
+   "camara": "http://www.cm-loures.pt",
+   "feriado": null
+  },
+  {
+   "id": "lourinha",
+   "nome": "Lourinhã",
+   "regiao": "continente",
+   "camara": "http://www.cm-lourinha.pt",
+   "feriado": null
+  },
+  {
+   "id": "lousa",
+   "nome": "Lousã",
+   "regiao": "continente",
+   "camara": "http://www.cm-lousa.pt",
+   "feriado": null
+  },
+  {
+   "id": "lousada",
+   "nome": "Lousada",
+   "regiao": "continente",
+   "camara": "http://www.cm-lousada.pt",
+   "feriado": null
+  },
+  {
+   "id": "macao",
+   "nome": "Mação",
+   "regiao": "continente",
+   "camara": "http://www.cm-macao.pt",
+   "feriado": null
+  },
+  {
+   "id": "macedo-de-cavaleiros",
+   "nome": "Macedo de Cavaleiros",
+   "regiao": "continente",
+   "camara": "http://www.cm-macedodecavaleiros.pt",
+   "feriado": {
+    "regra": "06-29",
+    "nome": "São Pedro",
+    "url": "https://www.cm-macedodecavaleiros.pt:443/municipio/historia",
+    "extrato": "ntigos concelhos de Chacim e Cortiços. Dez anos depois da criação do Concelho de Macedo de Cavaleiros, a 15 de Janeiro, a sede é elevada à categoria de Vila e a 13 de Maio de 1999 foi-lhe concedido o título de cidade. O feriado municipal é comemorado no dia de São Pedro, 29 de junho, Padroeiro da ci",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "machico",
+   "nome": "Machico",
+   "regiao": "madeira",
+   "camara": "http://www.cm-machico.pt",
+   "feriado": null
+  },
+  {
+   "id": "madalena",
+   "nome": "Madalena",
+   "regiao": "acores",
+   "camara": "http://www.cm-madalena.pt",
+   "feriado": null
+  },
+  {
+   "id": "mafra",
+   "nome": "Mafra",
+   "regiao": "continente",
+   "camara": "http://www.cm-mafra.pt",
+   "feriado": null
+  },
+  {
+   "id": "maia",
+   "nome": "Maia",
+   "regiao": "continente",
+   "camara": "http://www.cm-maia.pt",
+   "feriado": null
+  },
+  {
+   "id": "mangualde",
+   "nome": "Mangualde",
+   "regiao": "continente",
+   "camara": "http://www.cmmangualde.pt",
+   "feriado": null
+  },
+  {
+   "id": "manteigas",
+   "nome": "Manteigas",
+   "regiao": "continente",
+   "camara": "http://www.cm-manteigas.pt",
+   "feriado": {
+    "regra": "03-04",
+    "nome": "Outorgação do foral",
+    "url": "https://cm-manteigas.pt/?s=feriado+municipal",
+    "extrato": "ado Municipal de Manteigas Evento 4 Março, 2020 Evento Terminado 22 Janeiro, 2025 Comemoração do Feriado Municipal de Manteigas 2018 Evento 3 Março, 2018 – 4 Março, 2018 Evento Terminado 22 Janeiro, 2025 Comemorações do Feriado Municipal de Manteigas 2017 Evento 3 Fevereiro, 2017 – 12 Fevereiro, 201",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "marco-de-canaveses",
+   "nome": "Marco de Canaveses",
+   "regiao": "continente",
+   "camara": "http://www.cm-marco-canaveses.pt",
+   "feriado": null
+  },
+  {
+   "id": "marinha-grande",
+   "nome": "Marinha Grande",
+   "regiao": "continente",
+   "camara": "http://www.cm-mgrande.pt",
+   "feriado": null
+  },
+  {
+   "id": "marvao",
+   "nome": "Marvão",
+   "regiao": "continente",
+   "camara": "http://www.cm-marvao.pt",
+   "feriado": {
+    "regra": "09-08",
+    "nome": "Nossa Senhora da Estrela",
+    "url": "https://www.cm-marvao.pt/?s=feriado+municipal",
+    "extrato": "ança e Encarregado de Proteção de Dados Turismo Descobrir Visitar Programas sugeridos Percursos Pedestres Comer Dormir Atividades turísticas Produtos Artesanato Informação útil Posto de Turismo Contactos Marvão comemora Feriado Municipal com vasto programa cultural by Samuel Mimoso | Sep 1, 2026 | S",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "matosinhos",
+   "nome": "Matosinhos",
+   "regiao": "continente",
+   "camara": "http://www.cm-matosinhos.pt",
+   "feriado": {
+    "regra": "P+51",
+    "nome": "Senhor de Matosinhos (terça-feira a seguir ao Pentecostes)",
+    "url": "https://www.cm-matosinhos.pt/servicos/cultura/senhor-de-matosinhos",
+    "extrato": "Senhor de Matosinhos 2026 - Festas da Cidade: de 15 de maio a 7 de junho. O feriado municipal do Senhor de Matosinhos é no dia 26 de maio de 2026.",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "mealhada",
+   "nome": "Mealhada",
+   "regiao": "continente",
+   "camara": "http://www.cm-mealhada.pt",
+   "feriado": null
+  },
+  {
+   "id": "meda",
+   "nome": "Mêda",
+   "regiao": "continente",
+   "camara": "http://www.cm-meda.pt",
+   "feriado": {
+    "regra": "11-11",
+    "nome": "São Martinho",
+    "url": "https://www.cm-meda.pt/noticias/comemoracoes-do-feriado-municipal-2013/",
+    "extrato": "uivo de Artigos Agenda de Eventos Revista Municipal Movimento Associativo Investir Planeamento Estratégico Candidaturas Diáspora Documentação Pesquisa Menu Menu Está aqui: Página Inicial 1 / Notícias 2 / Comemorações do Feriado Municipal 2013 Comemorações do Feriado Municipal 2013 Atualizado em 15 N",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "melgaco",
+   "nome": "Melgaço",
+   "regiao": "continente",
+   "camara": "http://www.cm-melgaco.pt",
+   "feriado": {
+    "regra": "P+39",
+    "nome": "Quinta-feira da Ascensão",
+    "url": "https://www.cm-melgaco.pt/?s=feriado+municipal",
+    "extrato": "rada, madrinha dos Bombeiros melgacenses. Até quinta-feira, 25 de maio, Feriado Municipal, é possível ouvir-se música ambiente nas ruas do Município Mais a Norte de Portugal e assistir-se a atos solenes em hon",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "mertola",
+   "nome": "Mértola",
+   "regiao": "continente",
+   "camara": "http://www.cm-mertola.pt",
+   "feriado": null
+  },
+  {
+   "id": "mesao-frio",
+   "nome": "Mesão Frio",
+   "regiao": "continente",
+   "camara": "http://www.cm-mesaofrio.pt",
+   "feriado": null
+  },
+  {
+   "id": "mira",
+   "nome": "Mira",
+   "regiao": "continente",
+   "camara": "http://www.cm-mira.pt",
+   "feriado": null
+  },
+  {
+   "id": "miranda-do-corvo",
+   "nome": "Miranda do Corvo",
+   "regiao": "continente",
+   "camara": "http://www.cm-mirandadocorvo.pt",
+   "feriado": null
+  },
+  {
+   "id": "miranda-do-douro",
+   "nome": "Miranda do Douro",
+   "regiao": "continente",
+   "camara": "http://www.cm-mdouro.pt/",
+   "feriado": null
+  },
+  {
+   "id": "mirandela",
+   "nome": "Mirandela",
+   "regiao": "continente",
+   "camara": "http://www.cm-mirandela.pt",
+   "feriado": null
+  },
+  {
+   "id": "mogadouro",
+   "nome": "Mogadouro",
+   "regiao": "continente",
+   "camara": "http://mogadouro.pt/",
+   "feriado": null
+  },
+  {
+   "id": "moimenta-da-beira",
+   "nome": "Moimenta da Beira",
+   "regiao": "continente",
+   "camara": "http://www.cm-moimenta.pt",
+   "feriado": null
+  },
+  {
+   "id": "moita",
+   "nome": "Moita",
+   "regiao": "continente",
+   "camara": "http://www.cm-moita.pt",
+   "feriado": null
+  },
+  {
+   "id": "moncao",
+   "nome": "Monção",
+   "regiao": "continente",
+   "camara": "http://www.cm-moncao.pt ",
+   "feriado": null
+  },
+  {
+   "id": "monchique",
+   "nome": "Monchique",
+   "regiao": "continente",
+   "camara": "http://www.cm-monchique.pt",
+   "feriado": null
+  },
+  {
+   "id": "mondim-de-basto",
+   "nome": "Mondim de Basto",
+   "regiao": "continente",
+   "camara": "http://municipio.mondimdebasto.pt",
+   "feriado": null
+  },
+  {
+   "id": "monforte",
+   "nome": "Monforte",
+   "regiao": "continente",
+   "camara": "http://www.cm-monforte.pt",
+   "feriado": null
+  },
+  {
+   "id": "montalegre",
+   "nome": "Montalegre",
+   "regiao": "continente",
+   "camara": "http://www.cm-montalegre.pt",
+   "feriado": null
+  },
+  {
+   "id": "montemor-o-novo",
+   "nome": "Montemor-o-Novo",
+   "regiao": "continente",
+   "camara": "http://www.cm-montemornovo.pt",
+   "feriado": null
+  },
+  {
+   "id": "montemor-o-velho",
+   "nome": "Montemor-o-Velho",
+   "regiao": "continente",
+   "camara": "http://www.cm-montemorvelho.pt",
+   "feriado": null
+  },
+  {
+   "id": "montijo",
+   "nome": "Montijo",
+   "regiao": "continente",
+   "camara": "http://www.mun-montijo.pt",
+   "feriado": null
+  },
+  {
+   "id": "mora",
+   "nome": "Mora",
+   "regiao": "continente",
+   "camara": "http://www.cm-mora.pt",
+   "feriado": null
+  },
+  {
+   "id": "mortagua",
+   "nome": "Mortágua",
+   "regiao": "continente",
+   "camara": "http://www.cm-mortagua.pt",
+   "feriado": null
+  },
+  {
+   "id": "moura",
+   "nome": "Moura",
+   "regiao": "continente",
+   "camara": "http://www.cm-moura.pt",
+   "feriado": {
+    "regra": "06-24",
+    "nome": "São João Baptista",
+    "url": "https://www.cm-moura.pt/?s=feriado+municipal",
+    "extrato": "icipal Notícias Galeria de Fotografias Galeria de Videos Newsletter Logótipos e Brasão Investir CAMM Empresas Municipais Mour@investe Projetos Cofinanciados Participar Fale Connosco Orçamento Participativo Início Buscar feriado municipal - resultados da busca Se você não gostou dos resultados, por f",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "mourao",
+   "nome": "Mourão",
+   "regiao": "continente",
+   "camara": "http://www.cm-mourao.pt",
+   "feriado": {
+    "regra": "02-02",
+    "nome": "Nossa Senhora das Candeias",
+    "url": "https://www.cm-mourao.pt/municipe/areas-de-acao/cultura/festas-em-honra-de-n-a-sr-a-das-candeias/",
+    "extrato": "ilde, onde se ergue no cimo do monte o castelo, e no qual está integrado a Igreja Matriz de Nossa Senhora das Candeias que acolhe a padroeira da terra. Mourão localiza-se no Alentejo Central, é sede de concelho, e tem o Feriado Municipal no dia 2 de fevereiro, dia de Nossa Senhora das Candeias, data",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "murca",
+   "nome": "Murça",
+   "regiao": "continente",
+   "camara": "http://www.cm-murca.pt",
+   "feriado": null
+  },
+  {
+   "id": "murtosa",
+   "nome": "Murtosa",
+   "regiao": "continente",
+   "camara": "http://www.cm-murtosa.pt",
+   "feriado": null
+  },
+  {
+   "id": "nazare",
+   "nome": "Nazaré",
+   "regiao": "continente",
+   "camara": "http://www.cm-nazare.pt",
+   "feriado": null
+  },
+  {
+   "id": "nelas",
+   "nome": "Nelas",
+   "regiao": "continente",
+   "camara": "http://www.cm-nelas.pt",
+   "feriado": {
+    "regra": "06-24",
+    "nome": "São João Baptista",
+    "url": "https://www.cm-nelas.pt/?s=feriado+municipal",
+    "extrato": "Centenário dos Bombeiros, um dia tão… Dia do Município marcado pela Inauguração do Mercado Municipal e Homenagem ao Mérito e à Excelência do Coração do Dão Cultura , Notícias By Gabinete Comunicação Social 25 Junho 2026 Dia do Município marcado pela Inauguração do Mercado Municipal e Homenagem ao Mé",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "nisa",
+   "nome": "Nisa",
+   "regiao": "continente",
+   "camara": "http://www.cm-nisa.pt",
+   "feriado": null
+  },
+  {
+   "id": "nordeste",
+   "nome": "Nordeste",
+   "regiao": "acores",
+   "camara": "http://www.cmnordeste.pt",
+   "feriado": null
+  },
+  {
+   "id": "obidos",
+   "nome": "Óbidos",
+   "regiao": "continente",
+   "camara": "http://www.cm-obidos.pt",
+   "feriado": {
+    "regra": "01-11",
+    "nome": "Tomada de Óbidos aos mouros",
+    "url": "https://www.cm-obidos.pt:443/viver/cultura-e-patrimonio/arquivo-historico-intro/cronologia-historica-de-obidos-intro",
+    "extrato": "pena de multa de um escudo, pela primeira vez e de dois escudos por cada reincidência\". Data: 1937 (11 de Março) Época: Idade Contemporânea A Vereação delibera aceitar a proposta, feita por vários obidenses, para que o feriado municipal passe de 1 de Maio para o dia 11 de Janeiro. Data: 1938 (29 de ",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "odemira",
+   "nome": "Odemira",
+   "regiao": "continente",
+   "camara": "http://www.cm-odemira.pt",
+   "feriado": null
+  },
+  {
+   "id": "odivelas",
+   "nome": "Odivelas",
+   "regiao": "continente",
+   "camara": "http://www.cm-odivelas.pt",
+   "feriado": null
+  },
+  {
+   "id": "oeiras",
+   "nome": "Oeiras",
+   "regiao": "continente",
+   "camara": "http://www.cm-oeiras.pt",
+   "feriado": null
+  },
+  {
+   "id": "oleiros",
+   "nome": "Oleiros",
+   "regiao": "continente",
+   "camara": "http://www.cm-oleiros.pt/",
+   "feriado": null
+  },
+  {
+   "id": "olhao",
+   "nome": "Olhão",
+   "regiao": "continente",
+   "camara": "https://cm-olhao.pt/",
+   "feriado": null
+  },
+  {
+   "id": "oliveira-de-azemeis",
+   "nome": "Oliveira de Azeméis",
+   "regiao": "continente",
+   "camara": "http://www.cm-oaz.pt",
+   "feriado": null
+  },
+  {
+   "id": "oliveira-de-frades",
+   "nome": "Oliveira de Frades",
+   "regiao": "continente",
+   "camara": "http://www.cm-ofrades.com",
+   "feriado": null
+  },
+  {
+   "id": "oliveira-do-bairro",
+   "nome": "Oliveira do Bairro",
+   "regiao": "continente",
+   "camara": "http://www.cm-olb.pt/",
+   "feriado": {
+    "regra": "P+39",
+    "nome": "Quinta-feira da Ascensão (Dia da Espiga)",
+    "url": "http://www.cm-olb.pt/visitar/concelho/feriado-municipal",
+    "extrato": "e Romarias da Região Iniciativas Gastronomia Onde dormir O que visitar Património Artesanato Biblioteca Municipal | Rede de Concelhia de Leitura Arte Urbana Rede de Museus de Oliveira do Bairro Parques de Lazer Topónimo Feriado Municipal A Festa da Ascensão , conhecida também como Quinta-Feira da As",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "oliveira-do-hospital",
+   "nome": "Oliveira do Hospital",
+   "regiao": "continente",
+   "camara": "http://www.cm-oliveiradohospital.pt",
+   "feriado": {
+    "regra": "10-07",
+    "nome": "Recebimento da notícia da Implantação da República",
+    "url": "https://www.cm-oliveiradohospital.pt/?s=feriado+municipal",
+    "extrato": "Mérito no Feriado Municipal Ver mais Oliveira do Hospital celebra Feriado Municipal Ver mais Oliveira do Hospital comemora Feriado Municipal com a atribuição de Medalhas de Mérito Ver mais Oliveira do Hospital comemora Feriado Municipal e inaugura Casa da Cultura Ver mais Feriado Municipal de Olivei",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "ourem",
+   "nome": "Ourém",
+   "regiao": "continente",
+   "camara": "http://www.ourem.pt",
+   "feriado": {
+    "regra": "06-20",
+    "nome": "Elevação a cidade",
+    "url": "https://www.ourem.pt/municipio/freguesias/nossa-senhora-da-piedade/",
+    "extrato": "a de Nossa Senhora do Bom Despacho (Último Fim-de-semana Julho), Festa de Nossa Senhora da Piedade (1º Fim-de-semana Agosto), Festa dos Pinhões ou Nossa Senhora do Livramento (Fevereiro-Domingo magro), Festas da Cidade (Feriado Municipal 20 de Junho), Festa de Nossa Senhora das Mercês (3º fim de sem",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "ourique",
+   "nome": "Ourique",
+   "regiao": "continente",
+   "camara": "http://www.cm-ourique.pt  ",
+   "feriado": null
+  },
+  {
+   "id": "ovar",
+   "nome": "Ovar",
+   "regiao": "continente",
+   "camara": "http://www.cm-ovar.pt",
+   "feriado": null
+  },
+  {
+   "id": "pacos-de-ferreira",
+   "nome": "Paços de Ferreira",
+   "regiao": "continente",
+   "camara": "http://www.cm-pacosdeferreira.pt",
+   "feriado": null
+  },
+  {
+   "id": "palmela",
+   "nome": "Palmela",
+   "regiao": "continente",
+   "camara": "http://www.cm-palmela.pt",
+   "feriado": null
+  },
+  {
+   "id": "pampilhosa-da-serra",
+   "nome": "Pampilhosa da Serra",
+   "regiao": "continente",
+   "camara": "http://www.cm-pampilhosadaserra.pt",
+   "feriado": {
+    "regra": "04-10",
+    "nome": "Restauração dos títulos de vila isenta",
+    "url": "https://www.cm-pampilhosadaserra.pt:443/municipio/feriado-municipal",
+    "extrato": "eendedor Canal de Denúncias Município Câmara Municipal Assembleia Municipal Freguesias Planos Municipais de Ordenamento do Território Plano Estratégico Municipal Plano Municipal de Ação Climática Concelho Personalidades Feriado Municipal Imagem Institucional Resultados Eleitorais Pontos + Espaço do ",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "paredes",
+   "nome": "Paredes",
+   "regiao": "continente",
+   "camara": "http://www.cm-paredes.pt",
+   "feriado": null
+  },
+  {
+   "id": "paredes-de-coura",
+   "nome": "Paredes de Coura",
+   "regiao": "continente",
+   "camara": "http://www.paredesdecoura.pt",
+   "feriado": null
+  },
+  {
+   "id": "pedrogao-grande",
+   "nome": "Pedrógão Grande",
+   "regiao": "continente",
+   "camara": "http://www.cm-pedrogaogrande.pt",
+   "feriado": null
+  },
+  {
+   "id": "penacova",
+   "nome": "Penacova",
+   "regiao": "continente",
+   "camara": "http://www.cm-penacova.pt",
+   "feriado": null
+  },
+  {
+   "id": "penafiel",
+   "nome": "Penafiel",
+   "regiao": "continente",
+   "camara": "http://www.cm-penafiel.pt",
+   "feriado": {
+    "regra": "11-11",
+    "nome": "São Martinho",
+    "url": "https://www.cm-penafiel.pt:443/visitar/visitar-penafiel/historia",
+    "extrato": "inente santuário sobranceiro à cidade, com o seu parque. A 09 de outubro de 1969, usando da faculdade conferida pelo n.º 3 do artigo 109.º da Constituição, é decretado pelo Governo de Portugal, o dia 11 de Novembro como Feriado Municipal. Visitar 8571 Personalidades Voltar Partilhar no Facebook Part",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "penalva-do-castelo",
+   "nome": "Penalva do Castelo",
+   "regiao": "continente",
+   "camara": "http://www.cm-penalvadocastelo.pt/",
+   "feriado": null
+  },
+  {
+   "id": "penamacor",
+   "nome": "Penamacor",
+   "regiao": "continente",
+   "camara": "http://www.cm-penamacor.pt",
+   "feriado": {
+    "regra": "P+1",
+    "nome": "Segunda-feira de Páscoa",
+    "url": "https://www.cm-penamacor.pt:443/o-concelho/concelho/historia/historia-breve-resumo",
+    "extrato": "er mais Publicações CMP Ver mais Dia do Concelho 1 de junho Feriado Municipal Segunda-Feira a seguir ao Domingo de Páscoa Voltar Conteúdo atualizado em 7 de outubro de 2026 às 21:41 MUNICÍPIO DE PENAMACOR Largo do",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "penedono",
+   "nome": "Penedono",
+   "regiao": "continente",
+   "camara": "http://www.cm-penedono.pt ",
+   "feriado": {
+    "regra": "06-29",
+    "nome": "São Pedro",
+    "url": "http://www.cm-penedono.pt/noticias/hoje-celebramos-o-feriado-municipal-de-penedono-dia-de-s-pedro",
+    "extrato": "as nossas tradições e o orgulho de sermos de Penedono. Bom Feriado Municipal a todos os penedonenses! #MunicipioDePenedono #Penedono #FeriadoMunicipal #SPedro Publicações recentes Penedono realizo",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "penela",
+   "nome": "Penela",
+   "regiao": "continente",
+   "camara": "http://www.cm-penela.pt",
+   "feriado": null
+  },
+  {
+   "id": "peniche",
+   "nome": "Peniche",
+   "regiao": "continente",
+   "camara": "http://www.cm-peniche.pt ",
+   "feriado": null
+  },
+  {
+   "id": "peso-da-regua",
+   "nome": "Peso da Régua",
+   "regiao": "continente",
+   "camara": "http://www.cm-pesoregua.pt",
+   "feriado": null
+  },
+  {
+   "id": "pinhel",
+   "nome": "Pinhel",
+   "regiao": "continente",
+   "camara": "http://www.cm-pinhel.pt ",
+   "feriado": {
+    "regra": "08-25",
+    "nome": "Elevação a cidade (2007)",
+    "url": "https://www.cm-pinhel.pt/?s=feriado+municipal",
+    "extrato": "useológico do Manigoto Núcleo Museológico do Carvalhal da Atalaia Investir Pinhel Guia do Investidor Zona Industrial RERAE Contactos Ficha Técnica Canal de Denúncias Livro de Reclamações ✕ 8 Resultados encontrados para: feriado municipal 26-08-2024 Feriado Municipal assinalado com Sessão Solene e at",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "pombal",
+   "nome": "Pombal",
+   "regiao": "continente",
+   "camara": "http://www.cm-pombal.pt",
+   "feriado": null
+  },
+  {
+   "id": "ponta-delgada",
+   "nome": "Ponta Delgada",
+   "regiao": "acores",
+   "camara": "https://www.cm-pontadelgada.pt",
+   "feriado": null
+  },
+  {
+   "id": "ponta-do-sol",
+   "nome": "Ponta do Sol",
+   "regiao": "madeira",
+   "camara": "http://www.cm-pontadosol.pt/",
+   "feriado": {
+    "regra": "09-08",
+    "nome": "Nossa Senhora da Luz",
+    "url": "https://www.cm-pontadosol.pt/",
+    "extrato": "dadania Proponho para a Ponta do Sol Avaliação Municipal Avaliação das políticas e estratégias Editais Editais Públicos Sol Digital O Portal Municipal da Ponta do Sol Morada R. Santo António N.º 5, 9360-219 Ponta do Sol Feriado Municipal 8 de Setembro Balcão Online Telefones/Email (+351) 291 972 106",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "ponte-da-barca",
+   "nome": "Ponte da Barca",
+   "regiao": "continente",
+   "camara": "http://www.cmpb.pt",
+   "feriado": null
+  },
+  {
+   "id": "ponte-de-lima",
+   "nome": "Ponte de Lima",
+   "regiao": "continente",
+   "camara": "http://www.cm-pontedelima.pt",
+   "feriado": null
+  },
+  {
+   "id": "ponte-de-sor",
+   "nome": "Ponte de Sor",
+   "regiao": "continente",
+   "camara": "http://www.cm-pontedesor.pt",
+   "feriado": null
+  },
+  {
+   "id": "portalegre",
+   "nome": "Portalegre",
+   "regiao": "continente",
+   "camara": "http://www.cm-portalegre.pt",
+   "feriado": null
+  },
+  {
+   "id": "portel",
+   "nome": "Portel",
+   "regiao": "continente",
+   "camara": "http://www.cm-portel.pt",
+   "feriado": null
+  },
+  {
+   "id": "portimao",
+   "nome": "Portimão",
+   "regiao": "continente",
+   "camara": "http://www.cm-portimao.pt  ",
+   "feriado": null
+  },
+  {
+   "id": "porto",
+   "nome": "Porto",
+   "regiao": "continente",
+   "camara": "http://www.cm-porto.pt",
+   "feriado": {
+    "regra": "06-24",
+    "nome": "São João",
+    "url": "https://www.porto.pt/pt/noticia/sao-joao-2024-ana-moura-burrito-e-canario-dao-ritmo-a-noite-mais-magica-do-ano",
+    "extrato": "No dia 24 de junho, feriado municipal, a celebração prossegue com o habitual Concerto de São João.",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "porto-de-mos",
+   "nome": "Porto de Mós",
+   "regiao": "continente",
+   "camara": "http://www.municipio-portodemos.pt",
+   "feriado": null
+  },
+  {
+   "id": "porto-moniz",
+   "nome": "Porto Moniz",
+   "regiao": "madeira",
+   "camara": "http://www.portomoniz.pt",
+   "feriado": null
+  },
+  {
+   "id": "porto-santo",
+   "nome": "Porto Santo",
+   "regiao": "madeira",
+   "camara": "http://www.cm-portosanto.pt",
+   "feriado": null
+  },
+  {
+   "id": "povoa-de-lanhoso",
+   "nome": "Póvoa de Lanhoso",
+   "regiao": "continente",
+   "camara": "http://www.mun-planhoso.pt/",
+   "feriado": null
+  },
+  {
+   "id": "povoa-de-varzim",
+   "nome": "Póvoa de Varzim",
+   "regiao": "continente",
+   "camara": "http://www.cm-pvarzim.pt",
+   "feriado": {
+    "regra": "06-29",
+    "nome": "São Pedro",
+    "url": "https://www.cm-pvarzim.pt/comunicacao/noticias/suspensao-recolha-rsu-aos-feriados/",
+    "extrato": "o-Mar, Aguçadoura e Navais). De modo a salvaguardar a saúde pública, o ambiente e a qualidade de vida dos cidadãos, esta suspensão não ocorrerá em todos os feriados de uma forma linear, isto é, haverá recolha no caso do feriado municipal (29 de Junho), no feriado do 15 de Agosto e em todos os feriad",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "povoacao",
+   "nome": "Povoação",
+   "regiao": "acores",
+   "camara": "http://www.cm-povoacao.pt",
+   "feriado": null
+  },
+  {
+   "id": "praia-da-vitoria",
+   "nome": "Praia da Vitória",
+   "regiao": "acores",
+   "camara": "http://www.cmpv.pt",
+   "feriado": null
+  },
+  {
+   "id": "proenca-a-nova",
+   "nome": "Proença-a-Nova",
+   "regiao": "continente",
+   "camara": "http://www.cm-proencanova.pt",
+   "feriado": null
+  },
+  {
+   "id": "redondo",
+   "nome": "Redondo",
+   "regiao": "continente",
+   "camara": "http://www.cm-redondo.pt",
+   "feriado": {
+    "regra": "P+1",
+    "nome": "Segunda-feira de Páscoa",
+    "url": "https://www.cm-redondo.pt/municipe/cultura/fragmentos-da-historia-local/",
+    "extrato": "sboa, na Beira e em feiras de renome como a da Golegã, do Campo Grande e de São João, em Évora. A segunda-feira de Páscoa Originalmente celebrado a 1 de maio em honra da Senhora de Ao Pé da Cruz, padroeira desta vila, o feriado municipal de Redondo sofreu várias alterações ao longo do tempo. A 20 de",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "reguengos-de-monsaraz",
+   "nome": "Reguengos de Monsaraz",
+   "regiao": "continente",
+   "camara": "http://www.cm-reguengos-monsaraz.pt",
+   "feriado": null
+  },
+  {
+   "id": "resende",
+   "nome": "Resende",
+   "regiao": "continente",
+   "camara": "http://www.cm-resende.pt",
+   "feriado": {
+    "regra": "09-29",
+    "nome": "São Miguel Arcanjo",
+    "url": "https://cm-resende.pt/?s=feriado+municipal",
+    "extrato": "Cofinanciados pela UE Obras Públicas Feiras e Mercados Associações Equipamentos Sociais Turismo Espaços Desportivos Espaços Culturais Espaços Verdes e Lazer Educação Serviços Novas Tecnologias Serviços Resultados para : feriado municipal Feriado Municipal – dia 29 de setembro 25 Setembro, 2020 Museu",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "ribeira-brava",
+   "nome": "Ribeira Brava",
+   "regiao": "madeira",
+   "camara": "http://www.cm-ribeirabrava.pt",
+   "feriado": null
+  },
+  {
+   "id": "ribeira-de-pena",
+   "nome": "Ribeira de Pena",
+   "regiao": "continente",
+   "camara": "http://www.cm-rpena.pt",
+   "feriado": null
+  },
+  {
+   "id": "ribeira-grande",
+   "nome": "Ribeira Grande",
+   "regiao": "acores",
+   "camara": "http://www.cm-ribeiragrande.pt",
+   "feriado": null
+  },
+  {
+   "id": "rio-maior",
+   "nome": "Rio Maior",
+   "regiao": "continente",
+   "camara": "http://www.cm-riomaior.pt",
+   "feriado": null
+  },
+  {
+   "id": "sabrosa",
+   "nome": "Sabrosa",
+   "regiao": "continente",
+   "camara": "http://www.sabrosa.pt",
+   "feriado": null
+  },
+  {
+   "id": "sabugal",
+   "nome": "Sabugal",
+   "regiao": "continente",
+   "camara": "http://www.cm-sabugal.pt",
+   "feriado": null
+  },
+  {
+   "id": "salvaterra-de-magos",
+   "nome": "Salvaterra de Magos",
+   "regiao": "continente",
+   "camara": "http://www.cm-salvaterrademagos.pt",
+   "feriado": null
+  },
+  {
+   "id": "santa-comba-dao",
+   "nome": "Santa Comba Dão",
+   "regiao": "continente",
+   "camara": "http://www.cm-santacombadao.pt",
+   "feriado": null
+  },
+  {
+   "id": "santa-cruz",
+   "nome": "Santa Cruz",
+   "regiao": "madeira",
+   "camara": "http://www.cm-santacruz.pt",
+   "feriado": null
+  },
+  {
+   "id": "santa-cruz-da-graciosa",
+   "nome": "Santa Cruz da Graciosa",
+   "regiao": "acores",
+   "camara": "http://www.cm-graciosa.pt",
+   "feriado": null
+  },
+  {
+   "id": "santa-cruz-das-flores",
+   "nome": "Santa Cruz das Flores",
+   "regiao": "acores",
+   "camara": "http://www.cmscflores.pt",
+   "feriado": null
+  },
+  {
+   "id": "santa-maria-da-feira",
+   "nome": "Santa Maria da Feira",
+   "regiao": "continente",
+   "camara": "http://www.cm-feira.pt",
+   "feriado": null
+  },
+  {
+   "id": "santa-marta-de-penaguiao",
+   "nome": "Santa Marta de Penaguião",
+   "regiao": "continente",
+   "camara": "http://www.cm-smpenaguiao.pt",
+   "feriado": null
+  },
+  {
+   "id": "santana",
+   "nome": "Santana",
+   "regiao": "madeira",
+   "camara": "http://www.cm-santana.com",
+   "feriado": null
+  },
+  {
+   "id": "santarem",
+   "nome": "Santarém",
+   "regiao": "continente",
+   "camara": "http://www.cm-santarem.pt",
+   "feriado": null
+  },
+  {
+   "id": "santiago-do-cacem",
+   "nome": "Santiago do Cacém",
+   "regiao": "continente",
+   "camara": "http://www.cm-santiagocacem.pt",
+   "feriado": null
+  },
+  {
+   "id": "santo-tirso",
+   "nome": "Santo Tirso",
+   "regiao": "continente",
+   "camara": "http://www.cm-stirso.pt",
+   "feriado": null
+  },
+  {
+   "id": "sao-bras-de-alportel",
+   "nome": "São Brás de Alportel",
+   "regiao": "continente",
+   "camara": "http://www.cm-sbras.pt",
+   "feriado": null
+  },
+  {
+   "id": "sao-joao-da-madeira",
+   "nome": "São João da Madeira",
+   "regiao": "continente",
+   "camara": "http://www.cm-sjm.pt",
+   "feriado": null
+  },
+  {
+   "id": "sao-joao-da-pesqueira",
+   "nome": "São João da Pesqueira",
+   "regiao": "continente",
+   "camara": "http://www.sjpesqueira.pt",
+   "feriado": null
+  },
+  {
+   "id": "sao-pedro-do-sul",
+   "nome": "São Pedro do Sul",
+   "regiao": "continente",
+   "camara": "http://www.cm-spsul.pt",
+   "feriado": null
+  },
+  {
+   "id": "sao-roque-do-pico",
+   "nome": "São Roque do Pico",
+   "regiao": "acores",
+   "camara": "http://www.cm-saoroquedopico.pt",
+   "feriado": null
+  },
+  {
+   "id": "sao-vicente",
+   "nome": "São Vicente",
+   "regiao": "madeira",
+   "camara": "http://www.cm-saovicente.pt/",
+   "feriado": null
+  },
+  {
+   "id": "sardoal",
+   "nome": "Sardoal",
+   "regiao": "continente",
+   "camara": "http://www.cm-sardoal.pt",
+   "feriado": null
+  },
+  {
+   "id": "satao",
+   "nome": "Sátão",
+   "regiao": "continente",
+   "camara": "http://www.cm-satao.pt",
+   "feriado": null
+  },
+  {
+   "id": "seia",
+   "nome": "Seia",
+   "regiao": "continente",
+   "camara": "http://www.cm-seia.pt",
+   "feriado": {
+    "regra": "07-03",
+    "nome": "Elevação a cidade",
+    "url": "https://cm-seia.pt/ultimas-noticias/comemoracoes-do-feriado-municipal/",
+    "extrato": "tendimento Apoio à Esterilização de Animais de Companhia Visitar Investir Participar Fale com o Presidente Sugestões/Reclamações Canal de Denúncia Livro de Reclamações eletrónico Discussão Pública voltar Comemorações do Feriado Municipal 29 | 06 | 2022 Ouvir --> Partilhar Partilhar No dia da cidade,",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "seixal",
+   "nome": "Seixal",
+   "regiao": "continente",
+   "camara": "http://www.cm-seixal.pt",
+   "feriado": null
+  },
+  {
+   "id": "sernancelhe",
+   "nome": "Sernancelhe",
+   "regiao": "continente",
+   "camara": "http://www.cm-sernancelhe.pt",
+   "feriado": null
+  },
+  {
+   "id": "serpa",
+   "nome": "Serpa",
+   "regiao": "continente",
+   "camara": "http://www.cm-serpa.pt",
+   "feriado": null
+  },
+  {
+   "id": "serta",
+   "nome": "Sertã",
+   "regiao": "continente",
+   "camara": "http://www.cm-serta.pt",
+   "feriado": null
+  },
+  {
+   "id": "sesimbra",
+   "nome": "Sesimbra",
+   "regiao": "continente",
+   "camara": "http://www.sesimbra.pt",
+   "feriado": null
+  },
+  {
+   "id": "setubal",
+   "nome": "Setúbal",
+   "regiao": "continente",
+   "camara": "http://www.mun-setubal.pt",
+   "feriado": {
+    "regra": "09-15",
+    "nome": "Dia de Bocage e da Cidade",
+    "url": "https://noticias.mun-setubal.pt/cultura/comemoracoes-bocagianas-poem-setubal-em-festa/",
+    "extrato": "s da nossa cultura e, principalmente, pelo fado” , afirmou. As Comemorações Bocagianas prosseguem ao longo de setembro, com o momento central marcado para 15 de setembro, dia em que Setúbal celebra o feriado municipal e os 261 anos do nascimento de Bocage, com um programa diversificado dirigido à po",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "sever-do-vouga",
+   "nome": "Sever do Vouga",
+   "regiao": "continente",
+   "camara": "http://www.cm-sever.pt",
+   "feriado": {
+    "regra": "09-21",
+    "nome": "São Mateus",
+    "url": "https://www.cm-sever.pt:443/municipio/sobre-sever-do-vouga/dia-do-municipio",
+    "extrato": "9 Contactos Sever do Vouga 6065 Órgãos Autárquicos 4859 A Autarquia 8917 Contratação Pública 5577 Recursos Humanos do Município 1291 Subvenção Pública 8798 Direito de oposição 256 Freguesias 5259 Transparência Municipal Dia do Município Feriado Municipal: 21 de Setembro Dia de Sº. Mateus Voltar Cont",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "silves",
+   "nome": "Silves",
+   "regiao": "continente",
+   "camara": "http://www.cm-silves.pt",
+   "feriado": null
+  },
+  {
+   "id": "sines",
+   "nome": "Sines",
+   "regiao": "continente",
+   "camara": "http://www.sines.pt",
+   "feriado": null
+  },
+  {
+   "id": "sintra",
+   "nome": "Sintra",
+   "regiao": "continente",
+   "camara": "http://www.cm-sintra.pt",
+   "feriado": {
+    "regra": "06-29",
+    "nome": "São Pedro",
+    "url": "https://arquivo2026.cm-sintra.pt/atualidade/cultura/marchas-populares-do-concelho",
+    "extrato": "ho 23 junho 2015 O Largo do Palácio de Queluz e a Volta do Duche, em Sintra, acolhem as marchas populares do concelho que se realizam nos próximos dias 26 e 29 de junho. No âmbito das comemorações do feriado municipal, a 29 de junho, a Câmara Municipal promove dois desfiles de marchas populares, com",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "sobral-de-monte-agraco",
+   "nome": "Sobral de Monte Agraço",
+   "regiao": "continente",
+   "camara": "http://www.cm-sobral.pt",
+   "feriado": null
+  },
+  {
+   "id": "soure",
+   "nome": "Soure",
+   "regiao": "continente",
+   "camara": "http://www.cm-soure.pt",
+   "feriado": {
+    "regra": "09-21",
+    "nome": "São Mateus",
+    "url": "https://cm-soure.pt/concelho/",
+    "extrato": "r do padroeiro da vila de Soure ser São Tiago. As Festas de São Mateus e FATACIS (Feira de Artesanato, Turismo, Agricultura, Comércio e Indústria) realizam-se todos os anos, em Setembro, no fim de semana mais próximo do feriado municipal, a 21 de Setembro e atraem, a Soure, um grande número de visit",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "sousel",
+   "nome": "Sousel",
+   "regiao": "continente",
+   "camara": "http://www.cm-sousel.pt",
+   "feriado": {
+    "regra": "P+1",
+    "nome": "Nossa Senhora do Carmo da Serra",
+    "url": "https://cm-sousel.pt/?s=feriado+municipal",
+    "extrato": "ar assistência O Serviço Questionário de satisfação Fatura digital e débito direto Espaço do Cidadão Balcão Energia Taxas Municipais O Serviço Na sequência de uma reestruturação de... Sousel festejou com alegria mais um Feriado Municipal 12/04/2023 | Sem categoria O bom tempo abençoou o Feriado Muni",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "tabua",
+   "nome": "Tábua",
+   "regiao": "continente",
+   "camara": "http://www.cm-tabua.pt",
+   "feriado": null
+  },
+  {
+   "id": "tabuaco",
+   "nome": "Tabuaço",
+   "regiao": "continente",
+   "camara": "http://www.cm-tabuaco.pt",
+   "feriado": null
+  },
+  {
+   "id": "tarouca",
+   "nome": "Tarouca",
+   "regiao": "continente",
+   "camara": "http://www.cm-tarouca.pt",
+   "feriado": null
+  },
+  {
+   "id": "tavira",
+   "nome": "Tavira",
+   "regiao": "continente",
+   "camara": "http://www.cm-tavira.pt",
+   "feriado": null
+  },
+  {
+   "id": "terras-de-bouro",
+   "nome": "Terras de Bouro",
+   "regiao": "continente",
+   "camara": "http://www.cm-terrasdebouro.pt",
+   "feriado": null
+  },
+  {
+   "id": "tomar",
+   "nome": "Tomar",
+   "regiao": "continente",
+   "camara": "http://www.cm-tomar.pt",
+   "feriado": null
+  },
+  {
+   "id": "tondela",
+   "nome": "Tondela",
+   "regiao": "continente",
+   "camara": "http://www.cm-tondela.pt",
+   "feriado": null
+  },
+  {
+   "id": "torre-de-moncorvo",
+   "nome": "Torre de Moncorvo",
+   "regiao": "continente",
+   "camara": "http://www.torredemoncorvo.pt",
+   "feriado": null
+  },
+  {
+   "id": "torres-novas",
+   "nome": "Torres Novas",
+   "regiao": "continente",
+   "camara": "http://www.cm-torresnovas.pt",
+   "feriado": null
+  },
+  {
+   "id": "torres-vedras",
+   "nome": "Torres Vedras",
+   "regiao": "continente",
+   "camara": "http://www.cm-tvedras.pt",
+   "feriado": null
+  },
+  {
+   "id": "trancoso",
+   "nome": "Trancoso",
+   "regiao": "continente",
+   "camara": "http://www.cm-trancoso.pt",
+   "feriado": {
+    "regra": "05-29",
+    "nome": "Batalha de São Marcos (1385)",
+    "url": "https://www.cm-trancoso.pt/?s=feriado+municipal",
+    "extrato": "ado municipal Pesquisa O que procura? Tipo de Conteúdo Selecione uma opção Artigo Página Balcão Online Categorias: Selecione uma opção Em destaque Informações Notícias Outras categorias Pesquisar Resultados da Pesquisa: feriado municipal Feriado Municipal - Trancoso | 29 de maio Tipo de Conteúdo: Ev",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "trofa",
+   "nome": "Trofa",
+   "regiao": "continente",
+   "camara": "http://www.mun-trofa.pt",
+   "feriado": null
+  },
+  {
+   "id": "vagos",
+   "nome": "Vagos",
+   "regiao": "continente",
+   "camara": "http://www.cm-vagos.pt",
+   "feriado": null
+  },
+  {
+   "id": "vale-de-cambra",
+   "nome": "Vale de Cambra",
+   "regiao": "continente",
+   "camara": "http://www.cm-valedecambra.pt",
+   "feriado": null
+  },
+  {
+   "id": "valenca",
+   "nome": "Valença",
+   "regiao": "continente",
+   "camara": "http://www.cm-valenca.pt",
+   "feriado": {
+    "regra": "02-18",
+    "nome": "São Teotónio",
+    "url": "https://cm-valenca.pt/?s=feriado+municipal",
+    "extrato": "enúncias Editais Emissões Atmosféricas Plataforma SIG Gestão da Qualidade Provedor da Justiça Regulamentos e Taxas Requerimentos Silmplex Autárquico Consultas Públicas Concursos Públicos Idioma EN PT Search Results for: feriado municipal Concerto da Banda do Exército Conquistou Valença em dia de Fer",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "valongo",
+   "nome": "Valongo",
+   "regiao": "continente",
+   "camara": "http://www.cm-valongo.pt",
+   "feriado": null
+  },
+  {
+   "id": "valpacos",
+   "nome": "Valpaços",
+   "regiao": "continente",
+   "camara": "http://valpacos.pt",
+   "feriado": {
+    "regra": "11-06",
+    "nome": "Criação do município",
+    "url": "http://valpacos.pt",
+    "extrato": "bro 2026 Pesquisar Notícias Pesquisar Notícias ABRIU AS PORTAS A XXIX FEIRA DA CASTANHA JUDIA! 07 Novembro 2026 Valpaços Celebra a Comunidade, o Mérito e os 50 Anos de ... 06 Novembro 2026 Prémios aos Melhores alunos no Feriado Municipal de Valpaços 06 Novembro 2026 Projeto Afetos celebra o São Mart",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "velas",
+   "nome": "Velas",
+   "regiao": "acores",
+   "camara": "http://www.cmvelas.pt",
+   "feriado": {
+    "regra": "04-23",
+    "nome": "São Jorge",
+    "url": "https://cmvelas.pt/?s=feriado+municipal",
+    "extrato": "Pesquisar Escreva o que procura e prima Enter Procurado com frequência Serviços online (abre numa nova janela) Editais e avisos Agenda cultural As fajãs Contactos Início Resultados da pesquisa Pesquisa Resultados para “feriado municipal” 17 resultados. Pesquisar no site Notícia 23 de Abril de 2026 2",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "vendas-novas",
+   "nome": "Vendas Novas",
+   "regiao": "continente",
+   "camara": "http://www.cm-vendasnovas.pt",
+   "feriado": {
+    "regra": "09-07",
+    "nome": "Elevação a município",
+    "url": "https://www.cm-vendasnovas.pt/municipe/evora/concelho/",
+    "extrato": "esiduais: 93% (INSAAR, 2009); Taxa de Cobertura de Electricidade: superior a 98% Elevação de Vendas Novas à categoria de Cidade: 20 de Maio de 1993 Elevação de Vendas Novas à categoria de Concelho: 7 de Setembro de 1962 Feriado Municipal Dia 7 de Setembro – Aniversário da Elevação de Vendas Novas a ",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "viana-do-alentejo",
+   "nome": "Viana do Alentejo",
+   "regiao": "continente",
+   "camara": "http://www.cm-vianadoalentejo.pt",
+   "feriado": null
+  },
+  {
+   "id": "viana-do-castelo",
+   "nome": "Viana do Castelo",
+   "regiao": "continente",
+   "camara": "http://www.cm-viana-castelo.pt ",
+   "feriado": null
+  },
+  {
+   "id": "vidigueira",
+   "nome": "Vidigueira",
+   "regiao": "continente",
+   "camara": "http://www.cm-vidigueira.pt ",
+   "feriado": null
+  },
+  {
+   "id": "vieira-do-minho",
+   "nome": "Vieira do Minho",
+   "regiao": "continente",
+   "camara": "http://www.cm-vminho.pt",
+   "feriado": null
+  },
+  {
+   "id": "vila-de-rei",
+   "nome": "Vila de Rei",
+   "regiao": "continente",
+   "camara": "http://www.cm-viladerei.pt",
+   "feriado": null
+  },
+  {
+   "id": "vila-do-bispo",
+   "nome": "Vila do Bispo",
+   "regiao": "continente",
+   "camara": "http://www.cm-viladobispo.pt",
+   "feriado": null
+  },
+  {
+   "id": "vila-do-conde",
+   "nome": "Vila do Conde",
+   "regiao": "continente",
+   "camara": "http://www.cm-viladoconde.pt",
+   "feriado": null
+  },
+  {
+   "id": "vila-do-porto",
+   "nome": "Vila do Porto",
+   "regiao": "acores",
+   "camara": "http://www.cm-viladoporto.pt",
+   "feriado": null
+  },
+  {
+   "id": "vila-flor",
+   "nome": "Vila Flor",
+   "regiao": "continente",
+   "camara": "http://www.cm-vilaflor.pt",
+   "feriado": null
+  },
+  {
+   "id": "vila-franca-de-xira",
+   "nome": "Vila Franca de Xira",
+   "regiao": "continente",
+   "camara": "http://www.cm-vfxira.pt",
+   "feriado": null
+  },
+  {
+   "id": "vila-franca-do-campo",
+   "nome": "Vila Franca do Campo",
+   "regiao": "acores",
+   "camara": "http://www.cmvfc.pt",
+   "feriado": null
+  },
+  {
+   "id": "vila-nova-da-barquinha",
+   "nome": "Vila Nova da Barquinha",
+   "regiao": "continente",
+   "camara": "http://www.cm-vnbarquinha.pt",
+   "feriado": null
+  },
+  {
+   "id": "vila-nova-de-cerveira",
+   "nome": "Vila Nova de Cerveira",
+   "regiao": "continente",
+   "camara": "http://www.cm-vncerveira.pt",
+   "feriado": {
+    "regra": "10-01",
+    "nome": "Recebimento do foral manuelino",
+    "url": "https://www.cm-vncerveira.pt/pages/273",
+    "extrato": "ício do séc. XIX marca a estabilização da fronteira e traz a paz a estas terras. O Castelo e as Fortalezas transformam-se em património histórico, assumindo-se como símbolo da identidade do Concelho e das suas Gentes. O Feriado Municipal celebra-se a 1 de outubro (Dia do Município, dos Bombeiros Vol",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "vila-nova-de-famalicao",
+   "nome": "Vila Nova de Famalicão",
+   "regiao": "continente",
+   "camara": "http://www.cm-vnfamalicao.pt",
+   "feriado": null
+  },
+  {
+   "id": "vila-nova-de-foz-coa",
+   "nome": "Vila Nova de Foz Côa",
+   "regiao": "continente",
+   "camara": "http://www.cm-fozcoa.pt",
+   "feriado": null
+  },
+  {
+   "id": "vila-nova-de-gaia",
+   "nome": "Vila Nova de Gaia",
+   "regiao": "continente",
+   "camara": "http://www.cm-gaia.pt",
+   "feriado": {
+    "regra": "06-24",
+    "nome": "São João Baptista",
+    "url": "https://www.cm-gaia.pt/pt/noticias/feriado-municipal-festas-de-sao-joao/",
+    "extrato": "as ao Município Recursos Humanos Regulamentos Municipais Fundos Estruturais Projetos Cofinanciados pela UE Taxa de Cidade Programa de Cumprimento Normativo e Transparência Administrativa Notícias e Destaques 22 Mai 2025 Feriado Municipal - (Festas de São João) Decreto n.º 186/70 # festaseromarias Fo",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "vila-nova-de-paiva",
+   "nome": "Vila Nova de Paiva",
+   "regiao": "continente",
+   "camara": "http://www.cm-vnpaiva.pt",
+   "feriado": null
+  },
+  {
+   "id": "vila-nova-de-poiares",
+   "nome": "Vila Nova de Poiares",
+   "regiao": "continente",
+   "camara": "http://www.cm-vilanovadepoiares.pt",
+   "feriado": null
+  },
+  {
+   "id": "vila-pouca-de-aguiar",
+   "nome": "Vila Pouca de Aguiar",
+   "regiao": "continente",
+   "camara": "http://www.cm-vpaguiar.pt",
+   "feriado": {
+    "regra": "06-22",
+    "nome": "Atribuição do foral manuelino",
+    "url": "https://cm-vpaguiar.pt/?s=feriado+municipal",
+    "extrato": "Município tem por base o Foral Manuelino de Aguiar da Pena, aqui na foto o Brasão Manuelino. Aviso – Feriado Municipal Document Feriado Municipal será celebrado a 16 de Maio Artigo A fixação de data para comemoração do feriado municipal tem por base o Foral Manuelino de Aguiar da Pena (16 de maio de",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "vila-real",
+   "nome": "Vila Real",
+   "regiao": "continente",
+   "camara": "http://www.cm-vilareal.pt",
+   "feriado": null
+  },
+  {
+   "id": "vila-real-de-santo-antonio",
+   "nome": "Vila Real de Santo António",
+   "regiao": "continente",
+   "camara": "http://www.cm-vrsa.pt",
+   "feriado": null
+  },
+  {
+   "id": "vila-velha-de-rodao",
+   "nome": "Vila Velha de Ródão",
+   "regiao": "continente",
+   "camara": "http://www.cm-vvrodao.pt",
+   "feriado": null
+  },
+  {
+   "id": "vila-verde",
+   "nome": "Vila Verde",
+   "regiao": "continente",
+   "camara": "http://www.cm-vilaverde.pt",
+   "feriado": {
+    "regra": "06-13",
+    "nome": "Santo António",
+    "url": "http://www.cm-vilaverde.pt/?s=feriado+municipal",
+    "extrato": "m categoria Filtros Todos os anos 2026 2025 2024 2023 2022 2021 2020 2019 2018 2017 2016 2015 Todos os meses 01 02 03 04 05 06 07 08 09 10 11 12 INFORMAÇÃO MUNICIPAL – No dias 10 (Feriado Nacional) e no dia 13 de junho (feriado municipal) há recolha normal do lixo Notícias | 7 Jun 2019 INFORMAÇÃO – ",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "vila-vicosa",
+   "nome": "Vila Viçosa",
+   "regiao": "continente",
+   "camara": "http://www.cm-vilavicosa.pt",
+   "feriado": null
+  },
+  {
+   "id": "vimioso",
+   "nome": "Vimioso",
+   "regiao": "continente",
+   "camara": "http://www.cm-vimioso.pt",
+   "feriado": null
+  },
+  {
+   "id": "vinhais",
+   "nome": "Vinhais",
+   "regiao": "continente",
+   "camara": "http://www.cm-vinhais.pt",
+   "feriado": {
+    "regra": "05-20",
+    "nome": "Outorgação do foral manuelino",
+    "url": "https://www.cm-vinhais.pt:443/viver-em-vinhais/cultura/feriado-municipal",
+    "extrato": "ação Equipamentos Transportes Desenvolvimento Económico Proruris Segurança e Proteção Civil Canil Municipal Farmácias Carnes de Vinhais Visite Vinhais Balcão Virtual TRANSPORTE AUTOCARROS Início Viver em Vinhais Cultura Feriado Municipal Feriado Municipal O feriado municipal de Vinhais comemora-se a",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "viseu",
+   "nome": "Viseu",
+   "regiao": "continente",
+   "camara": "http://www.cm-viseu.pt",
+   "feriado": null
+  },
+  {
+   "id": "vizela",
+   "nome": "Vizela",
+   "regiao": "continente",
+   "camara": "http://www.cm-vizela.pt",
+   "feriado": {
+    "regra": "03-19",
+    "nome": "Restauração do município",
+    "url": "https://www.cm-vizela.pt:443/areas-de-atividade/cultura/festas-feiras-e-romarias",
+    "extrato": "333 Associações e Coletividades Vizelenses 6762 Espaços Culturais 1305 Desporto 6589 Educação 8545 Juventude 7267 Proteção Civil 1969 Vizela ProAnimal 2298 Turismo área central (não partilhada) Festas, Feiras e Romarias Feriado Municipal No dia 19 de março, celebra-se o Aniversário da criação do Mun",
+    "lido": "2026-11-13"
+   }
+  },
+  {
+   "id": "vouzela",
+   "nome": "Vouzela",
+   "regiao": "continente",
+   "camara": "http://www.cm-vouzela.pt",
+   "feriado": {
+    "regra": "05-14",
+    "nome": "São Frei Gil",
+    "url": "https://www.cm-vouzela.pt/?s=feriado+municipal",
+    "extrato": "r feriado municipal - Câmara Municipal de Vouzela geral@cm-vouzela.pt 232 740 740 (chamada para a rede fixa nacional) MUNICÍPIO VISITAR VIVER INVESTIR | MUNICÍPIO VISITAR VIVER INVESTIR | Home Search Search results for: feriado municipal Vouzela celebra Feriado Municipal com dois dias de programação",
+    "lido": "2026-11-13"
+   }
+  }
+ ]
+}

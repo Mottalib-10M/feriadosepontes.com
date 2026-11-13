@@ -1,0 +1,33 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import LegalIdentity from '../../components/LegalIdentity.astro';
+import { route } from '../../i18n/routes';
+import { AUTHOR_NAME, AUTHOR_DESC, CONTACT_EMAIL, SITE_NAMES } from '../../data/site-config';
+import { srcLink } from '../../lib/helpers';
+import { KIT as K } from '../../lib/kit';
+import { profilePageSchema, breadcrumbSchema } from '../../lib/seo';
+const lang = 'en';
+const path = route('about', lang);
+const title = 'Holidays and long weekends 2027 in Portugal: who we are';
+const description = 'Who runs the Portugal holidays and long-weekend planner for 2027: Radif Partners, independent, no travel sold. Where holidays and municipal dates come from.';
+const s = (k: string, t: string) => srcLink(k, lang, t);
+---
+<PageLayout title={title} description={description} lang={lang} jsonLd={[profilePageSchema({ path, lang }), breadcrumbSchema([{ name: 'Home', path: route('home', lang) }, { name: 'About', path }])]} breadcrumbs={[{ label: 'About' }]}>
+  <article class="prose prose-slate max-w-none">
+    <h1>About {SITE_NAMES[lang]}</h1>
+    <p>{AUTHOR_DESC.en}</p>
+    <h2>Why this site exists</h2>
+    <p>In the autumn people in Portugal book next year's leave and look for the days where a single day off turns into a long weekend, a ponte. Most lists of those days sit on pages that want to sell you a trip afterwards, or copy the municipal holiday from one another with no source, sometimes with the wrong date. Here the calculation starts from the law and your municipality, and tells you exactly how many days off you get for the leave you want to spend.</p>
+    <h2>Who publishes it</h2>
+    <p>The publisher is {AUTHOR_NAME}, a company that builds tools from public rules and data. {AUTHOR_NAME} is not an authority or a consultancy, has no link with the Portuguese government, the autonomous regions or any municipal council, and uses no coats of arms or logos. The site sells no trips, hotels or calendars and carries no affiliate links.</p>
+    <LegalIdentity lang={lang} />
+    <h2>Where the data comes from</h2>
+    <p>National holidays come from <Fragment set:html={s('ct234', 'article 234 of the Labour Code')} />, as worded by <Fragment set:html={s('l8-2016', 'Law 8/2016')} />. Regional holidays come from <Fragment set:html={s('dr13-80-a', 'Regional Decree 13/80/A')} /> (Azores) and, for Madeira, <Fragment set:html={s('dr27-79-m', 'Regional Decree 27/79/M')} />, <Fragment set:html={s('dlr18-2002-m', 'DLR 18/2002/M')} /> and <Fragment set:html={s('dlr17-2024-m', 'DLR 17/2024/M')} />. The list of {K.CONCELHOS.length} municipalities comes from the <Fragment set:html={s('anmp', 'national association of municipalities')} />; the municipal holiday of each of the {K.CONFIRMADOS.length} municipalities published was read on the council's own website, with the date it was read. How the long weekends are worked out is on the <a href={route('method', lang)}>method</a> page; how we correct mistakes is in the <a href={route('editorial', lang)}>editorial policy</a>.</p>
+    <h2>Your data</h2>
+    <p>Every tool runs in your browser. The year, municipality and leave days you enter are neither sent nor stored. There is no account and no form. Details are in the <a href={route('privacy', lang)}>privacy notice</a>.</p>
+    <h2>What the site does not do</h2>
+    <p>It does not approve leave and does not know your employment contract. Whether Carnival Tuesday, the municipal holiday or 24 December are off for you is set by your contract, collective agreement or employer. It sells no travel.</p>
+    <h2>Write to us</h2>
+    <p><a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> if a holiday, a date or a municipality looks wrong.</p>
+  </article>
+</PageLayout>
