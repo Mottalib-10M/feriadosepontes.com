@@ -5,6 +5,7 @@ import type { MiniSpec, MiniInput } from './mini-types';
 import { getTool } from './tool-specs';
 import { optsOf, resolve, type Input, type V } from './tool-types';
 import type { Lang } from './format';
+import { concelhoById, emNome } from './engine/concelhos';
 
 const L = (lang: string): Lang => (lang === 'pt' ? 'pt' : 'en');
 const optList = (i: Input, v: V) => (i.kind === 'select' ? optsOf(i, v) : i.kind === 'choice' ? i.options : null);
@@ -34,9 +35,17 @@ export function getSpec(kind: string, lang: string): MiniSpec {
     return o
       ? { id: i.id, label: i.label, def: Math.max(0, o.findIndex((x) => x.value === String(i.def))), help: i.help, options: o.map((x, k) => ({ value: String(k), label: x.label })) }
       : { id: i.id, label: i.label, def: Number(i.def), unit: (i as { unit?: string }).unit, max: (i as { max?: number }).max, help: i.help };
-  });
+  }).map((m, k) => { const si = spec.inputs[k].showIf; return si ? { ...m, showIf: (n: Record<string, number>) => si(fromNum(spec.inputs, n)) } : m; });
   return {
     title: l === 'pt' ? 'Faça a conta' : 'Work it out',
+    // Dit l'année (et le concelho) de l'exemple au lieu de « Exemplo com valores habituais », qui n'avait pas de sens
+    // sur un simple choix de date et cachait le passage de 2027 à 2028 (testeurs naïfs du 2026-11-14).
+    exemple: (n) => {
+      const v = fromNum(spec.inputs, n), c = concelhoById(String(v.concelho ?? ''));
+      const ano = v.ano !== undefined ? String(v.ano) : '';
+      if (!ano) return '';
+      return l === 'pt' ? `Exemplo para ${ano}${c ? ` ${emNome(c.nome)}` : ''}` : `Example for ${ano}${c ? ` in ${c.nome}` : ''}`;
+    },
     cta: l === 'pt' ? 'Abrir a ferramenta completa' : 'Open the full tool',
     inputs,
     run: (n) => {

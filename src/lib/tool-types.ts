@@ -5,7 +5,8 @@ export interface ChoiceIn { kind: 'choice'; id: string; label: string; def: stri
 export type Opt = { value: string; label: string };
 /** Options can depend on the other fields (the counties of the chosen state). */
 export interface SelectIn { kind: 'select'; id: string; label: string; def: string; options: Opt[] | ((v: V) => Opt[]); help?: string; adv?: boolean; wide?: boolean }
-export type Input = NumIn | ChoiceIn | SelectIn;
+/** `showIf` : champ montré seulement quand il change le résultat (testeurs naïfs du 2026-11-14 : « meses no ano de admissão » visible en « Ano completo »). */
+export type Input = (NumIn | ChoiceIn | SelectIn) & { showIf?: (v: V) => boolean };
 export interface OutTable { caption?: string; headers: string[]; rows: string[][]; align?: Array<'l' | 'r'> }
 export interface ToolOut {
   label: string; value: string; sub?: string;

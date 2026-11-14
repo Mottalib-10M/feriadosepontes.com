@@ -24,7 +24,7 @@ const path = route(page.id, lang);
 const group = GROUPS.find((g) => g.id === page.group)!;
 const jsonLd = [webApplicationSchema({ name: x.h1, description: x.description, path, lang }), articleSchema({ title: x.h1, description: x.description, path, lang }), webPageSchema({ name: x.h1, description: x.description, path, lang }), breadcrumbSchema([{ name: ui.breadcrumbHome, path: route('home', lang) }, { name: x.nav, path }])];
 if (x.faqs.length) jsonLd.push(faqSchema(x.faqs, lang));
-const related = page.related.filter((id) => hasRoute(id, lang)).map((id) => ({ href: route(id, lang), name: label(id, lang), description: guideById(id)?.[lang]?.card ?? '' }));
+const related = page.related.filter((id) => hasRoute(id, lang)).map((id) => ({ href: route(id, lang), name: label(id, lang), description: guideById(id)?.[lang]?.card ?? (id === 'home' ? { pt: 'Os 13 feriados e as pontes que rendem mais', en: 'The 13 holidays and the best long weekends' }[lang] : '') }));
 const sources = sourceList(page.sources, lang);
 const tag = LANG_TAGS[lang];
 const gel = displayDate(LAST_UPDATED, tag);

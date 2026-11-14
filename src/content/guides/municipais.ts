@@ -9,6 +9,7 @@ const fixos = C.filter((c) => /^\d/.test(c.feriado!.regra)).length, moveis = C.l
 const porMes = (m: string) => C.filter((c) => c.feriado!.regra.startsWith(m)).length;
 const jun = porMes('06');
 const ant = concelhosDoDia('06-13'), joao = concelhosDoDia('06-24'), ped = concelhosDoDia('06-29');
+const fd27 = (id: string) => K.feriados(2027).find((f) => f.id === id)!.date;
 const nomes = (l: typeof C) => l.map((c) => c.nome).join(', ');
 const lis = K.concelhoById('lisboa')!, por = K.concelhoById('porto')!;
 const anos = [2026, 2027, 2028, 2029, 2030];
@@ -31,7 +32,7 @@ export default [
       slug: 'feriado-municipal', nav: 'Feriado municipal', card: 'Os 308 concelhos, com a data lida na câmara',
       title: 'Feriado municipal 2027: a data de cada concelho do país',
       description: 'Feriado municipal 2027 dos 308 concelhos de Portugal: a data confirmada no sítio da própria câmara, com fonte, dia da semana e ponte, ou marcada por confirmar.',
-      h1: 'Feriado municipal 2027: pesquise o seu concelho',
+      h1: 'Feriado municipal 2027: escolha o seu concelho',
       intro: 'Feriado municipal de cada um dos 308 concelhos: escolha o seu e, se a data estiver confirmada no sítio da câmara, vê o dia de 2027, a ponte possível e a fonte; se não, a ligação para a câmara.',
       resume: `Cada um dos ${nn(T.length, 'pt')} concelhos de Portugal tem um feriado municipal, escolhido pelo próprio município, muitas vezes no dia do santo padroeiro ou de um acontecimento da sua história. Não há uma lista oficial central: por isso lemos cada data no sítio da câmara municipal e só a publicamos quando lá está escrita junto às palavras « feriado municipal ». Até hoje confirmámos ${nn(C.length, 'pt')} concelhos, com a ligação, um extrato e a data de leitura; os restantes ${nn(T.length - C.length, 'pt')} aparecem « Por confirmar », com a ligação para a câmara. Dos confirmados, ${nn(fixos, 'pt')} têm data fixa e ${nn(moveis, 'pt')} dependem da Páscoa, como a quinta-feira da Ascensão ou a segunda-feira de Páscoa. Junho concentra ${nn(jun, 'pt')} deles, à volta do Santo António, do São João e do São Pedro. O feriado municipal é facultativo pelo artigo 235.º do Código do Trabalho: vale no seu trabalho se o contrato ou a convenção coletiva o preveem.`,
       faqs: [
@@ -172,9 +173,9 @@ ${tabelaAno(h, 2027, { nome: 'Madeira', regiao: 'madeira' })}
       ],
       body: (h) => `<h2>Feriado municipal de Lisboa nos próximos anos</h2>
 <p>A ferramenta mostra o dia da semana do 13 de junho em cada ano e a melhor ponte com o feriado. Em 2027 Lisboa fica com as pontes do resto do país: as sextas a seguir ao Corpo de Deus e ao Dia de Portugal e a segunda antes do 5 de Outubro.</p>
-${h.mini('pt', { p: ['ferias'], d: { ano: 2028, concelho: 'lisboa', ferias: 6 }, c: 'As suas pontes de 2028 em Lisboa' })}
+${h.mini('pt', { p: ['ferias'], d: { ano: 2028, concelho: 'lisboa', ferias: 6 }, c: 'E em 2028? O Santo António calha a uma terça: as suas pontes em Lisboa' })}
 <h2>De onde vem a data</h2>
-<p>A data foi lida numa página da Assembleia Municipal de Lisboa sobre a procissão de Santo António, que fala do « 13 de junho, feriado municipal e dia de Santo António em Lisboa ». O sítio da câmara recusa leituras automáticas; por isso a fonte é a assembleia, um órgão do próprio município. A lista dos municípios vem da ${h.src('anmp', 'ANMP')}, e o regime do feriado facultativo do ${h.src('ct', 'artigo 235.º do Código do Trabalho')}.</p>
+<p>A data foi lida numa página da Assembleia Municipal de Lisboa sobre a procissão de Santo António, que fala do « 13 de junho, feriado municipal e dia de Santo António em Lisboa ». A assembleia é um órgão do próprio município, tal como a câmara. A lista dos municípios vem da ${h.src('anmp', 'Associação Nacional de Municípios Portugueses (ANMP)')}, e o regime do feriado facultativo do ${h.src('ct', 'artigo 235.º do Código do Trabalho')}.</p>
 <p>Os outros santos populares estão em ${h.a('santos-populares', 'santos populares')}; o Porto em ${h.a('feriado-porto', 'feriado do Porto')}.</p>`,
     },
     en: {
@@ -191,9 +192,9 @@ ${h.mini('pt', { p: ['ferias'], d: { ano: 2028, concelho: 'lisboa', ferias: 6 },
       ],
       body: (h) => `<h2>Lisbon municipal holiday in the coming years</h2>
 <p>The tool shows the weekday of 13 June each year and the best bridge with the holiday. In 2027 Lisbon gets the same bridges as the rest of the country: the Fridays after Corpus Christi and Portugal Day and the Monday before 5 October.</p>
-${h.mini('pt', { p: ['ferias'], d: { ano: 2028, concelho: 'lisboa', ferias: 6 }, c: 'Your 2028 long weekends in Lisbon' })}
+${h.mini('pt', { p: ['ferias'], d: { ano: 2028, concelho: 'lisboa', ferias: 6 }, c: 'And in 2028? St Anthony falls on a Tuesday: your Lisbon long weekends' })}
 <h2>Where the date comes from</h2>
-<p>The date was read on a Lisbon Municipal Assembly page about the St Anthony procession, which speaks of "13 June, municipal holiday and St Anthony's Day in Lisbon". The council's own website refuses automated reading, so the source is the assembly, a body of the municipality itself. The list of municipalities comes from the ${h.src('anmp', 'ANMP')}, and the optional-holiday rules from ${h.src('ct', 'article 235 of the Labour Code')}.</p>
+<p>The date was read on a Lisbon Municipal Assembly page about the St Anthony procession, which speaks of "13 June, municipal holiday and St Anthony's Day in Lisbon". The assembly is a body of the municipality itself, like the council. The list of municipalities comes from the ${h.src('anmp', 'National Association of Portuguese Municipalities (ANMP)')}, and the optional-holiday rules from ${h.src('ct', 'article 235 of the Labour Code')}.</p>
 <p>The other popular saints are on ${h.a('santos-populares', 'popular saints')}; Porto on ${h.a('feriado-porto', 'Porto holiday')}.</p>`,
     },
   }),
@@ -214,8 +215,8 @@ ${h.mini('pt', { p: ['ferias'], d: { ano: 2028, concelho: 'lisboa', ferias: 6 },
         { q: 'O São João dá ponte em 2026?', a: `Em 2026 o 24 de junho foi uma ${wdLong('2026-06-24', 'pt')}: ${p26 ? `a ponte custava ${nn(p26.ferie, 'pt')} dias de férias para ${nn(p26.liberi, 'pt')} dias livres` : 'não havia ponte de um dia'}. Em 2027 calha a uma quinta-feira, com ponte de um dia na sexta 25, e em 2028 a um sábado, sem dia livre a mais. A ferramenta acima calcula a ponte de qualquer ano.` },
       ],
       body: (h) => `<h2>Feriado municipal do Porto nos próximos anos</h2>
-<p>A ferramenta mostra o dia da semana do 24 de junho em cada ano e a melhor ponte. 2027 é um bom ano para o Porto: além do São João, o Corpo de Deus e o Dia de Portugal também calham à quinta-feira, e junho tem três pontes de um dia para quem trabalha na cidade.</p>
-${h.mini('pt', { p: ['ferias'], d: { ano: 2027, concelho: 'porto', ferias: 3 }, c: 'As três pontes de junho no Porto' })}
+<p>A ferramenta mostra o dia da semana do 24 de junho em cada ano e a melhor ponte. 2027 é um bom ano para o Porto: além do São João, o Corpo de Deus e o Dia de Portugal também calham à quinta-feira, a ${dmo(fd27('corpo-deus'), 'pt')} e a ${dmo(fd27('portugal'), 'pt')}: maio e junho têm três pontes de um dia para quem trabalha na cidade.</p>
+${h.mini('pt', { p: ['ferias'], d: { ano: 2027, concelho: 'porto', ferias: 3 }, c: 'As três pontes de maio e junho no Porto' })}
 <h2>De onde vem a data</h2>
 <p>A data foi lida no sítio da Câmara Municipal do Porto, numa notícia do programa de São João. A lista dos municípios vem da ${h.src('anmp', 'ANMP')}, e o regime do feriado facultativo do ${h.src('ct', 'artigo 235.º do Código do Trabalho')}. Os concelhos vizinhos têm datas diferentes: Matosinhos, por exemplo, tem o Senhor de Matosinhos, na terça-feira a seguir ao Pentecostes. Veja todos em ${h.a('feriado-municipal', 'feriado municipal')} e os outros santos em ${h.a('santos-populares', 'santos populares')}.</p>`,
     },
@@ -232,8 +233,8 @@ ${h.mini('pt', { p: ['ferias'], d: { ano: 2027, concelho: 'porto', ferias: 3 }, 
         { q: 'Did St John’s Day give a bridge in 2026?', a: `In 2026, 24 June was a ${wdLong('2026-06-24', 'en')}: ${p26 ? `the bridge cost ${nn(p26.ferie, 'en')} leave days for ${nn(p26.liberi, 'en')} days off` : 'there was no one-day bridge'}. In 2027 it falls on a Thursday, with a one-day bridge on Friday 25, and in 2028 on a Saturday, with no extra day off. The tool above works out the bridge for any year.` },
       ],
       body: (h) => `<h2>Porto municipal holiday in the coming years</h2>
-<p>The tool shows the weekday of 24 June each year and the best bridge. 2027 is a good year for Porto: besides St John's Day, Corpus Christi and Portugal Day also fall on a Thursday, and June has three one-day bridges for people working in the city.</p>
-${h.mini('pt', { p: ['ferias'], d: { ano: 2027, concelho: 'porto', ferias: 3 }, c: 'Porto’s three June bridges' })}
+<p>The tool shows the weekday of 24 June each year and the best bridge. 2027 is a good year for Porto: besides St John's Day, Corpus Christi and Portugal Day also fall on a Thursday, on ${dmo(fd27('corpo-deus'), 'en')} and ${dmo(fd27('portugal'), 'en')}: May and June have three one-day bridges for people working in the city.</p>
+${h.mini('pt', { p: ['ferias'], d: { ano: 2027, concelho: 'porto', ferias: 3 }, c: 'Porto’s three May and June bridges' })}
 <h2>Where the date comes from</h2>
 <p>The date was read on Porto City Council's website, in a news item on the St John's programme. The list of municipalities comes from the ${h.src('anmp', 'ANMP')}, and the optional-holiday rules from ${h.src('ct', 'article 235 of the Labour Code')}. Neighbouring municipalities have different dates: Matosinhos, for example, has Senhor de Matosinhos, on the Tuesday after Pentecost. See them all on ${h.a('feriado-municipal', 'municipal holiday')} and the other saints on ${h.a('santos-populares', 'popular saints')}.</p>`,
     },

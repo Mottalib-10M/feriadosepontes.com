@@ -43,7 +43,7 @@ const pt: HomeLang = {
   facts: [
     { k: `Páscoa ${Y}`, v: dLong(K.pascoa(Y), 'pt') },
     { k: `Feriados ${Y} em dia útil`, v: `${n(uteis, 'pt')} de ${n(F.length, 'pt')}` },
-    { k: '10 dias de férias', v: `${n(o10.liberi, 'pt')} dias livres` },
+    { k: 'Exemplo: 10 dias de férias dão', v: `${n(o10.liberi, 'pt')} dias livres` },
     { k: `Dias úteis ${Y} (continente)`, v: n(du, 'pt') },
   ],
   toolsTitle: 'Outras ferramentas para férias, feriados e calendário',
@@ -59,14 +59,14 @@ const pt: HomeLang = {
   ],
   why: (h) => `<h2>As pontes de ${Y} que valem mesmo a pena</h2>
 <p>O valor de uma ponte é a relação entre dias livres e dias de férias. As três pontes de um dia de ${Y} dão quatro dias livres por um dia de férias: ${span(cd.liberoDal, cd.liberoAl, 'pt')} com o Corpo de Deus, ${span(pg.liberoDal, pg.liberoAl, 'pt')} com o Dia de Portugal e ${span(rp.liberoDal, rp.liberoAl, 'pt')} com a Implantação da República. Uma semana normal de férias, de segunda a sexta, dá nove dias livres por cinco de férias: tudo o que rende mais do que isso é uma boa ponte.</p>
-<p>Junho é o mês mais generoso. O Corpo de Deus calha a ${h.dm(fd('corpo-deus'))} e o Dia de Portugal a ${h.dm(fd('portugal'))}, ambos à quinta-feira, com duas semanas de intervalo. Em Lisboa o Santo António, a 13 de junho, é um domingo em ${Y}; no Porto e em Braga o São João, a 24 de junho, é uma quinta-feira e dá mais uma ponte de um dia a quem trabalha nesses concelhos. A lista completa está em ${h.a('calendario-2027', 'calendário 2027')}; os dias úteis mês a mês em ${h.a('dias-uteis-2027', 'dias úteis 2027')}.</p>
+<p>Maio e junho são os meses mais generosos. O Corpo de Deus calha a ${h.dm(fd('corpo-deus'))} e o Dia de Portugal a ${h.dm(fd('portugal'))}, ambos à quinta-feira, com duas semanas de intervalo. Em Lisboa o Santo António, a 13 de junho, é um domingo em ${Y}; no Porto e em Braga o São João, a 24 de junho, é uma quinta-feira e dá mais uma ponte de um dia a quem trabalha nesses concelhos. A lista completa está em ${h.a('calendario-2027', 'calendário 2027')}; os dias úteis mês a mês em ${h.a('dias-uteis-2027', 'dias úteis 2027')}.</p>
 ${tabelaAno(h, Y)}
 ${h.mini('fr', { p: ['caso', 'meses'], c: 'Calcule os seus dias de férias' })}
 <p>Quantas férias tem direito a gozar diz-o primeiro o ${h.src('ct', 'Código do Trabalho, nos artigos 237.º a 239.º')}: pelo menos 22 dias úteis por ano, vencidos a 1 de janeiro. No ano de admissão são dois dias por cada mês completo de contrato, até vinte. As regras estão na página ${h.a('ferias', 'férias')}.</p>`,
   sections: (h) => [
     { title: `As pontes de ${Y} por ordem do calendário`, html: `<p><strong>Inverno.</strong> O ${h.dm(fd('ano-novo'))} é uma ${h.wd(fd('ano-novo'))}: o primeiro fim de semana do ano tem três dias sem férias. A terça de Carnaval, ${h.day(K.carnaval(Y).terca)}, só é livre para quem a tem no contrato; nesse caso a segunda-feira anterior faz uma ponte de quatro dias.</p>
 <p><strong>Páscoa.</strong> A Páscoa é a ${h.day(K.pascoa(Y))}, cedo. A Sexta-Feira Santa, ${h.day(fd('sexta-santa'))}, já dá três dias; os quatro dias úteis antes, ${span(pas.ferieDal, pas.ferieAl, 'pt')}, levam a ${n(pas.liberi, 'pt')} dias livres. O 25 de Abril é um domingo e o 1.º de Maio um sábado: a primavera de ${Y} não dá outras pontes.</p>
-<p><strong>Junho.</strong> Duas pontes de um dia: ${h.dm(cd.ferieDal)} depois do Corpo de Deus e ${h.dm(pg.ferieDal)} depois do Dia de Portugal. Com os três dias úteis entre as duas quintas-feiras faz-se uma ponte maior.</p>
+<p><strong>Maio e junho.</strong> Duas pontes de um dia: ${h.dm(cd.ferieDal)} depois do Corpo de Deus e ${h.dm(pg.ferieDal)} depois do Dia de Portugal. Com os três dias úteis entre as duas quintas-feiras faz-se uma ponte maior.</p>
 <p><strong>Outono.</strong> O 5 de Outubro é uma terça: a segunda, ${h.day(rp.ferieDal)}, é a terceira ponte de um dia. O Dia de Todos os Santos é uma segunda; com quatro dias depois, ${span(ts.ferieDal, ts.ferieAl, 'pt')}, ficam ${n(ts.liberi, 'pt')} dias livres.</p>
 <p><strong>Dezembro.</strong> O 1 e o 8 de dezembro calham à quarta-feira: cada um pede dois dias de férias para cinco dias livres, como ${span(dez1.ferieDal, dez1.ferieAl, 'pt')}. O Natal é um sábado; quem tem o 24 e o 31 livres por tolerância de ponto ou por contrato indica-o em « Mais opções ».</p>` },
     { title: 'Como usar o otimizador', html: `<p>Escolha o ano e quantos dias de férias quer dedicar às pontes. Normalmente não são todas as férias do ano, porque uma parte vai para o verão; entre cinco e dez dias é um bom ponto de partida. A ferramenta mostra em cima o total de dias livres, por baixo cada bloco com as datas e, no fim, todas as pontes do ano ordenadas pelo rendimento.</p>
@@ -89,7 +89,7 @@ const en: HomeLang = {
   facts: [
     { k: `Easter Sunday ${Y}`, v: dLong(K.pascoa(Y), 'en') },
     { k: `Holidays on a weekday in ${Y}`, v: `${n(uteis, 'en')} of ${n(F.length, 'en')}` },
-    { k: '10 leave days', v: `${n(o10.liberi, 'en')} days off` },
+    { k: 'Example: 10 leave days give', v: `${n(o10.liberi, 'en')} days off` },
     { k: `Working days ${Y} (mainland)`, v: n(du, 'en') },
   ],
   toolsTitle: 'More tools for leave, holidays and calendars',
@@ -105,14 +105,14 @@ const en: HomeLang = {
   ],
   why: (h) => `<h2>The ${Y} long weekends that really pay off</h2>
 <p>The value of a bridge is the ratio of days off to leave days. The three one-day bridges of ${Y} give four days off for one leave day: ${span(cd.liberoDal, cd.liberoAl, 'en')} with Corpus Christi, ${span(pg.liberoDal, pg.liberoAl, 'en')} with Portugal Day and ${span(rp.liberoDal, rp.liberoAl, 'en')} with Republic Day. An ordinary week off, Monday to Friday, gives nine days for five leave days: anything better than that is a good bridge.</p>
-<p>June is the most generous month. Corpus Christi falls on ${h.dm(fd('corpo-deus'))} and Portugal Day on ${h.dm(fd('portugal'))}, both Thursdays, two weeks apart. In Lisbon, St Anthony's Day, 13 June, is a Sunday in ${Y}; in Porto and Braga, St John's Day, 24 June, is a Thursday and gives one more one-day bridge to people working there. The full list is on ${h.a('calendario-2027', 'calendar 2027')}; working days month by month on ${h.a('dias-uteis-2027', 'working days 2027')}.</p>
+<p>May and June are the most generous months. Corpus Christi falls on ${h.dm(fd('corpo-deus'))} and Portugal Day on ${h.dm(fd('portugal'))}, both Thursdays, two weeks apart. In Lisbon, St Anthony's Day, 13 June, is a Sunday in ${Y}; in Porto and Braga, St John's Day, 24 June, is a Thursday and gives one more one-day bridge to people working there. The full list is on ${h.a('calendario-2027', 'calendar 2027')}; working days month by month on ${h.a('dias-uteis-2027', 'working days 2027')}.</p>
 ${tabelaAno(h, Y)}
 ${h.mini('fr', { p: ['caso', 'meses'], c: 'Work out your leave days' })}
 <p>How much leave you are owed is set first by the ${h.src('ct', 'Labour Code, articles 237 to 239')}: at least 22 working days a year, earned on 1 January. In the year you are hired it is two days for each full month under contract, up to twenty. The rules are on the ${h.a('ferias', 'annual leave')} page.</p>`,
   sections: (h) => [
     { title: `The long weekends of ${Y}, in calendar order`, html: `<p><strong>Winter.</strong> ${h.dm(fd('ano-novo'))} is a ${h.wd(fd('ano-novo'))}: the year's first weekend lasts three days with no leave. Carnival Tuesday, ${h.day(K.carnaval(Y).terca)}, is off only if your contract says so; then the Monday before makes a four-day bridge.</p>
 <p><strong>Easter.</strong> Easter Sunday is ${h.day(K.pascoa(Y))}, early. Good Friday, ${h.day(fd('sexta-santa'))}, already gives three days; the four working days before it, ${span(pas.ferieDal, pas.ferieAl, 'en')}, stretch that to ${n(pas.liberi, 'en')} days off. 25 April is a Sunday and 1 May a Saturday: spring ${Y} offers no other bridges.</p>
-<p><strong>June.</strong> Two one-day bridges: ${h.dm(cd.ferieDal)} after Corpus Christi and ${h.dm(pg.ferieDal)} after Portugal Day. Adding the three working days between the two Thursdays makes a bigger bridge.</p>
+<p><strong>May and June.</strong> Two one-day bridges: ${h.dm(cd.ferieDal)} after Corpus Christi and ${h.dm(pg.ferieDal)} after Portugal Day. Adding the three working days between the two Thursdays makes a bigger bridge.</p>
 <p><strong>Autumn.</strong> 5 October is a Tuesday: the Monday, ${h.day(rp.ferieDal)}, is the third one-day bridge. All Saints' Day is a Monday; four days after it, ${span(ts.ferieDal, ts.ferieAl, 'en')}, give ${n(ts.liberi, 'en')} days off.</p>
 <p><strong>December.</strong> 1 and 8 December fall on a Wednesday: each needs two leave days for five days off, such as ${span(dez1.ferieDal, dez1.ferieAl, 'en')}. Christmas Day is a Saturday; if 24 and 31 December are off for you by contract or tolerância de ponto, set it under "More options".</p>` },
     { title: 'How to use the planner', html: `<p>Choose the year and how many leave days you want to spend on bridges. That is usually not your whole allowance, since part of it goes on a summer break; five to ten days is a good start. The tool shows the total days off at the top, each block with its dates below, and every bridge of the year at the bottom, sorted by value.</p>

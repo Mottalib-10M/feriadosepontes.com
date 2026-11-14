@@ -17,7 +17,7 @@ export const label = (id: string, lang: Locale) => CORE[lang][id] ?? guideById(i
 const link = (id: string, lang: Locale): NavLink => ({ href: route(id, lang), label: label(id, lang) });
 export const inGroup = (g: Group, lang: Locale): NavLink[] => GUIDES.filter((p) => p.group === g && hasRoute(p.id, lang)).map((p) => link(p.id, lang));
 export function navCategories(lang: Locale, short = true): NavCategory[] {
-  return GROUPS.map((g) => ({ label: (short ? g.short : g.label)[lang], links: g.id === 'ferramentas' ? [link('home', lang), ...inGroup(g.id, lang)] : inGroup(g.id, lang) })).filter((c) => c.links.length);
+  return GROUPS.map((g) => ({ label: (short ? g.short : g.label)[lang], links: g.id === 'ferramentas' ? [{ ...link('home', lang), label: { pt: 'Pontes 2027', en: 'Long weekends 2027' }[lang] }, ...inGroup(g.id, lang)] : inGroup(g.id, lang) })).filter((c) => c.links.length);
 }
 /** O Método não está no menu de cima (RECETTE §10.3): debaixo do título e no fundo da página. */
 export const navDirect = (_lang: Locale): NavLink[] => [];

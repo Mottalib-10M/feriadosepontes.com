@@ -5,7 +5,7 @@ export function ResultCard({ label, value, sub, children }: { label: string; val
   return (
     <div data-resultat aria-live="polite" className="rounded-lg border-t-4 border-accent-500 bg-navy-50 p-4 sm:p-5">
       <p className="text-sm font-medium text-navy-700">{label}</p>
-      <p className="tabular-nums mt-1 text-[2.3rem] font-bold leading-tight text-navy-900">{value}</p>
+      <p className="mt-1 text-[2.3rem] font-bold leading-tight text-navy-900">{value}</p>
       {sub && <p className="mt-1 text-sm text-navy-700">{sub}</p>}
       {children}
     </div>
@@ -17,7 +17,7 @@ export function Rows({ rows }: { rows: Array<[string, string, number?]> }) {
   return (
     <table className="mt-3 w-full table-fixed text-sm"><tbody className="divide-y divide-navy-200">
       {rows.map(([l, v, w]) => (
-        <tr key={l}><td className="py-1.5 pe-3 text-navy-700 hyphens-auto [overflow-wrap:anywhere]">{l}{w !== undefined && w > 0 && <span aria-hidden="true" className="mt-1 block h-1 rounded bg-accent-500/60" style={{ width: `${Math.max(3, (w / max) * 100)}%` }} />}</td><td className="w-[42%] tabular-nums py-1.5 text-right align-top text-navy-900 [overflow-wrap:anywhere]">{v}</td></tr>
+        <tr key={l}><td className="py-1.5 pe-3 text-navy-700 hyphens-auto [overflow-wrap:anywhere]">{l}{w !== undefined && w > 0 && <span aria-hidden="true" className="mt-1 block h-1 rounded bg-accent-500/60" style={{ width: `${Math.max(3, (w / max) * 100)}%` }} />}</td><td className="w-[42%] py-1.5 text-right align-top text-navy-900 [overflow-wrap:anywhere]">{v}</td></tr>
       ))}
     </tbody></table>
   );

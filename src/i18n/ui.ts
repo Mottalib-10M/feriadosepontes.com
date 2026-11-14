@@ -10,7 +10,7 @@ const pt = {
   notFound: 'Não há nenhuma página neste endereço. Na página inicial encontra o feriado municipal do seu concelho, as pontes de 2027 e o calendário.',
   readMore: 'Continuar a ler',
   moreOptions: 'Mais opções', copyLink: 'Copiar a ligação', copied: 'Ligação copiada', print: 'Imprimir', howComputed: 'Como se calcula', openFull: 'Abrir a ferramenta completa',
-  countdownTo: 'Faltam para', days: 'dias', hours: 'h', minutes: 'min', seconds: 's', tzNote: 'Usa o relógio do seu dispositivo, fuso horário', passed: 'Esta data já passou.',
+  countdownTo: 'Faltam para', days: 'dias', hours: 'h', minutes: 'min', seconds: 's', tzNote: 'Contagem feita com a hora do seu telemóvel ou computador.', passed: 'Esta data já passou.',
 };
 const en: typeof pt = {
   updatedOn: 'Updated on', editorialPolicy: 'Editorial policy', contactLabel: 'Contact', reviewedBy: 'Prepared by',
@@ -23,7 +23,7 @@ const en: typeof pt = {
   notFound: 'Nothing lives at this address. The home page has your municipality\'s holiday, the 2027 long weekends and the calendar.',
   readMore: 'Read more',
   moreOptions: 'More options', copyLink: 'Copy share link', copied: 'Link copied', print: 'Print', howComputed: 'How this is calculated', openFull: 'Open the full tool',
-  countdownTo: 'Time left until', days: 'days', hours: 'hrs', minutes: 'min', seconds: 'sec', tzNote: 'Uses your device clock, time zone', passed: 'This date has passed.',
+  countdownTo: 'Time left until', days: 'days', hours: 'hrs', minutes: 'min', seconds: 'sec', tzNote: 'Counted with your phone or computer clock.', passed: 'This date has passed.',
 };
 const ALL = { pt, en };
 export function t(lang: Locale) { return ALL[lang] ?? pt; }

@@ -26,7 +26,11 @@ export default function Calendario({ lang, year, concelho: c0 = '', methodHref, 
   const hol = useMemo(() => new Map(list.map((f) => [f.date, f])), [list]);
   const du = useMemo(() => diasUteis(year, { local: c }).reduce((a, b) => a + b, 0), [year, c]);
   const wk = list.filter((f) => { const w = weekday(dayNum(Number(f.date.slice(0, 4)), Number(f.date.slice(5, 7)), Number(f.date.slice(8, 10)))); return w !== 0 && w !== 6; }).length;
-  const wdHead = Array.from({ length: 7 }, (_, i) => new Date(Date.UTC(2027, 1, 1 + i)).toLocaleDateString(TAG(lang), { weekday: 'short', timeZone: 'UTC' }).replace('.', ''));
+  // En-têtes courts écrits à la main (testeurs naïfs du 2026-11-14) : en pt-PT, `weekday: 'short'` rend « segunda »,
+  // « terça »… qui se collaient sur 320-390 px. Le nom complet reste lisible au survol et pour les lecteurs d'écran.
+  const wdHead = (lang === 'pt'
+    ? [['seg', 'segunda-feira'], ['ter', 'terça-feira'], ['qua', 'quarta-feira'], ['qui', 'quinta-feira'], ['sex', 'sexta-feira'], ['sáb', 'sábado'], ['dom', 'domingo']]
+    : [['Mon', 'Monday'], ['Tue', 'Tuesday'], ['Wed', 'Wednesday'], ['Thu', 'Thursday'], ['Fri', 'Friday'], ['Sat', 'Saturday'], ['Sun', 'Sunday']]) as Array<[string, string]>;
   const months = Array.from({ length: 12 }, (_, m) => {
     const first = dayNum(year, m + 1, 1), last = dayNum(year, m + 2, 1) - 1;
     const lead = (weekday(first) + 6) % 7;
@@ -55,7 +59,7 @@ export default function Calendario({ lang, year, concelho: c0 = '', methodHref, 
         {months.map((mo) => (
           <table key={mo.name} data-pas-de-fiches>
             <caption className="mb-1 text-left text-sm font-semibold text-navy-900">{mo.name} {year}</caption>
-            <thead><tr><th scope="col" className="text-[0.7rem] font-medium text-navy-600">{T('Sem.', 'Wk')}</th>{wdHead.map((h) => <th key={h} scope="col" className="font-medium text-navy-700">{h}</th>)}</tr></thead>
+            <thead><tr><th scope="col" className="kw"><abbr title={T('Semana do ano', 'Week of the year')}>{T('Sem.', 'Wk')}</abbr></th>{wdHead.map(([h, full]) => <th key={h} scope="col"><abbr title={full}>{h}</abbr></th>)}</tr></thead>
             <tbody>{mo.weeks.map((w, i) => {
               const firstDay = w.find((x) => x !== null)!;
               return (
@@ -72,9 +76,9 @@ export default function Calendario({ lang, year, concelho: c0 = '', methodHref, 
           </table>
         ))}
       </div>
-      <p className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-xs text-navy-700"><span><span className="mr-1 inline-block h-3 w-3 rounded bg-accent-100 align-middle" aria-hidden="true" />{T('feriado nacional', 'national holiday')}</span><span><span className="mr-1 inline-block h-3 w-3 rounded bg-navy-100 align-middle" aria-hidden="true" />{T('feriado regional ou municipal', 'regional or municipal holiday')}</span></p>
+      <p className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-sm text-navy-700"><span><span className="kal-cle ft" aria-hidden="true" />{T('feriado nacional', 'national holiday')}</span><span><span className="kal-cle tf" aria-hidden="true" />{T('feriado regional ou municipal', 'regional or municipal holiday')}</span><span><span className="kal-cle kw-cle" aria-hidden="true">1</span>{T('número da semana', 'week number')}</span></p>
       <ul className="mt-4 grid gap-x-6 gap-y-1 text-sm text-navy-800 sm:grid-cols-2">
-        {list.map((f) => <li key={f.id}><span className="tabular-nums">{dLong(f.date, lang)}</span> · {f.name[lang]}</li>)}
+        {list.map((f) => <li key={f.id}><span>{dLong(f.date, lang)}</span> · {f.name[lang]}</li>)}
       </ul>
     </div>
   );

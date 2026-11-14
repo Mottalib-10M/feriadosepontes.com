@@ -44,7 +44,8 @@ export default function SpecTool({ kind, lang, arg, methodHref, idPrefix = 't' }
     if (i.kind === 'select') return <SelectField key={i.id} id={id} label={i.label} value={String(rv[i.id])} onChange={set(i.id)} options={optsOf(i, rv)} help={i.help} className={cls} />;
     return <NumberField key={i.id} id={id} label={i.label} value={Number(rv[i.id])} onChange={set(i.id)} unit={i.unit} max={i.max} decimals={i.decimals} help={i.help} className={cls} lang={lang} />;
   };
-  const main = spec.inputs.filter((i) => !i.adv), adv = spec.inputs.filter((i) => i.adv);
+  const vis = spec.inputs.filter((i) => !i.showIf || i.showIf(rv));
+  const main = vis.filter((i) => !i.adv), adv = vis.filter((i) => i.adv);
   return (
     <div className="rounded-xl border border-navy-200 bg-white p-4 sm:p-5">
       <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(0,23rem)]">
@@ -63,15 +64,21 @@ export default function SpecTool({ kind, lang, arg, methodHref, idPrefix = 't' }
           <ShareRow methodHref={methodHref} labels={ui} />
         </ResultCard>
       </div>
-      {[out.table, ...(out.tables ?? [])].filter((x) => !!x).map((tb, ti) => (
-        <div key={ti} className="mt-4 overflow-x-auto">
-          <table className="w-full text-sm">
-            {tb!.caption && <caption className="mb-2 text-left text-sm text-navy-700">{tb!.caption}</caption>}
+      {/* Tableaux du résultat (testeurs naïfs du 2026-11-14) : le script de BaseLayout ne touche pas aux îlots React,
+          les tableaux de 5 colonnes restaient coupés à droite sur téléphone. Dès 3 colonnes, le composant pose lui-même
+          .empile et data-label (fiches sous 768 px, global.css). Les tableaux en plus (« Todas as pontes ») sont repliés. */}
+      {[out.table, ...(out.tables ?? [])].filter((x) => !!x).map((tb, ti) => {
+        const tableau = (
+          <table className={`w-full text-sm ${tb!.headers.length >= 3 ? 'empile' : ''}`}>
+            {tb!.caption && ti === 0 && <caption className="mb-2 text-left text-sm font-semibold text-navy-900">{tb!.caption}</caption>}
             <thead><tr>{tb!.headers.map((h, i) => <th key={h} scope="col" className={`border-b border-navy-300 px-2 py-1.5 font-semibold text-navy-900 ${tb!.align?.[i] === 'r' ? 'text-right' : 'text-left'}`}>{h}</th>)}</tr></thead>
-            <tbody>{tb!.rows.map((r, k) => <tr key={k}>{r.map((c, i) => <td key={i} className={`tabular-nums border-b border-navy-100 px-2 py-1.5 text-navy-800 ${tb!.align?.[i] === 'r' ? 'text-right' : 'text-left'}`} dangerouslySetInnerHTML={{ __html: c }} />)}</tr>)}</tbody>
+            <tbody>{tb!.rows.map((r, k) => <tr key={k}>{r.map((c, i) => <td key={i} data-label={tb!.headers[i]} className={`border-b border-navy-100 px-2 py-1.5 text-navy-800 ${tb!.align?.[i] === 'r' ? 'tabular-nums text-right' : 'text-left'}`} dangerouslySetInnerHTML={{ __html: c }} />)}</tr>)}</tbody>
           </table>
-        </div>
-      ))}
+        );
+        return ti === 0
+          ? <div key={ti} className="mt-4 overflow-x-auto">{tableau}</div>
+          : <details key={ti} className="mt-4 rounded-lg border border-navy-200 px-3 py-2"><summary className="cursor-pointer text-sm font-semibold text-accent-700">{tb!.caption ?? ''}</summary><div className="mt-2 overflow-x-auto">{tableau}</div></details>;
+      })}
     </div>
   );
 }

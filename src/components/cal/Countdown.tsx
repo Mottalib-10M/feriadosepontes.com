@@ -30,7 +30,8 @@ export default function Countdown({ at, label, dateText, lang }: Props) {
       {left > 0
         ? <p className="mt-1 flex flex-wrap gap-x-4 gap-y-1" aria-live="off">{cell(p.d, ui.days)}{cell(p.h, ui.hours)}{cell(p.m, ui.minutes)}{cell(p.s, ui.seconds)}</p>
         : <p className="mt-1 text-sm text-navy-800">{ui.passed}</p>}
-      {tz && <p className="mt-1 text-xs text-navy-600">{ui.tzNote} {tz}.</p>}
+      {/* Sans nom de fuseau (testeurs naïfs du 2026-11-14 : « Europe/Paris » inquiétait un lecteur au Portugal). */}
+      {tz && <p className="mt-1 text-xs text-navy-600">{ui.tzNote}</p>}
     </div>
   );
 }
