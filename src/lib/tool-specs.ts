@@ -32,6 +32,10 @@ export const dmo = (iso: string, l: Lang) => fmt(iso, l, { day: 'numeric', month
 export const nn = (x: number, l: Lang) => formatNumber(x, 0, l);
 /** « 1 dia de férias → 4 dias livres » / « 1 leave day → 4 days off » (testeurs naïfs du 2026-11-14 : « 1 férias → 4 dias »). */
 const troca = (f: number, d: number, l: Lang) => T(l, `${num(f, l)} ${f === 1 ? 'dia' : 'dias'} de férias → ${num(d, l)} dias livres`, `${num(f, l)} leave ${f === 1 ? 'day' : 'days'} → ${num(d, l)} days off`);
+/** Os dias a tirar de uma ponte: « sexta, 28 de maio » ou « segunda, 12 de junho – sexta, 16 de junho, sem contar os feriados »
+ *  (testeurs naïfs du 2026-11-14, tour 3 : la liste du résultat ne disait pas quel jour poser). */
+const diasCorridos = (a: string, b: string) => Math.round((Date.parse(`${b}T12:00:00Z`) - Date.parse(`${a}T12:00:00Z`)) / 864e5) + 1;
+const tirar = (b: { ferieDal: string; ferieAl: string; ferie: number }, l: Lang) => `${span(b.ferieDal, b.ferieAl, l)}${diasCorridos(b.ferieDal, b.ferieAl) > b.ferie ? T(l, ', sem contar os feriados', ', holidays excluded') : ''}`;
 const host = (u: string) => u.replace(/^https?:\/\/(www\.)?/, '').split('/')[0];
 const dias = (x: number, l: Lang) => `${num(x, l)} ${x === 1 ? T(l, 'dia', 'day') : T(l, 'dias', 'days')}`;
 export const yearRange = (a: number, b: number) => Array.from({ length: b - a + 1 }, (_, i) => a + i);
@@ -43,7 +47,7 @@ const regLabel = (c: Concelho, l: Lang) => (c.regiao === 'continente' ? c.nome :
 export const concelhoLabel = (c: Concelho, l: Lang = 'pt') => regLabel(c, l);
 const concelhoOpts = (l: Lang, vazio = true): Opt[] => [...(vazio ? [{ value: '', label: T(l, 'Só feriados nacionais', 'National holidays only') }] : []), ...CONCELHOS.map((c) => ({ value: c.id, label: regLabel(c, l) }))];
 const fAno = (l: Lang, def: number, ys = ANOS) => ({ kind: 'select' as const, id: 'ano', label: T(l, 'Ano', 'Year'), def: String(def), options: anoOpts(ys) });
-const fConcelho = (l: Lang, def = '', adv = false) => ({ kind: 'select' as const, id: 'concelho', label: T(l, 'O seu concelho', 'Your municipality'), def, options: concelhoOpts(l), adv, wide: true, help: T(l, 'Nas ilhas junta os feriados regionais. O feriado municipal só conta se responder « Tenho o dia livre » abaixo.', 'On the islands it adds the regional holidays. The municipal holiday only counts if you answer "I have the day off" below.') });
+const fConcelho = (l: Lang, def = '', adv = false) => ({ kind: 'select' as const, id: 'concelho', label: T(l, 'O seu concelho', 'Your municipality'), def, options: concelhoOpts(l), adv, wide: true, help: T(l, 'Nas ilhas junta os feriados regionais. Se o concelho tiver a data confirmada, aparece logo a seguir a pergunta sobre o feriado municipal.', 'On the islands it adds the regional holidays. If the municipality\'s date is confirmed, a question about the municipal holiday appears just below.') });
 /** Feriado municipal: facultativo (art. 235.º), por isso só conta como dia livre quando a pessoa o diz (testeurs naïfs
  *  du 2026-11-14, tour 2 : « 1 dia de férias → 4 dias livres » com o feriado municipal, e logo abaixo « É obrigatório? Não »).
  *  Pergunta visível, só quando o concelho escolhido tem a data confirmada. */
@@ -78,16 +82,18 @@ function ptSpec(l: Lang, a: Args = {}): ToolSpec {
         // l'écart entre saisis et utilisés est dit dans la phrase sous le gros chiffre.
         // Titre qui dit ce que mesure le gros chiffre (testeurs naïfs du 2026-11-14, tour 2 : « 22 dias livres », « 22 dias
         // úteis », « 54 », « 27 » sur l'accueil, « je ne sais plus lequel est le mien »).
-        label: T(l, `Dias livres seguidos que ganha nas pontes de ${y} ${onde(c, l)}, com ${dias(pedidos, l)} de férias`, `Days off in a row on the ${y} long weekends ${onde(c, l)}, with ${num(pedidos, l)} leave ${pedidos === 1 ? 'day' : 'days'}`),
+        // « No total » : le gros chiffre additionne plusieurs pontes séparées (testeurs naïfs du 2026-11-14, tour 3 : « seguidos »
+        // faisait croire à 22 jours d'affilée). plano.liberi = somme des blocs choisis, qui ne se chevauchent pas (otimiza).
+        label: T(l, `Dias livres no total, somando as pontes de ${y} ${onde(c, l)}, com ${dias(pedidos, l)} de férias`, `Total days off across the ${y} long weekends ${onde(c, l)}, with ${num(pedidos, l)} leave ${pedidos === 1 ? 'day' : 'days'}`),
         value: T(l, `${num(plano.liberi, l)} dias livres`, `${num(plano.liberi, l)} days off`),
         sub: !plano.ferie ? T(l, 'Indique pelo menos um dia de férias.', 'Enter at least one leave day.')
           : plano.resto > 0 ? T(l, `As pontes abaixo usam ${num(plano.ferie, l)} dos seus ${num(pedidos, l)} dias de férias: em média, cada um dá ${formatDecimal(rend, 1, l)} dias livres.`, `The bridges below use ${num(plano.ferie, l)} of your ${num(pedidos, l)} leave days: on average each one gives ${formatDecimal(rend, 1, l)} days off.`)
           : T(l, `Em média, cada dia de férias dá ${formatDecimal(rend, 1, l)} dias livres.`, `On average each leave day gives ${formatDecimal(rend, 1, l)} days off.`),
-        rows: plano.blocchi.slice(0, 6).map((b) => [span(b.liberoDal, b.liberoAl, l), troca(b.ferie, b.liberi, l), b.liberi] as [string, string, number]),
+        rows: plano.blocchi.slice(0, 6).map((b) => [T(l, `${span(b.liberoDal, b.liberoAl, l)} · tirar férias: ${tirar(b, l)}`, `${span(b.liberoDal, b.liberoAl, l)} · take leave: ${tirar(b, l)}`), troca(b.ferie, b.liberi, l), b.liberi] as [string, string, number]),
         table: plano.blocchi.length ? {
           caption: T(l, `O seu plano ${y}: quando tirar férias`, `Your ${y} plan: when to take leave`),
           headers: [T(l, 'Tirar férias', 'Take leave'), T(l, 'Dias de férias', 'Leave days'), T(l, 'Período livre', 'Time off'), T(l, 'Dias livres', 'Days off'), T(l, 'Graças a', 'Thanks to')],
-          rows: plano.blocchi.map((b) => [span(b.ferieDal, b.ferieAl, l), num(b.ferie, l), span(b.liberoDal, b.liberoAl, l), num(b.liberi, l), b.feste.map((id) => feriadoName(id, l, c)).join(', ')]),
+          rows: plano.blocchi.map((b) => [tirar(b, l), num(b.ferie, l), span(b.liberoDal, b.liberoAl, l), num(b.liberi, l), b.feste.map((id) => feriadoName(id, l, c)).join(', ')]),
           align: ['l', 'r', 'l', 'r', 'l'],
         } : undefined,
         tables: todas.length ? [{
@@ -121,7 +127,7 @@ function feSpec(l: Lang, a: Args = {}): ToolSpec {
           [T(l, 'Feriados em dia útil', 'Holidays on a weekday'), num(util.length, l)],
           [T(l, 'Feriados ao sábado ou domingo', 'Holidays on a Saturday or Sunday'), num(aoFimDeSemana(list).length, l)],
           [T(l, 'Pontes de um só dia de férias', 'Long weekends for one leave day'), num(um.length, l)],
-          [T(l, 'Dias úteis (seg-sex)', 'Working days (Mon-Fri)'), num(du, l)],
+          [T(l, 'Dias úteis (de segunda a sexta)', 'Working days (Monday to Friday)'), num(du, l)],
         ],
         table: {
           caption: T(l, `Feriados ${y} ${onde(c, l)}`, `Public holidays ${y} ${onde(c, l)}`),
@@ -143,14 +149,14 @@ function fmSpec(l: Lang, a: Args = {}): ToolSpec {
     inputs: [{ kind: 'select', id: 'concelho', label: T(l, 'O seu concelho', 'Your municipality'), def: String(a.concelho ?? ''), options: [{ value: '', label: T(l, 'Escolha o seu concelho', 'Choose your municipality') }, ...concelhoOpts(l, false)] }, fAno(l, Number(a.ano ?? 2027))],
     run: (v) => {
       const c = concelhoById(s(v, 'concelho')), y = n(v, 'ano');
+      // Sans concelho : un appel à choisir, pas la statistique du site en gros (testeurs naïfs du 2026-11-14, tour 3 :
+      // « 84 de 308 » en vedette « parle du site, pas de moi », « Ainda por confirmar 224 » inquiétait).
       if (!c) return {
-        label: T(l, `Feriado municipal ${y}: escolha o seu concelho acima`, `Municipal holiday ${y}: choose your municipality above`),
-        value: T(l, `${num(CONFIRMADOS.length, l)} de ${num(CONCELHOS.length, l)}`, `${num(CONFIRMADOS.length, l)} of ${num(CONCELHOS.length, l)}`),
-        sub: T(l, `concelhos já têm a data confirmada no sítio da câmara. Para os outros ${num(CONCELHOS.length - CONFIRMADOS.length, l)}, damos a ligação para a câmara.`, `municipalities already have the date confirmed on the council's website. For the other ${num(CONCELHOS.length - CONFIRMADOS.length, l)}, we give the link to the council.`),
+        label: T(l, `Feriado municipal ${y}`, `Municipal holiday ${y}`),
+        value: T(l, 'Escolha o seu concelho acima', 'Choose your municipality above'),
+        sub: T(l, `Mostramos o dia do feriado em ${y}, se dá ponte e onde lemos a data.`, `We show the holiday's day in ${y}, whether it gives a long weekend and where we read the date.`),
         rows: [
-          [T(l, 'Com data confirmada', 'Date confirmed'), num(CONFIRMADOS.length, l)],
-          [T(l, 'Ainda por confirmar', 'Not yet confirmed'), num(CONCELHOS.length - CONFIRMADOS.length, l)],
-          [T(l, `Com feriado num dia útil em ${y}`, `Holiday on a weekday in ${y}`), num(CONFIRMADOS.filter((x) => { const w = weekday(fromIso(dataRegra(y, x.feriado!.regra))); return w !== 0 && w !== 6; }).length, l)],
+          [T(l, 'Concelhos com a data confirmada no sítio da câmara', 'Municipalities with the date confirmed on the council website'), T(l, `${num(CONFIRMADOS.length, l)} de ${num(CONCELHOS.length, l)}; para os outros damos a ligação para a câmara`, `${num(CONFIRMADOS.length, l)} of ${num(CONCELHOS.length, l)}; for the others we link to the council`)],
         ],
       };
       if (!c.feriado) return {
@@ -191,7 +197,7 @@ function fmSpec(l: Lang, a: Args = {}): ToolSpec {
 export const MESES = (l: Lang) => Array.from({ length: 12 }, (_, i) => new Date(Date.UTC(2027, i, 15)).toLocaleDateString(TAG(l), { month: 'long', timeZone: 'UTC' }));
 function duSpec(l: Lang, a: Args = {}): ToolSpec {
   return {
-    inputs: [fAno(l, Number(a.ano ?? 2027)), { kind: 'choice', id: 'semana', label: T(l, 'Semana de trabalho', 'Working week'), def: '5', options: [{ value: '5', label: T(l, 'seg-sex', 'Mon-Fri') }, { value: '6', label: T(l, 'seg-sáb', 'Mon-Sat') }] }, fConcelho(l, String(a.concelho ?? '')), fMunicipal(l, String(a.municipal ?? 'nao')), fCarnaval(l), fVesperas(l)],
+    inputs: [fAno(l, Number(a.ano ?? 2027)), { kind: 'choice', id: 'semana', label: T(l, 'Semana de trabalho', 'Working week'), def: '5', options: [{ value: '5', label: T(l, 'Segunda a sexta', 'Monday to Friday') }, { value: '6', label: T(l, 'Segunda a sábado', 'Monday to Saturday') }] }, fConcelho(l, String(a.concelho ?? '')), fMunicipal(l, String(a.municipal ?? 'nao')), fCarnaval(l), fVesperas(l)],
     run: (v) => {
       const { y, c, o } = ctx(v);
       const w = s(v, 'semana') === '6' ? 6 : 5;
@@ -284,7 +290,7 @@ function caSpec(l: Lang, a: Args = {}): ToolSpec {
 const DETALHE = ['ano-novo', 'sexta-santa', 'liberdade', 'trabalhador', 'corpo-deus', 'portugal', 'assuncao', 'republica', 'todos-santos', 'restauracao', 'imaculada', 'natal'];
 function fdSpec(l: Lang, a: Args = {}): ToolSpec {
   return {
-    inputs: [{ kind: 'select', id: 'feriado', label: T(l, 'Feriado', 'Holiday'), def: String(a.feriado ?? 'corpo-deus'), options: DETALHE.map((id) => ({ value: id, label: NACIONAIS.find((f) => f.id === id)!.name[l] })) }, fAno(l, Number(a.ano ?? 2027), yearRange(2026, 2032))],
+    inputs: [{ kind: 'select', id: 'feriado', label: T(l, 'Feriado (pode escolher outro)', 'Holiday (you can pick another)'), def: String(a.feriado ?? 'corpo-deus'), options: DETALHE.map((id) => ({ value: id, label: NACIONAIS.find((f) => f.id === id)!.name[l] })) }, fAno(l, Number(a.ano ?? 2027), yearRange(2026, 2032))],
     run: (v) => {
       const id = s(v, 'feriado'), y = n(v, 'ano'), f = NACIONAIS.find((x) => x.id === id)!;
       const d = f.date(y), w = weekday(fromIso(d));
@@ -347,15 +353,15 @@ function frSpec(l: Lang, a: Args = {}): ToolSpec {
       return {
         // Gros chiffre nommé pour ne pas le confondre avec les « dias livres » de l'optimiseur (testeurs naïfs du
         // 2026-11-14, tour 2 : « 22 dias livres » puis « 22 dias úteis » sur la même page).
-        label: adm ? T(l, `Dias de férias a que tem direito no ano em que entrou, ${y}`, `Leave you are owed in the year you were hired, ${y}`) : T(l, `Dias de férias a que tem direito por lei, ${y}`, `Leave you are owed by law, ${y}`),
-        value: T(l, `${num(dd, l)} dias úteis de férias`, `${num(dd, l)} working days of leave`),
-        sub: adm ? T(l, `${F.porMesAdmissao} dias úteis por cada mês completo de contrato, até ${F.maxAdmissao}; pode gozá-los depois de ${F.mesesEspera} meses de trabalho.`, `${F.porMesAdmissao} working days for each full month under contract, up to ${F.maxAdmissao}; you can take them after ${F.mesesEspera} months of work.`) : T(l, `Pelo menos ${F.minimoAnual} dias úteis por ano, ganhos a 1 de janeiro pelo trabalho do ano anterior.`, `At least ${F.minimoAnual} working days a year, earned on 1 January for the previous year's work.`),
+        label: adm ? T(l, `Por lei, as suas férias no ano em que entrou (${y})`, `By law, your leave in the year you were hired (${y})`) : T(l, `Por lei, as suas férias por ano (${y})`, `By law, your yearly leave (${y})`),
+        value: T(l, `${num(dd, l)} dias de férias`, `${num(dd, l)} days of leave`),
+        sub: adm ? T(l, `${F.porMesAdmissao} dias úteis por cada mês completo de contrato, até ${F.maxAdmissao}; pode gozá-los depois de ${F.mesesEspera} meses de trabalho.`, `${F.porMesAdmissao} working days for each full month under contract, up to ${F.maxAdmissao}; you can take them after ${F.mesesEspera} months of work.`) : T(l, `Pelo menos ${F.minimoAnual} dias por ano, contando só de segunda a sexta (dias úteis), ganhos a 1 de janeiro pelo trabalho do ano anterior.`, `At least ${F.minimoAnual} working days a year, earned on 1 January for the previous year's work.`),
         rows: [
           [T(l, 'Semanas de férias (aprox.)', 'Weeks of leave (approx.)'), formatDecimal(dd / 5, 1, l)],
-          [T(l, `Dias livres no total, se puser os ${num(dd, l)} dias de férias nas pontes de ${y}`, `Total days off if you put all ${num(dd, l)} leave days on the ${y} bridges`), num(plano.liberi, l)],
-          ...(adm ? [] : [[T(l, 'Dias que pode trabalhar e receber em vez de os gozar', 'Days you may work and be paid for instead of taking them'), T(l, `${num(Math.max(0, dd - F.renunciaAcima), l)} (os que passam de ${F.renunciaAcima})`, `${num(Math.max(0, dd - F.renunciaAcima), l)} (those above ${F.renunciaAcima})`)] as [string, string]]),
+          [T(l, `Se puser todas estas férias nas pontes de ${y}: dias livres no total`, `If you put all this leave on the ${y} bridges: total days off`), num(plano.liberi, l)],
+          ...(adm ? [] : [[T(l, 'Dias de férias a que pode renunciar: trabalha nesses dias e esse trabalho é pago além das férias', 'Leave days you may give up: you work them and that work is paid on top of your holiday pay'), T(l, `${num(Math.max(0, dd - F.renunciaAcima), l)} (os que passam de ${F.renunciaAcima})`, `${num(Math.max(0, dd - F.renunciaAcima), l)} (those above ${F.renunciaAcima})`)] as [string, string]]),
         ],
-        note: T(l, 'Só contam como dias de férias os dias de segunda a sexta que não são feriado. O acordo do seu setor pode dar mais dias. Fonte: Código do Trabalho, artigos 237.º a 239.º.', 'Only Monday-to-Friday days that are not holidays count as leave days. Your sector\'s agreement may give more days. Source: Labour Code, articles 237 to 239.'),
+        note: T(l, 'Só contam como dias de férias os dias de segunda a sexta que não são feriado. O acordo do seu setor pode dar mais dias. Fonte: Código do Trabalho, artigos 237.º a 239.º (as regras das férias).', 'Only Monday-to-Friday days that are not holidays count as leave days. Your sector\'s agreement may give more days. Source: Labour Code, articles 237 to 239 (the leave rules).'),
       };
     },
   };

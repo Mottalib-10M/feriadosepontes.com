@@ -1,0 +1,159 @@
+
+> feriadosepontes.com@0.1.0 check
+> npm run build && npx vitest run && node scripts/typo-nbsp.mjs dist --check && node scripts/check-legal.mjs && python3 scripts/check-seo.py . && python3 scripts/check-unique.py . && python3 scripts/check-trame.py . && python3 scripts/check-liens.py . && node scripts/check-layout.mjs . && node scripts/check-sources.mjs . && python3 scripts/check-simulateurs.py . && python3 scripts/check-hreflang.py . && python3 scripts/check-anglais.py . && python3 scripts/check-portefeuille.py . && python3 scripts/check-cookies.py . && node scripts/check-url-propre.mjs . && node scripts/check-premier-ecran.mjs . && node scripts/check-droits.mjs . && node scripts/check-copie.mjs . && node scripts/check-nombres.mjs . && node scripts/check-contraste.mjs . && node scripts/check-saisie.mjs . && python3 scripts/check-regles.py . && python3 scripts/check-motcle.py .
+
+
+> feriadosepontes.com@0.1.0 build
+> astro build && node scripts/typo-nbsp.mjs && python3 scripts/check-snippets.py dist
+
+20:55:43 [types] Generated 120ms
+20:55:43 [build] output: "static"
+20:55:43 [build] mode: "static"
+20:55:43 [build] directory: /Users/mottalib/Documents/GitHub/a-publier/Mottalib-10M/feriadosepontes.com/dist/
+20:55:43 [build] Collecting build info...
+20:55:43 [build] ✓ Completed in 137ms.
+20:55:43 [build] Building static entrypoints...
+20:55:44 [vite] ✓ built in 1.20s
+20:55:44 [vite] ✓ built in 558ms
+20:55:44 [build] Rearranging server assets...
+
+ generating static routes 
+20:55:45   ├─ /404.html (+10ms) 
+20:55:45   ├─ /embed/pt/pontes/index.html (+33ms) 
+20:55:45   ├─ /embed/pt/feriado-municipal/index.html (+4ms) 
+20:55:45   ├─ /embed/en/pontes/index.html (+19ms) 
+20:55:45   ├─ /embed/en/feriado-municipal/index.html (+4ms) 
+20:55:45   ├─ /en/about/index.html (+11ms) 
+20:55:45   ├─ /en/contact/index.html (+4ms) 
+20:55:45   ├─ /en/cookies/index.html (+4ms) 
+20:55:45   ├─ /en/editorial-policy/index.html (+4ms) 
+20:55:45   ├─ /en/legal-notice/index.html (+3ms) 
+20:55:45   ├─ /en/method/index.html (+4ms) 
+20:55:45   ├─ /en/privacy/index.html (+3ms) 
+20:55:45   ├─ /en/widget/index.html (+3ms) 
+20:55:45   ├─ /en/index.html (+51ms) 
+20:55:45   ├─ /en/long-weekends-2026/index.html (+51ms) 
+20:55:45   ├─ /en/long-weekends-2028/index.html (+36ms) 
+20:55:45   ├─ /en/annual-leave/index.html (+20ms) 
+20:55:45   ├─ /en/working-days-2027/index.html (+12ms) 
+20:55:45   ├─ /en/public-holidays-2026/index.html (+12ms) 
+20:55:45   ├─ /en/calendar-2027/index.html (+17ms) 
+20:55:45   ├─ /en/public-holidays-2028/index.html (+22ms) 
+20:55:45   ├─ /en/corpus-christi-2027/index.html (+34ms) 
+20:55:45   ├─ /en/easter-2027/index.html (+24ms) 
+20:55:45   ├─ /en/carnival-2027/index.html (+24ms) 
+20:55:45   ├─ /en/municipal-holiday/index.html (+20ms) 
+20:55:45   ├─ /en/popular-saints/index.html (+10ms) 
+20:55:45   ├─ /en/lisbon-municipal-holiday/index.html (+22ms) 
+20:55:45   ├─ /en/porto-municipal-holiday/index.html (+19ms) 
+20:55:45   ├─ /en/azores-madeira-holidays/index.html (+19ms) 
+20:55:45   ├─ /llms.txt (+2ms) 
+20:55:45   ├─ /pt/contacto/index.html (+3ms) 
+20:55:45   ├─ /pt/cookies/index.html (+2ms) 
+20:55:45   ├─ /pt/informacao-legal/index.html (+2ms) 
+20:55:45   ├─ /pt/metodo/index.html (+6ms) 
+20:55:45   ├─ /pt/politica-editorial/index.html (+2ms) 
+20:55:45   ├─ /pt/privacidade/index.html (+2ms) 
+20:55:45   ├─ /pt/sobre/index.html (+3ms) 
+20:55:45   ├─ /pt/widget/index.html (+2ms) 
+20:55:45   ├─ /pt/index.html (+29ms) 
+20:55:45   ├─ /pt/pontes-2026/index.html (+47ms) 
+20:55:45   ├─ /pt/pontes-2028/index.html (+31ms) 
+20:55:45   ├─ /pt/ferias/index.html (+22ms) 
+20:55:45   ├─ /pt/dias-uteis-2027/index.html (+11ms) 
+20:55:45   ├─ /pt/feriados-2026/index.html (+11ms) 
+20:55:45   ├─ /pt/calendario-2027/index.html (+11ms) 
+20:55:45   ├─ /pt/feriados-2028/index.html (+22ms) 
+20:55:45   ├─ /pt/corpo-de-deus-2027/index.html (+37ms) 
+20:55:45   ├─ /pt/pascoa-2027/index.html (+27ms) 
+20:55:45   ├─ /pt/carnaval-2027/index.html (+21ms) 
+20:55:45   ├─ /pt/feriado-municipal/index.html (+20ms) 
+20:55:45   ├─ /pt/santos-populares/index.html (+13ms) 
+20:55:45   ├─ /pt/feriado-municipal-lisboa/index.html (+19ms) 
+20:55:45   ├─ /pt/feriado-municipal-porto/index.html (+18ms) 
+20:55:45   ├─ /pt/feriados-acores-madeira/index.html (+18ms) 
+20:55:45   ├─ /index.html (+9ms) 
+20:55:45 ✓ Completed in 1.01s.
+
+20:55:45 [build] ✓ Completed in 2.81s.
+20:55:45 [@astrojs/sitemap] `sitemap-index.xml` created at `dist`
+20:55:45 [build] 54 page(s) built in 2.99s
+20:55:45 [build] Complete!
+typo-nbsp: 0 espace(s) rendue(s) insécable(s) dans 0 page(s)
+check-snippets : 36 pages indexables, titres 50-60, descriptions 150-160, ordre des mots et unicite conformes
+
+ RUN  v4.1.12 /Users/mottalib/Documents/GitHub/a-publier/Mottalib-10M/feriadosepontes.com
+
+
+ Test Files  2 passed (2)
+      Tests  62 passed (62)
+   Start at  20:55:47
+   Duration  786ms (transform 400ms, setup 0ms, import 614ms, tests 308ms, environment 0ms)
+
+typo-nbsp: 0 espace(s) à corriger dans 0 page(s)
+typo-nbsp: 0 décimale(s) avec un point dans une langue à virgule
+typo-nbsp: 0 pourcentage(s) écrit(s) mal placé(s) : « 20 % » là où la langue écrit « 20% », ou après le nombre en turc, qui écrit « %20 » (souvent dans un composant React : corriger la source)
+typo-nbsp: 0 mot(s) français sans accent ou avec un accent faux
+Identité légale complète, aucune mention provisoire.
+. : 36 pages indexables, 0 à corriger
+
+. : 36 pages comparées, 0 paire(s) trop proches, 0 question(s) recyclée(s)
+
+. : 53 pages, 0 à corriger, 0 question(s) de FAQ recyclée(s)
+. : 57 pages, 0 cible(s) morte(s), 0 lien(s) a corriger, 0 route(s) vide(s)
+check-layout: 36 pages × 4 largeurs, 0 défaut(s)
+check-sources: 404 source(s), 0 morte(s), 26 injoignable(s), 3 bloquée(s) aux robots
+  ~ connexion http://cm-alcanena.pt/  (serveur en panne ? à revérifier)
+  ~ connexion http://www.carregal-digital.pt  (serveur en panne ? à revérifier)
+  ~ connexion https://www.cm-braga.pt/pt/1201/conhecer/historia-e-patrimonio/museus/item/item-1-662  (serveur en panne ? à revérifier)
+  ~ connexion http://www.cmah.pt  (serveur en panne ? à revérifier)
+  ~ connexion http://www.cm-constancia.pt  (serveur en panne ? à revérifier)
+  ~ connexion http://www.cm-entroncamento.pt  (serveur en panne ? à revérifier)
+  ~ connexion http://www.cm-ferreiradozezere.pt  (serveur en panne ? à revérifier)
+  ~ connexion http://www.cm-macao.pt  (serveur en panne ? à revérifier)
+  ~ connexion http://www.cm-albufeira.pt  (serveur en panne ? à revérifier)
+  ~ connexion http://www.cm-arouca.pt  (serveur en panne ? à revérifier)
+  ~ connexion http://www.cm-braganca.pt  (serveur en panne ? à revérifier)
+  ~ connexion http://www.cm-ovar.pt  (serveur en panne ? à revérifier)
+  ~ connexion http://www.cm-portel.pt  (serveur en panne ? à revérifier)
+  ~ connexion http://www.mun-planhoso.pt/  (serveur en panne ? à revérifier)
+  ~ connexion http://www.cm-estremoz.pt  (serveur en panne ? à revérifier)
+  ~ connexion http://www.cm-serta.pt  (serveur en panne ? à revérifier)
+  ~ connexion http://www.cm-mafra.pt  (serveur en panne ? à revérifier)
+  ~ connexion http://www.cm-tomar.pt  (serveur en panne ? à revérifier)
+  ~ connexion http://www.cm-oeiras.pt  (serveur en panne ? à revérifier)
+  ~ connexion http://www.cm-viladerei.pt  (serveur en panne ? à revérifier)
+  ~ connexion http://www.cm-ribeirabrava.pt  (serveur en panne ? à revérifier)
+  ~ connexion http://www.cm-vnbarquinha.pt  (serveur en panne ? à revérifier)
+  ~ connexion http://www.cm-santarem.pt  (serveur en panne ? à revérifier)
+  ~ délai http://www.cm-tarouca.pt  (serveur en panne ? à revérifier)
+  ~ connexion http://www.cm-torresnovas.pt  (serveur en panne ? à revérifier)
+  ~ connexion http://www.cm-valedecambra.pt  (serveur en panne ? à revérifier)
+  ? 403 http://www.cm-coimbra.pt  (à vérifier à la main)
+  ? 403 http://www.cm-lisboa.pt  (à vérifier à la main)
+  ? 403 http://www.cm-lousa.pt  (à vérifier à la main)
+. : 32 page(s) de contenu, 0 sans simulateur
+. : 36 pages, 36 avec hreflang, 0 à corriger
+. : 18 page(s) en langue locale, 0 sans version anglaise
+check-portefeuille : 0 paragraphe(s) copiés, 0 site(s) du portefeuille liés, 60 sites comparés.
+check-cookies : 0 défaut (55 pages, Clarity sur 49, GA4 G-19N26F1MS8 sur 49, langues en, pt)
+check-url-propre: 36 page(s) du sitemap, 0 défaut(s)
+check-premier-ecran : 0 page(s) fautive(s) sur 32 page(s) à simulateur (36 pages lues)
+check-droits : 53 page(s) lues dans dist ; licences citées : aucune ; workflow planifié : non
+  (a) liens soumis à autorisation (citer l’organisme sans lien : titre, adresse en texte, date) : 0
+  (b) relais juridique présenté comme officiel (lien vers le texte officiel, ou « relais non officiel ») : 0
+  (c) copie web.archive.org présentée comme officielle (écrire « copie archivée du JJ/MM/AAAA ») : 0
+  (d) attribution de licence absente du pied de page : 0
+  (e) promesse de mise à jour sans workflow planifié (écrire « lu le JJ/MM/AAAA, mise à jour manuelle ») : 0
+check-droits : 0 défaut
+check-copie : sans objet (pas de data/textes-sources/*.txt)
+  36 page(s), 0 champ(s) mal formaté(s)
+check-contraste: 36 page(s), 0 texte(s) sous le seuil
+check-saisie: 20 page(s) à calculateur, 0 défaut(s)
+  trame        ok         site le plus proche : sagredelweekend.it (42 % de blocs en commun)
+  chiffres     ok         date de mise à jour visible · 5 source(s) officielle(s) liée(s)
+  credibilite  ok         À propos lié · méthode liée
+  reseau       ok         liens vers : aucun site du portefeuille
+  publicite    ok         0 emplacement(s) publicitaire(s) sur l’accueil
+check-regles : 292 accueils comparés, 0 règle(s) KO ou à revoir
+check-motcle : 0/33 page(s) où le terme-clé du titre manque {}

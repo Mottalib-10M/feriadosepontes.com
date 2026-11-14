@@ -150,7 +150,9 @@ describe('Feriado municipal: só conta como dia livre quando a pessoa o diz (tou
   });
   it('página geral sem concelho escolhido: nada de Braga por omissão, e quantas datas estão confirmadas', () => {
     const o = runTool('fm', 'pt', { concelho: '', ano: 2027 });
-    expect(o.value).toBe(`${CONFIRMADOS.length} de ${CONCELHOS.length}`);
+    // Tour 3 : appel à choisir en gros ; le nombre de dates confirmées reste dit, en petit.
+    expect(o.value).toBe('Escolha o seu concelho acima');
+    expect(o.rows[0][1]).toMatch(new RegExp(`^${CONFIRMADOS.length} de ${CONCELHOS.length};`));
   });
 });
 
@@ -173,11 +175,28 @@ describe('Mini-simuladores: outra pergunta que a ferramenta do topo, e uma frase
     expect(phraseFixe('du', 'pt', { ano: 2027 }, ['ano', 'concelho', 'municipal', 'carnaval', 'vesperas'])).not.toMatch(/Trabalha-se|seg-sex/);
   });
   it('o gros chiffre de cada ferramenta diz o que mede: dias livres ≠ dias úteis de férias', () => {
-    expect(runTool('pt', 'pt').label).toMatch(/^Dias livres seguidos que ganha nas pontes de 2027/);
+    // Tour 3 : le total de plusieurs pontes n'est pas « seguidos » ; il est bien la somme des blocs, sans chevauchement.
+    const pt = runTool('pt', 'pt');
+    expect(pt.label).toMatch(/^Dias livres no total, somando as pontes de 2027/);
+    expect(pt.label).not.toMatch(/seguidos/);
+    const pl = otimiza(2027, 8);
+    expect(pl.liberi).toBe(pl.blocchi.reduce((a, b) => a + b.liberi, 0));
+    for (let i = 1; i < pl.blocchi.length; i++) expect(pl.blocchi[i].liberoDal > pl.blocchi[i - 1].liberoAl).toBe(true);
+    expect(pt.value).toBe(`${pl.liberi} dias livres`);
+    // Chaque ligne du résultat dit le jour à poser.
+    expect(pt.rows[0][0]).toMatch(/tirar férias: /);
     const fr = runTool('fr', 'pt', { ano: 2027 });
-    expect(fr.value).toBe('22 dias úteis de férias');
-    expect(fr.label).toMatch(/^Dias de férias a que tem direito/);
+    expect(fr.value).toBe('22 dias de férias');
+    expect(fr.label).toMatch(/^Por lei, as suas férias por ano/);
+    expect(fr.rows.map((r) => r[0]).join(' | ')).not.toMatch(/22/);
     expect(fr.rows.map((r) => r[0]).join(' | ')).not.toMatch(/trocar por dinheiro/);
+  });
+  it('a ajuda do concelho não remete para um campo invisível (tour 3)', () => {
+    for (const k of ['pt', 'du']) {
+      const help = SPECS[k]('pt').inputs.find((i) => i.id === 'concelho')!.help ?? '';
+      expect(help).not.toMatch(/abaixo/);
+    }
+    expect(runTool('fm', 'pt', { concelho: '', ano: 2027 }).value).toBe('Escolha o seu concelho acima');
   });
   it('prazo em dias úteis: fins de semana e feriados saltados', () => {
     expect(somaDiasUteis('2027-01-04', 10).fim).toBe('2027-01-18');

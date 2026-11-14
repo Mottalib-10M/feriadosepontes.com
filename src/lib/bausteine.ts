@@ -16,12 +16,12 @@ export function tabelaAno(h: Helpers, y: number, c: Local | null = null, carnava
 /** As melhores pontes de um ano. */
 export function tabelaPontes(h: Helpers, y: number, c: Local | null = null, max = 8) {
   const rows = pontes(y, { local: c }).slice(0, max).map((b) => [span(b.ferieDal, b.ferieAl, h.lang), b.ferie, span(b.liberoDal, b.liberoAl, h.lang), b.liberi, b.feste.map((id) => feriadoName(id, h.lang, c as Concelho | null)).join(', ')]);
-  return h.table([h.T('Tirar férias', 'Take leave'), h.T('Dias de férias', 'Leave days'), h.T('Livre seguido', 'Off in a row'), h.T('Dias livres', 'Days off'), h.T('Feriado', 'Holiday')], rows, h.T(`As melhores pontes de ${y} ${onde(h, c)}`, `Best long weekends ${y} ${onde(h, c)}`), ['l', 'r', 'l', 'r', 'l']);
+  return h.table([h.T('Tirar férias', 'Take leave'), h.T('Dias de férias', 'Leave days'), h.T('Período livre', 'Time off'), h.T('Dias livres', 'Days off'), h.T('Feriado', 'Holiday')], rows, h.T(`As melhores pontes de ${y} ${onde(h, c)}`, `Best long weekends ${y} ${onde(h, c)}`), ['l', 'r', 'l', 'r', 'l']);
 }
-/** Dias livres seguidos com 5, 10 e 15 dias de férias, ano a ano. */
+/** Dias livres no total com 5, 10 e 15 dias de férias, ano a ano. */
 export function tabelaRendimento(h: Helpers, anos: number[], c: Local | null = null) {
   const rows = anos.map((y) => [String(y), ...[5, 10, 15].map((b) => otimiza(y, b, { local: c }).liberi)]);
-  return h.table([h.T('Ano', 'Year'), h.T('5 dias de férias', '5 leave days'), h.T('10 dias de férias', '10 leave days'), h.T('15 dias de férias', '15 leave days')], rows, h.T('Dias livres seguidos com a melhor distribuição das férias', 'Consecutive days off with the best spread of leave'), ['l', 'r', 'r', 'r']);
+  return h.table([h.T('Ano', 'Year'), h.T('5 dias de férias', '5 leave days'), h.T('10 dias de férias', '10 leave days'), h.T('15 dias de férias', '15 leave days')], rows, h.T('Dias livres no total, somando as pontes, com a melhor distribuição das férias', 'Total days off across the long weekends, with the best spread of leave'), ['l', 'r', 'r', 'r']);
 }
 /** Os feriados nacionais de três anos, uma linha por feriado. */
 export function tabelaTresAnos(h: Helpers, anos = [2026, 2027, 2028]) {
@@ -37,10 +37,16 @@ export function tabelaDiasUteis(h: Helpers, anos: number[]) {
   rows.push([h.T('<strong>Total</strong>', '<strong>Total</strong>'), ...by.map((x) => `<strong>${h.n(x.reduce((a, b) => a + b, 0))}</strong>`)]);
   return h.table([h.T('Mês', 'Month'), ...anos.map(String)], rows, h.T('Dias úteis de segunda a sexta, sem feriado municipal (continente)', 'Working days Monday to Friday, without a municipal holiday (mainland)'), ['l', 'r', 'r', 'r']);
 }
-/** Os feriados municipais confirmados, por data num ano. */
+/** Os feriados municipais confirmados, por ordem alfabética, numa linha cada (testeurs naïfs du 2026-11-14, tour 3 :
+ *  fiches de 5 lignes triées par date, « interminable », « impossible de retrouver ma commune »). Deux colonnes : le
+ *  tableau ne s'empile pas sur téléphone ; le nom du concelho est le lien vers la page de la câmara (la source). */
 export function tabelaMunicipais(h: Helpers, y: number, list: Concelho[] = CONFIRMADOS) {
-  const rows = list.map((c) => ({ c, d: dataRegra(y, c.feriado!.regra) })).sort((a, b) => a.d.localeCompare(b.d) || a.c.nome.localeCompare(b.c.nome, 'pt')).map(({ c, d }) => [c.nome, REGIAO_NOME[c.regiao][h.lang], c.feriado!.nome, dLong(d, h.lang), wdLong(d, h.lang), `<a href="${c.feriado!.url}" rel="nofollow noopener" target="_blank">${h.T('câmara', 'council')}</a>`]);
-  return h.table([h.T('Concelho', 'Municipality'), h.T('Região', 'Region'), h.T('Festa', 'Feast'), h.T('Data', 'Date'), h.T('Dia', 'Day'), h.T('Fonte', 'Source')], rows, h.T(`Feriados municipais ${y}: os ${list.length} concelhos confirmados no sítio da câmara, por data`, `Municipal holidays ${y}: the ${list.length} municipalities confirmed on the council website, by date`));
+  const rows = [...list].sort((a, b) => a.nome.localeCompare(b.nome, 'pt')).map((c) => {
+    const d = dataRegra(y, c.feriado!.regra);
+    const ilha = c.regiao === 'continente' ? '' : ` (${REGIAO_NOME[c.regiao][h.lang]})`;
+    return [`<a class="underline" href="${c.feriado!.url}" rel="nofollow noopener" target="_blank">${c.nome.replace(/ \((Açores|Madeira)\)$/, '')}</a>${ilha}`, dShort(d, h.lang)];
+  });
+  return h.table([h.T('Concelho', 'Municipality'), h.T(`Feriado em ${y}`, `Holiday in ${y}`)], rows, h.T(`Feriados municipais ${y}: os ${list.length} concelhos confirmados no sítio da câmara, de A a Z`, `Municipal holidays ${y}: the ${list.length} municipalities confirmed on the council website, A to Z`));
 }
 /** Mês a mês: dias, fins de semana, feriados em dia útil, dias úteis. */
 export function tabelaMeses(h: Helpers, y: number) {

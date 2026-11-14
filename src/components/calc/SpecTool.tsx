@@ -58,8 +58,10 @@ export default function SpecTool({ kind, lang, arg, methodHref, idPrefix = 't' }
             <details className="sm:col-span-2 rounded-lg border border-navy-200 px-3 py-2">
               {/* Le titre du repli dit ce qu'il contient et la valeur en vigueur (testeurs naïfs du 2026-11-14, tour 2 :
                   « Mais opções » fermé, « on ne sait pas ce qu'il contient », options citées ailleurs restées invisibles). */}
-              <summary data-repli-outil className="cursor-pointer text-sm font-medium text-navy-700">{ui.moreOptions}
-                <span className="mt-0.5 block text-xs font-normal text-navy-600">{adv.map((i) => `${i.label}: ${valeurDe(i, rv)}`).join(' · ')}</span></summary>
+              {/* Tour 3 : le résumé cite TOUTES les options réglées, y compris la question conditionnelle montrée plus haut
+                  (« No feriado municipal »), et dit à quoi sert le repli (« tem algum destes dias livres? »). */}
+              <summary data-repli-outil className="cursor-pointer text-sm font-medium text-navy-700">{ui.moreOptions}{adv.some((i) => i.kind === 'choice') ? `: ${ui.moreOptionsHint}` : ''}
+                <span className="mt-0.5 block text-xs font-normal text-navy-600">{[...main.filter((i) => i.showIf && i.kind === 'choice'), ...adv].map((i) => `${i.label}: ${valeurDe(i, rv)}`).join(' · ')}</span></summary>
               <div className="mt-3 grid grid-cols-1 gap-x-4 gap-y-3 sm:grid-cols-2">{adv.map(field)}</div>
             </details>
           )}
