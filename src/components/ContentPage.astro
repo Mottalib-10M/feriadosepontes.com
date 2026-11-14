@@ -28,7 +28,7 @@ const related = page.related.filter((id) => hasRoute(id, lang)).map((id) => ({ h
 const sources = sourceList(page.sources, lang);
 const tag = LANG_TAGS[lang];
 const gel = displayDate(LAST_UPDATED, tag);
-const read = { pt: `Código do Trabalho, art. 234.º, relido em ${gel}`, en: `Labour Code, art. 234, checked on ${gel}` }[lang];
+const read = { pt: `Código do Trabalho, art. 234.º e 235.º, relidos em ${gel}`, en: `Labour Code, art. 234 and 235, checked on ${gel}` }[lang];
 const cd = page.countdown;
 ---
 <PageLayout title={x.title} description={x.description} lang={lang} jsonLd={jsonLd} faqs={x.faqs} related={related} sources={sources} breadcrumbs={[{ label: group.label[lang] }, { label: x.nav }]}>

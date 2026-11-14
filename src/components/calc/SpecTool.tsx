@@ -15,6 +15,9 @@ import type { Lang } from '../../lib/format';
 
 interface Props { kind: string; lang: Lang; arg?: string; methodHref?: string; idPrefix?: string }
 
+/** Valeur d'un champ telle qu'on la lit (libellé de l'option, ou nombre). */
+const valeurDe = (i: Input, v: V) => (i.kind === 'choice' ? i.options.find((o) => o.value === String(v[i.id]))?.label : i.kind === 'select' ? optsOf(i, v).find((o) => o.value === String(v[i.id]))?.label : undefined) ?? String(v[i.id]);
+
 export default function SpecTool({ kind, lang, arg, methodHref, idPrefix = 't' }: Props) {
   const ui = t(lang);
   const spec = useMemo(() => getTool(kind, lang, arg ? JSON.parse(arg) : undefined), [kind, lang, arg]);
@@ -53,7 +56,10 @@ export default function SpecTool({ kind, lang, arg, methodHref, idPrefix = 't' }
           {main.map(field)}
           {adv.length > 0 && (
             <details className="sm:col-span-2 rounded-lg border border-navy-200 px-3 py-2">
-              <summary className="cursor-pointer text-sm font-medium text-navy-700">{ui.moreOptions}</summary>
+              {/* Le titre du repli dit ce qu'il contient et la valeur en vigueur (testeurs naïfs du 2026-11-14, tour 2 :
+                  « Mais opções » fermé, « on ne sait pas ce qu'il contient », options citées ailleurs restées invisibles). */}
+              <summary data-repli-outil className="cursor-pointer text-sm font-medium text-navy-700">{ui.moreOptions}
+                <span className="mt-0.5 block text-xs font-normal text-navy-600">{adv.map((i) => `${i.label}: ${valeurDe(i, rv)}`).join(' · ')}</span></summary>
               <div className="mt-3 grid grid-cols-1 gap-x-4 gap-y-3 sm:grid-cols-2">{adv.map(field)}</div>
             </details>
           )}

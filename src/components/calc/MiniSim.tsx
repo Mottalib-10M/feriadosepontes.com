@@ -36,12 +36,15 @@ interface Props { kind: string; lang?: string; href?: string; title?: string; id
   /** Champs fixés par la page : gardés à `defaults[id]` (sinon `def`), non affichés comme champs, nommés sous le formulaire. */
   locked?: string[];
   /** Ce que suppose l'exemple sur cette page ; remplace `spec.exemple`. */
-  exemple?: string }
+  exemple?: string;
+  /** Phrase courte qui remplace la ligne « Fixé par cette page : libellé : valeur · … » (feriadosepontes.com, testeurs
+   *  naïfs du 2026-11-14, tour 2 : la liste renvoyait à des options cachées). Chaîne vide : aucune ligne. */
+  fixe?: string }
 
 /** Une valeur en mots longue (« Not eligible: 150 hours needed ») passe sous son libellé au lieu d'être coincée à droite. */
 export const valeurEnMots = (x: string) => x.length > 12 && /\p{L}{3}/u.test(x);
 
-export default function MiniSim({ kind, lang = 'en', href, title, idPrefix = 'm', defaults = {}, saisiParLeLecteur = false, locked = [], exemple }: Props) {
+export default function MiniSim({ kind, lang = 'en', href, title, idPrefix = 'm', defaults = {}, saisiParLeLecteur = false, locked = [], exemple, fixe }: Props) {
   const spec = getSpec(kind, lang);
   const [v, setV] = useState<Record<string, number>>(() => Object.fromEntries(spec.inputs.map((i) => [i.id, defaults[i.id] ?? i.def])));
   const [touched, setTouched] = useState<Record<string, boolean>>(() => (saisiParLeLecteur ? Object.fromEntries(spec.inputs.map((i) => [i.id, true])) : {}));
@@ -73,7 +76,7 @@ export default function MiniSim({ kind, lang = 'en', href, title, idPrefix = 'm'
               <div className="mt-3 space-y-3">{avances.map(champ)}</div>
             </details>
           )}
-          {fixes.length > 0 && (
+          {fixe !== undefined ? (fixe && <p data-fixe className="text-xs text-navy-600">{fixe}</p>) : fixes.length > 0 && (
             <p data-fixe className="text-xs text-navy-600">{lib.fixeParLaPage}{dp} {fixes.map((i, n) => <span key={i.id}>{n > 0 && ' · '}{i.label}{dp} <span className="font-semibold text-navy-900">{valeurAffichee(i, v[i.id])}</span></span>)}</p>
           )}
         </form>

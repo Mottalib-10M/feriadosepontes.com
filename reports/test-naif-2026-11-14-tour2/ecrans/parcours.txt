@@ -1,0 +1,9 @@
+01 / → /pt/
+02 menu ☰ ouvert (rubriques dépliées)
+03 /pt/calendario-2027/
+04 /pt/carnaval-2027/
+05 /pt/corpo-de-deus-2027/
+06 /pt/dias-uteis-2027/
+07 /pt/feriado-municipal-lisboa/
+08 /pt/feriado-municipal-porto/
+09 /pt/feriado-municipal/

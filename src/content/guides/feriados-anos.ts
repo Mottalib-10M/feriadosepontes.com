@@ -33,7 +33,7 @@ export default [
 <p>A lista acima é a do continente, sem feriado municipal. Escolha o seu concelho para ver também o dia da sua câmara: em Lisboa o Santo António de 2026 foi um sábado, no Porto o São João foi uma quarta-feira. Nos Açores junta-se a segunda-feira do Espírito Santo e na Madeira três feriados regionais; tudo está em ${h.a('acores-madeira', 'Açores e Madeira')}.</p>
 <p>Para comparar com os anos seguintes, a tabela põe lado a lado as datas de 2026, 2027 e 2028. As datas fixas mudam só de dia da semana; a Sexta-Feira Santa, a Páscoa e o Corpo de Deus andam com a Páscoa, que em 2026 foi a ${h.day(K.pascoa(2026))}.</p>
 ${tabelaTresAnos(h)}
-${h.mini('fe', { p: ['concelho'], d: { ano: 2026 }, c: 'Junte o feriado do seu concelho' })}
+${h.mini('du', { p: ['semana'], d: { ano: 2026 }, c: 'Outra conta: quantos dias úteis teve 2026?' })}
 <h2>O que mudou nos feriados desde 2013</h2>
 <p>Entre 2013 e 2015 Portugal teve só nove feriados obrigatórios: o Corpo de Deus, o 5 de Outubro, o 1 de Novembro e o 1 de Dezembro tinham sido suspensos. A ${h.src('l8-2016', 'Lei n.º 8/2016')} repô-los a partir desse ano, e desde então o ${h.src('ct234', 'artigo 234.º do Código do Trabalho')} volta a enumerar treze dias. A terça de Carnaval e o feriado municipal continuam facultativos, como diz o artigo 235.º.</p>
 <p>As pontes que ainda pode aproveitar em dezembro estão em ${h.a('pontes-2026', 'pontes 2026')}; os feriados do próximo ano estão na ${h.a('home', 'página dos feriados 2027')}.</p>`,
@@ -54,7 +54,7 @@ ${h.mini('fe', { p: ['concelho'], d: { ano: 2026 }, c: 'Junte o feriado do seu c
 <p>The list above is for the mainland, without a municipal holiday. Choose your municipality to see your council's day too: in Lisbon St Anthony's Day 2026 was a Saturday, in Porto St John's Day was a Wednesday. The Azores add Whit Monday and Madeira three regional holidays; all of it is on ${h.a('acores-madeira', 'Azores and Madeira')}.</p>
 <p>To compare with the following years, the table puts the 2026, 2027 and 2028 dates side by side. Fixed dates only change weekday; Good Friday, Easter and Corpus Christi move with Easter, which in 2026 was ${h.day(K.pascoa(2026))}.</p>
 ${tabelaTresAnos(h)}
-${h.mini('fe', { p: ['concelho'], d: { ano: 2026 }, c: 'Add your municipality’s holiday' })}
+${h.mini('du', { p: ['semana'], d: { ano: 2026 }, c: 'Another count: how many working days did 2026 have?' })}
 <h2>What changed in Portugal’s holidays since 2013</h2>
 <p>From 2013 to 2015 Portugal had only nine compulsory holidays: Corpus Christi, 5 October, 1 November and 1 December had been suspended. ${h.src('l8-2016', 'Law 8/2016')} restored them from that year, and since then ${h.src('ct234', 'article 234 of the Labour Code')} lists thirteen days again. Carnival Tuesday and the municipal holiday remain optional, as article 235 says.</p>
 <p>The bridges you can still take in December are on ${h.a('pontes-2026', 'long weekends 2026')}; next year's holidays are on the ${h.a('home', 'holidays 2027')} page.</p>`,
@@ -79,7 +79,7 @@ ${h.mini('fe', { p: ['concelho'], d: { ano: 2026 }, c: 'Add your municipality’
       body: (h) => `<h2>Os feriados de 2028 um a um</h2>
 <p>Quatro feriados de 2028 calham à terça ou à quinta e pedem uma ponte de um dia: o 25 de Abril (terça), o Corpo de Deus (quinta), a Assunção (terça) e o 5 de Outubro (quinta). O 1.º de Maio é segunda e o 1 e o 8 de dezembro são sextas, três fins de semana de três dias sem férias. O Dia de Todos os Santos é quarta: pede dois dias de cada lado.</p>
 ${tabelaTresAnos(h)}
-${h.mini('fe', { p: ['concelho', 'carnaval'], d: { ano: 2028 }, c: 'Feriados 2028 no seu concelho' })}
+${h.mini('pt', { p: ['ferias'], d: { ano: 2028, ferias: 4 }, c: 'As pontes de 2028: quantos dias de férias quer usar?' })}
 <h2>Planear 2028 com antecedência</h2>
 <p>Com tantos feriados em dia útil, quem marca férias cedo em 2028 consegue blocos longos com poucos dias. A conta exata para o seu número de dias está em ${h.a('pontes-2028', 'pontes 2028')}. As regras de marcação, incluindo o mapa de férias até 15 de abril, estão no ${h.src('ct', 'artigo 241.º do Código do Trabalho')}.</p>
 <p>O feriado municipal muda a conta de concelho para concelho. Em 2028 o São João, a 24 de junho, calha a um sábado, e o Santo António, a 13 de junho, a uma terça. A data de cada concelho confirmado está em ${h.a('feriado-municipal', 'feriado municipal')}.</p>`,
@@ -99,7 +99,7 @@ ${h.mini('fe', { p: ['concelho', 'carnaval'], d: { ano: 2028 }, c: 'Feriados 202
       body: (h) => `<h2>The 2028 holidays one by one</h2>
 <p>Four 2028 holidays fall on a Tuesday or a Thursday and call for a one-day bridge: 25 April (Tuesday), Corpus Christi (Thursday), the Assumption (Tuesday) and 5 October (Thursday). 1 May is a Monday and 1 and 8 December are Fridays, three three-day weekends with no leave. All Saints' Day is a Wednesday: it needs two days on either side.</p>
 ${tabelaTresAnos(h)}
-${h.mini('fe', { p: ['concelho', 'carnaval'], d: { ano: 2028 }, c: '2028 holidays in your municipality' })}
+${h.mini('pt', { p: ['ferias'], d: { ano: 2028, ferias: 4 }, c: 'The 2028 long weekends: how many leave days will you use?' })}
 <h2>Planning 2028 ahead</h2>
 <p>With so many weekday holidays, booking early in 2028 gets you long blocks for few days. The exact count for your number of days is on ${h.a('pontes-2028', 'long weekends 2028')}. The booking rules, including the leave schedule due by 15 April, are in ${h.src('ct', 'article 241 of the Labour Code')}.</p>
 <p>The municipal holiday changes the count from one municipality to the next. In 2028 St John's Day, 24 June, falls on a Saturday, and St Anthony's Day, 13 June, on a Tuesday. Each confirmed municipality's date is on ${h.a('feriado-municipal', 'municipal holiday')}.</p>`,

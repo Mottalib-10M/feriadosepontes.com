@@ -54,3 +54,56 @@ export function getSpec(kind: string, lang: string): MiniSpec {
     },
   };
 }
+
+/* ------------------------------------------------------------------ ce que la page a fixé, en une phrase */
+/**
+ * Phrase courte qui dit, sous un mini-simulateur, ce que la page a déjà fixé (testeurs naïfs du 2026-11-14, tour 2 :
+ * « Já escolhido nesta página: Ano: 2027 · Semana de trabalho: seg-sex · Terça de Carnaval: Trabalha-se · 24 e 31 de
+ * dezembro: Trabalha-se » renvoyait à des options cachées). On ne nomme que ce qui change la conta : l'année, le lieu,
+ * le jour choisi, et les jours libres EN PLUS des feriados nacionais ; « trabalha-se » (le cas de la loi) se tait.
+ * Chaîne vide quand rien n'est à dire.
+ */
+export function phraseFixe(kind: string, lang: string, d: Record<string, number | string> = {}, locked: string[] = []): string {
+  const l = L(lang);
+  const spec = getTool(kind, l, d);
+  const v = resolve(spec.inputs, { ...defaults(spec.inputs), ...d });
+  const lab = (id: string) => { const i = spec.inputs.find((x) => x.id === id); const o = i ? optList(i, v) : null; return o?.find((x) => x.value === String(v[id]))?.label ?? String(v[id]); };
+  const has = (id: string) => locked.includes(id) && spec.inputs.some((x) => x.id === id);
+  const T = (pt: string, en: string) => (l === 'pt' ? pt : en);
+  const c = has('concelho') ? concelhoById(String(v.concelho ?? '')) : null;
+  const quem: string[] = [];
+  if (has('feriado')) quem.push(T(`o feriado ${lab('feriado')}`, lab('feriado')));
+  if (has('santo')) quem.push(lab('santo'));
+  if (has('regiao')) quem.push(T(`os feriados ${String(v.regiao) === 'madeira' ? 'da Madeira' : 'dos Açores'}`, `${lab('regiao')}'s holidays`));
+  if (has('ano')) quem.push(String(v.ano));
+  let f = quem.length ? T(`Conta feita para ${quem.join(', ')}`, `Worked out for ${quem.join(', ')}`) : '';
+  if (c) f += f ? ` ${T(emNome(c.nome), `in ${c.nome}`)}` : T(`Conta feita ${emNome(c.nome)}`, `Worked out for ${c.nome}`);
+  const extra: string[] = [];
+  if (has('semana') && String(v.semana) === '6') extra.push(T('de segunda a sábado', 'Monday to Saturday'));
+  const livres: string[] = [];
+  if (has('municipal') && String(v.municipal) === 'sim' && c?.feriado) livres.push(T('o feriado municipal', 'the municipal holiday'));
+  if (has('carnaval') && String(v.carnaval) === 'sim') livres.push(T('a terça de Carnaval', 'Carnival Tuesday'));
+  if (has('vesperas') && String(v.vesperas) === 'sim') livres.push(T('24 e 31 de dezembro', '24 and 31 December'));
+  if (livres.length) extra.push(T(`com ${livres.join(' e ')} ${livres.length > 1 || livres[0].startsWith('24') ? 'livres' : 'livre'}`, `with ${livres.join(' and ')} off`));
+  if (!f && !extra.length) return '';
+  if (!f) f = T('Conta feita', 'Worked out');
+  return `${f}${extra.length ? `, ${extra.join(', ')}` : ''}.`;
+}
+
+/** Ce que l'exemple suppose, dit par le premier champ que le lecteur peut changer (la phrase fixe dit le reste). */
+export function exempleMini(kind: string, lang: string, d: Record<string, number | string> = {}, locked: string[] = []): string {
+  const l = L(lang);
+  const spec = getTool(kind, l, d);
+  const v = resolve(spec.inputs, { ...defaults(spec.inputs), ...d });
+  const T = (pt: string, en: string) => (l === 'pt' ? pt : en);
+  const vis = spec.inputs.filter((i) => !locked.includes(i.id) && (!i.showIf || i.showIf(v)));
+  const i = vis[0]; if (!i) return '';
+  const o = optList(i, v), lab = o?.find((x) => x.value === String(v[i.id]))?.label ?? String(v[i.id]);
+  if (i.id === 'ferias') return T(`Exemplo com ${v.ferias} dias de férias`, `Example with ${v.ferias} leave days`);
+  if (i.id === 'n') return T(`Exemplo com ${v.n} dias úteis`, `Example with ${v.n} working days`);
+  if (i.id === 'concelho') { const c = concelhoById(String(v.concelho ?? '')); return c ? T(`Exemplo ${emNome(c.nome)}`, `Example for ${c.nome}`) : T('Exemplo para todo o país', 'Example for the whole country'); }
+  if (i.id === 'ano') return T(`Exemplo para ${v.ano}`, `Example for ${v.ano}`);
+  if (i.id === 'caso') return String(v.caso) === 'admissao' ? T('Exemplo para quem entrou este ano', 'Example for someone hired this year') : T('Exemplo para quem já trabalhava antes deste ano', 'Example for someone already employed before this year');
+  if (i.id === 'mes') return T(`Exemplo a partir de ${v.dia ?? 1} de ${lab}`, `Example from ${v.dia ?? 1} ${lab}`);
+  return T(`Exemplo: ${lab}`, `Example: ${lab}`);
+}

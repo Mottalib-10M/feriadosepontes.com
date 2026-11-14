@@ -13,7 +13,7 @@
  */
 import { feriados, fromIso, toIso, isWeekend, dayNum, type Local } from './feriados';
 
-export interface Opcoes { local?: Local | null; carnaval?: boolean; /** 24 e 31 de dezembro livres (tolerância, acordo). */ vesperas?: boolean }
+export interface Opcoes { local?: Local | null; carnaval?: boolean; /** Feriado municipal livre (ver feriados.ts). */ municipal?: boolean; /** 24 e 31 de dezembro livres (tolerância, acordo). */ vesperas?: boolean }
 interface Bloco { libero: boolean; start: number; len: number; festa: boolean }
 
 function festiviSet(y: number, o: Opcoes): Set<number> {
@@ -129,6 +129,25 @@ export function diasUteis(y: number, o: Opcoes = {}, settimana: 5 | 6 = 5): numb
     out.push(c);
   }
   return out;
+}
+/** Prazo em dias úteis: a data a que se chega contando `n` dias úteis (segunda a sexta sem feriado) depois de `inicio`
+ *  (o próprio dia não conta). Devolve também os feriados e os dias de fim de semana saltados pelo caminho. */
+export function somaDiasUteis(inicio: string, n: number, o: Opcoes = {}): { fim: string; corridos: number; feriadosSaltados: string[]; fimDeSemana: number } {
+  const y0 = Number(inicio.slice(0, 4));
+  const hol = new Map<number, string>();
+  for (let yy = y0; yy <= y0 + 2; yy++) {
+    for (const f of feriados(yy, o)) hol.set(fromIso(f.date), f.id);
+    if (o.vesperas) { hol.set(dayNum(yy, 12, 24), 'vespera-natal'); hol.set(dayNum(yy, 12, 31), 'vespera-ano-novo'); }
+  }
+  const a = fromIso(inicio); let d = a, conta = 0, fds = 0; const saltados: string[] = [];
+  const alvo = Math.max(0, Math.floor(n));
+  while (conta < alvo) {
+    d++;
+    if (isWeekend(d)) { fds++; continue; }
+    const h = hol.get(d); if (h) { saltados.push(toIso(d)); continue; }
+    conta++;
+  }
+  return { fim: toIso(d), corridos: d - a, feriadosSaltados: saltados, fimDeSemana: fds };
 }
 /** Giorni dal lunedì al venerdì di un anno, festività comprese. */
 export const diasSemana5 = (y: number) => { let c = 0; for (let d = dayNum(y, 1, 1); d <= dayNum(y, 12, 31); d++) if (!isWeekend(d)) c++; return c; };

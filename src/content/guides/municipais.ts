@@ -25,15 +25,15 @@ const lisDu = K.diasUteis(2027, { local: lis }).reduce((a, b) => a + b, 0), porD
 
 export default [
   defineGuide({
-    id: 'feriado-municipal', group: 'municipais', order: 30, tool: 'fm', toolArg: { concelho: 'braga', ano: 2027 },
+    id: 'feriado-municipal', group: 'municipais', order: 30, tool: 'fm', toolArg: { concelho: '', ano: 2027 },
     related: ['santos-populares', 'feriado-lisboa', 'feriado-porto', 'acores-madeira', 'home'],
     sources: ['anmp', 'ct'],
     pt: {
-      slug: 'feriado-municipal', nav: 'Feriado municipal', card: 'Os 308 concelhos, com a data lida na câmara',
+      slug: 'feriado-municipal', nav: 'Feriado municipal', card: `Data lida na câmara em ${nn(C.length, 'pt')} dos ${nn(T.length, 'pt')} concelhos; ligação para os outros`,
       title: 'Feriado municipal 2027: a data de cada concelho do país',
       description: 'Feriado municipal 2027 dos 308 concelhos de Portugal: a data confirmada no sítio da própria câmara, com fonte, dia da semana e ponte, ou marcada por confirmar.',
       h1: 'Feriado municipal 2027: escolha o seu concelho',
-      intro: 'Feriado municipal de cada um dos 308 concelhos: escolha o seu e, se a data estiver confirmada no sítio da câmara, vê o dia de 2027, a ponte possível e a fonte; se não, a ligação para a câmara.',
+      intro: `Feriado municipal: escolha o seu concelho. Em ${nn(C.length, 'pt')} dos ${nn(T.length, 'pt')} já lemos a data no sítio da câmara e mostramos o dia de 2027, a ponte possível e a fonte; nos outros damos a ligação para a câmara.`,
       resume: `Cada um dos ${nn(T.length, 'pt')} concelhos de Portugal tem um feriado municipal, escolhido pelo próprio município, muitas vezes no dia do santo padroeiro ou de um acontecimento da sua história. Não há uma lista oficial central: por isso lemos cada data no sítio da câmara municipal e só a publicamos quando lá está escrita junto às palavras « feriado municipal ». Até hoje confirmámos ${nn(C.length, 'pt')} concelhos, com a ligação, um extrato e a data de leitura; os restantes ${nn(T.length - C.length, 'pt')} aparecem « Por confirmar », com a ligação para a câmara. Dos confirmados, ${nn(fixos, 'pt')} têm data fixa e ${nn(moveis, 'pt')} dependem da Páscoa, como a quinta-feira da Ascensão ou a segunda-feira de Páscoa. Junho concentra ${nn(jun, 'pt')} deles, à volta do Santo António, do São João e do São Pedro. O feriado municipal é facultativo pelo artigo 235.º do Código do Trabalho: vale no seu trabalho se o contrato ou a convenção coletiva o preveem.`,
       faqs: [
         { q: 'O feriado municipal é obrigatório?', a: 'Não para todas as empresas. O Código do Trabalho classifica-o como feriado facultativo: é observado quando a convenção coletiva ou o contrato o preveem, e pode ser substituído por outro dia por acordo. Câmaras, escolas e muitos serviços fecham. Na dúvida, veja a convenção coletiva do seu setor.' },
@@ -43,17 +43,17 @@ export default [
       body: (h) => `<h2>Todos os feriados municipais confirmados, por data</h2>
 <p>A tabela lista os ${nn(C.length, h.lang)} concelhos confirmados por ordem da data em 2027, com o nome da festa, o dia da semana e a ligação para a página da câmara onde a lemos. Os concelhos dos Açores e da Madeira têm também os feriados regionais; veja ${h.a('acores-madeira', 'Açores e Madeira')}.</p>
 ${tabelaMunicipais(h, 2027)}
-${h.mini('fm', { p: ['concelho'], d: { concelho: 'coimbra', ano: 2027 }, c: 'Veja outro concelho' })}
+${h.mini('pt', { p: ['concelho', 'municipal', 'ferias'], d: { ano: 2027, concelho: 'braga', municipal: 'sim', ferias: 3 }, c: 'As pontes de 2027 no seu concelho' })}
 <h2>Como verificamos cada data</h2>
 <p>Partimos da lista das câmaras municipais e dos respetivos sítios mantida pela ${h.src('anmp', 'Associação Nacional de Municípios Portugueses')}. Em cada sítio procuramos uma página onde a câmara escreve a data do seu feriado municipal: a página do concelho, uma notícia das comemorações, um aviso de encerramento dos serviços. Guardamos o endereço, um extrato curto e o dia em que o lemos. Quando a data depende da Páscoa, confirmamos a regra com a data de um ano concreto. Pelo caminho encontrámos datas erradas em listas muito copiadas, por exemplo em Alfândega da Fé, onde a câmara indica o 8 de maio.</p>
 <p>Os feriados de junho mais procurados têm página própria: ${h.a('feriado-lisboa', 'Lisboa')}, ${h.a('feriado-porto', 'Porto')} e os ${h.a('santos-populares', 'santos populares')}. Para incluir o feriado do seu concelho nas pontes, escolha-o no otimizador da ${h.a('home', 'página dos feriados 2027')}.</p>`,
     },
     en: {
-      slug: 'municipal-holiday', nav: 'Municipal holiday', card: 'All 308 municipalities, with the date read on the council site',
+      slug: 'municipal-holiday', nav: 'Municipal holiday', card: `Date read on the council site for ${nn(C.length, 'en')} of ${nn(T.length, 'en')} municipalities; links for the rest`,
       title: 'Municipal holidays 2027 in Portugal: date for each town',
       description: 'Municipal holidays 2027 for Portugal’s 308 municipalities: the date confirmed on the council’s own website, with source, weekday and bridge, or unconfirmed.',
       h1: 'Portugal municipal holidays 2027: find your municipality',
-      intro: 'Municipal holidays for all 308 municipalities: choose yours and, if its date is confirmed on the council website you see the 2027 day, the possible bridge and the source; if not, a link to the council.',
+      intro: `Municipal holidays: choose your municipality. For ${nn(C.length, 'en')} of the ${nn(T.length, 'en')} we have already read the date on the council website and show the 2027 day, the possible bridge and the source; for the others we give the link to the council.`,
       resume: `Each of Portugal's ${nn(T.length, 'en')} municipalities has a municipal holiday, chosen by the municipality itself, often its patron saint's day or a date from its history. There is no central official list: so we read each date on the câmara municipal's website and publish it only where it is written next to the words "feriado municipal". So far we have confirmed ${nn(C.length, 'en')} municipalities, with the link, an extract and the date read; the other ${nn(T.length - C.length, 'en')} are shown as not yet confirmed, with a link to the council. Of the confirmed ones, ${nn(fixos, 'en')} have a fixed date and ${nn(moveis, 'en')} depend on Easter, such as Ascension Thursday or Easter Monday. June holds ${nn(jun, 'en')} of them, around St Anthony's, St John's and St Peter's days. The municipal holiday is optional under article 235 of the Labour Code: it applies at your job if your contract or collective agreement provides for it.`,
       faqs: [
         { q: 'Is the municipal holiday compulsory in Portugal?', a: 'Not for every employer. The Labour Code classes it as an optional holiday: it is observed when the collective agreement or contract provides for it, and another day can replace it by agreement. Councils, schools and many services close. If in doubt, check your sector’s collective agreement.' },
@@ -63,7 +63,7 @@ ${h.mini('fm', { p: ['concelho'], d: { concelho: 'coimbra', ano: 2027 }, c: 'Vej
       body: (h) => `<h2>Every confirmed municipal holiday, by date</h2>
 <p>The table lists the ${nn(C.length, h.lang)} confirmed municipalities in 2027 date order, with the feast's name, the weekday and a link to the council page where we read it. Municipalities in the Azores and Madeira also have the regional holidays; see ${h.a('acores-madeira', 'Azores and Madeira')}.</p>
 ${tabelaMunicipais(h, 2027)}
-${h.mini('fm', { p: ['concelho'], d: { concelho: 'coimbra', ano: 2027 }, c: 'See another municipality' })}
+${h.mini('pt', { p: ['concelho', 'municipal', 'ferias'], d: { ano: 2027, concelho: 'braga', municipal: 'sim', ferias: 3 }, c: 'The 2027 long weekends in your municipality' })}
 <h2>How we check each date</h2>
 <p>We start from the list of councils and their websites kept by the ${h.src('anmp', 'national association of municipalities')}. On each site we look for a page where the council writes the date of its municipal holiday: the municipality page, a news item on the celebrations, a notice of closed services. We keep the address, a short extract and the day we read it. When the date depends on Easter, we check the rule against a specific year's date. Along the way we found wrong dates in widely copied lists, for example in Alfândega da Fé, where the council gives 8 May.</p>
 <p>The most searched June holidays have their own pages: ${h.a('feriado-lisboa', 'Lisbon')}, ${h.a('feriado-porto', 'Porto')} and the ${h.a('santos-populares', 'popular saints')}. To include your municipality's holiday in the bridges, choose it in the planner on the ${h.a('home', 'holidays 2027')} page.</p>`,
@@ -87,7 +87,7 @@ ${h.mini('fm', { p: ['concelho'], d: { concelho: 'coimbra', ano: 2027 }, c: 'See
       ],
       body: (h) => `<h2>Os três santos populares nos próximos anos</h2>
 <p>As datas são fixas, só muda o dia da semana. Em 2028 o Santo António é uma terça e o São João um sábado; em 2029 o São João é um domingo. A ferramenta refaz a conta para o ano escolhido e diz quantos dias de férias custa a ponte.</p>
-${h.mini('sp', { p: ['santo'], d: { santo: 'antonio', ano: 2028 }, c: 'Outro santo, outro ano' })}
+${h.mini('fm', { p: ['concelho'], d: { concelho: 'sintra', ano: 2027 }, c: 'E o feriado do seu concelho, quando é em 2027?' })}
 <h2>Feriado municipal e festas não são a mesma coisa</h2>
 <p>Muitos concelhos festejam os santos populares sem que o dia seja o seu feriado: Sintra, por exemplo, faz marchas em junho mas o feriado municipal é o São Pedro. Só contamos o dia como feriado quando a câmara o diz. O feriado continua a ser facultativo nos termos do ${h.src('ct', 'artigo 235.º do Código do Trabalho')}. As páginas de ${h.a('feriado-lisboa', 'Lisboa')} e do ${h.a('feriado-porto', 'Porto')} mostram as pontes desses concelhos; a pesquisa de todos está em ${h.a('feriado-municipal', 'feriado municipal')}.</p>`,
     },
@@ -105,7 +105,7 @@ ${h.mini('sp', { p: ['santo'], d: { santo: 'antonio', ano: 2028 }, c: 'Outro san
       ],
       body: (h) => `<h2>The three popular saints in the coming years</h2>
 <p>The dates are fixed; only the weekday changes. In 2028 St Anthony's Day is a Tuesday and St John's a Saturday; in 2029 St John's is a Sunday. The tool redoes the count for the chosen year and says how much leave the bridge costs.</p>
-${h.mini('sp', { p: ['santo'], d: { santo: 'antonio', ano: 2028 }, c: 'Another saint, another year' })}
+${h.mini('fm', { p: ['concelho'], d: { concelho: 'sintra', ano: 2027 }, c: 'And your municipality’s holiday: when is it in 2027?' })}
 <h2>A municipal holiday is not the same as a festival</h2>
 <p>Many municipalities celebrate the popular saints without the day being their holiday: Sintra, for example, holds marches in June but its municipal holiday is St Peter's Day. We count the day as a holiday only when the council says so. It remains optional under ${h.src('ct', 'article 235 of the Labour Code')}. The ${h.a('feriado-lisboa', 'Lisbon')} and ${h.a('feriado-porto', 'Porto')} pages show those municipalities' bridges; the search across all of them is on ${h.a('feriado-municipal', 'municipal holiday')}.</p>`,
     },
@@ -128,7 +128,7 @@ ${h.mini('sp', { p: ['santo'], d: { santo: 'antonio', ano: 2028 }, c: 'Another s
       ],
       body: (h) => `<h2>Feriados dos Açores e da Madeira: a lei de cada um</h2>
 <p>O Dia da Região dos Açores vem do ${h.src('dr13-80-a', 'Decreto Regional n.º 13/80/A')}. Na Madeira, o 1 de julho vem do ${h.src('dr27-79-m', 'Decreto Regional n.º 27/79/M')}, o 26 de dezembro do ${h.src('dlr18-2002-m', 'Decreto Legislativo Regional n.º 18/2002/M')} e o 2 de abril do ${h.src('dlr17-2024-m', 'Decreto Legislativo Regional n.º 17/2024/M')}. A ferramenta só conta o 2 de abril a partir de 2025.</p>
-${h.mini('rg', { p: ['regiao'], d: { regiao: 'madeira', ano: 2027 }, c: 'Feriados da Madeira em 2027' })}
+${h.mini('pt', { p: ['ferias'], d: { ano: 2027, concelho: 'funchal', ferias: 4 }, c: 'As pontes de 2027 no Funchal, com os feriados regionais' })}
 <h2>Os feriados municipais das ilhas</h2>
 <p>Nas ilhas o feriado municipal soma-se aos regionais. Entre os confirmados no sítio da câmara estão ${nomes([...confA, ...confM])}. O Funchal, por exemplo, celebra o Dia da Cidade a 21 de agosto. A lista completa, com a fonte de cada data, está em ${h.a('feriado-municipal', 'feriado municipal')}.</p>
 ${tabelaAno(h, 2027, { nome: 'Madeira', regiao: 'madeira' })}
@@ -148,7 +148,7 @@ ${tabelaAno(h, 2027, { nome: 'Madeira', regiao: 'madeira' })}
       ],
       body: (h) => `<h2>Azores and Madeira holidays: the law behind each one</h2>
 <p>Azores Day comes from ${h.src('dr13-80-a', 'Regional Decree 13/80/A')}. In Madeira, 1 July comes from ${h.src('dr27-79-m', 'Regional Decree 27/79/M')}, 26 December from ${h.src('dlr18-2002-m', 'Regional Legislative Decree 18/2002/M')} and 2 April from ${h.src('dlr17-2024-m', 'Regional Legislative Decree 17/2024/M')}. The tool counts 2 April only from 2025.</p>
-${h.mini('rg', { p: ['regiao'], d: { regiao: 'madeira', ano: 2027 }, c: 'Madeira holidays in 2027' })}
+${h.mini('pt', { p: ['ferias'], d: { ano: 2027, concelho: 'funchal', ferias: 4 }, c: 'The 2027 long weekends in Funchal, with the regional holidays' })}
 <h2>Municipal holidays on the islands</h2>
 <p>On the islands the municipal holiday comes on top of the regional ones. Those confirmed on the council website include ${nomes([...confA, ...confM])}. Funchal, for example, celebrates City Day on 21 August. The full list, with each date's source, is on ${h.a('feriado-municipal', 'municipal holiday')}.</p>
 ${tabelaAno(h, 2027, { nome: 'Madeira', regiao: 'madeira' })}
@@ -173,7 +173,7 @@ ${tabelaAno(h, 2027, { nome: 'Madeira', regiao: 'madeira' })}
       ],
       body: (h) => `<h2>Feriado municipal de Lisboa nos próximos anos</h2>
 <p>A ferramenta mostra o dia da semana do 13 de junho em cada ano e a melhor ponte com o feriado. Em 2027 Lisboa fica com as pontes do resto do país: as sextas a seguir ao Corpo de Deus e ao Dia de Portugal e a segunda antes do 5 de Outubro.</p>
-${h.mini('pt', { p: ['ferias'], d: { ano: 2028, concelho: 'lisboa', ferias: 6 }, c: 'E em 2028? O Santo António calha a uma terça: as suas pontes em Lisboa' })}
+${h.mini('pt', { p: ['ferias', 'municipal'], d: { ano: 2028, concelho: 'lisboa', ferias: 6, municipal: 'sim' }, c: 'E em 2028? O Santo António calha a uma terça: as suas pontes em Lisboa' })}
 <h2>De onde vem a data</h2>
 <p>A data foi lida numa página da Assembleia Municipal de Lisboa sobre a procissão de Santo António, que fala do « 13 de junho, feriado municipal e dia de Santo António em Lisboa ». A assembleia é um órgão do próprio município, tal como a câmara. A lista dos municípios vem da ${h.src('anmp', 'Associação Nacional de Municípios Portugueses (ANMP)')}, e o regime do feriado facultativo do ${h.src('ct', 'artigo 235.º do Código do Trabalho')}.</p>
 <p>Os outros santos populares estão em ${h.a('santos-populares', 'santos populares')}; o Porto em ${h.a('feriado-porto', 'feriado do Porto')}.</p>`,
@@ -192,7 +192,7 @@ ${h.mini('pt', { p: ['ferias'], d: { ano: 2028, concelho: 'lisboa', ferias: 6 },
       ],
       body: (h) => `<h2>Lisbon municipal holiday in the coming years</h2>
 <p>The tool shows the weekday of 13 June each year and the best bridge with the holiday. In 2027 Lisbon gets the same bridges as the rest of the country: the Fridays after Corpus Christi and Portugal Day and the Monday before 5 October.</p>
-${h.mini('pt', { p: ['ferias'], d: { ano: 2028, concelho: 'lisboa', ferias: 6 }, c: 'And in 2028? St Anthony falls on a Tuesday: your Lisbon long weekends' })}
+${h.mini('pt', { p: ['ferias', 'municipal'], d: { ano: 2028, concelho: 'lisboa', ferias: 6, municipal: 'sim' }, c: 'And in 2028? St Anthony falls on a Tuesday: your Lisbon long weekends' })}
 <h2>Where the date comes from</h2>
 <p>The date was read on a Lisbon Municipal Assembly page about the St Anthony procession, which speaks of "13 June, municipal holiday and St Anthony's Day in Lisbon". The assembly is a body of the municipality itself, like the council. The list of municipalities comes from the ${h.src('anmp', 'National Association of Portuguese Municipalities (ANMP)')}, and the optional-holiday rules from ${h.src('ct', 'article 235 of the Labour Code')}.</p>
 <p>The other popular saints are on ${h.a('santos-populares', 'popular saints')}; Porto on ${h.a('feriado-porto', 'Porto holiday')}.</p>`,
@@ -216,7 +216,7 @@ ${h.mini('pt', { p: ['ferias'], d: { ano: 2028, concelho: 'lisboa', ferias: 6 },
       ],
       body: (h) => `<h2>Feriado municipal do Porto nos próximos anos</h2>
 <p>A ferramenta mostra o dia da semana do 24 de junho em cada ano e a melhor ponte. 2027 é um bom ano para o Porto: além do São João, o Corpo de Deus e o Dia de Portugal também calham à quinta-feira, a ${dmo(fd27('corpo-deus'), 'pt')} e a ${dmo(fd27('portugal'), 'pt')}: maio e junho têm três pontes de um dia para quem trabalha na cidade.</p>
-${h.mini('pt', { p: ['ferias'], d: { ano: 2027, concelho: 'porto', ferias: 3 }, c: 'As três pontes de maio e junho no Porto' })}
+${h.mini('pt', { p: ['ferias', 'municipal'], d: { ano: 2027, concelho: 'porto', ferias: 3, municipal: 'sim' }, c: 'As três pontes de maio e junho no Porto' })}
 <h2>De onde vem a data</h2>
 <p>A data foi lida no sítio da Câmara Municipal do Porto, numa notícia do programa de São João. A lista dos municípios vem da ${h.src('anmp', 'ANMP')}, e o regime do feriado facultativo do ${h.src('ct', 'artigo 235.º do Código do Trabalho')}. Os concelhos vizinhos têm datas diferentes: Matosinhos, por exemplo, tem o Senhor de Matosinhos, na terça-feira a seguir ao Pentecostes. Veja todos em ${h.a('feriado-municipal', 'feriado municipal')} e os outros santos em ${h.a('santos-populares', 'santos populares')}.</p>`,
     },
@@ -234,7 +234,7 @@ ${h.mini('pt', { p: ['ferias'], d: { ano: 2027, concelho: 'porto', ferias: 3 }, 
       ],
       body: (h) => `<h2>Porto municipal holiday in the coming years</h2>
 <p>The tool shows the weekday of 24 June each year and the best bridge. 2027 is a good year for Porto: besides St John's Day, Corpus Christi and Portugal Day also fall on a Thursday, on ${dmo(fd27('corpo-deus'), 'en')} and ${dmo(fd27('portugal'), 'en')}: May and June have three one-day bridges for people working in the city.</p>
-${h.mini('pt', { p: ['ferias'], d: { ano: 2027, concelho: 'porto', ferias: 3 }, c: 'Porto’s three May and June bridges' })}
+${h.mini('pt', { p: ['ferias', 'municipal'], d: { ano: 2027, concelho: 'porto', ferias: 3, municipal: 'sim' }, c: 'Porto’s three May and June bridges' })}
 <h2>Where the date comes from</h2>
 <p>The date was read on Porto City Council's website, in a news item on the St John's programme. The list of municipalities comes from the ${h.src('anmp', 'ANMP')}, and the optional-holiday rules from ${h.src('ct', 'article 235 of the Labour Code')}. Neighbouring municipalities have different dates: Matosinhos, for example, has Senhor de Matosinhos, on the Tuesday after Pentecost. See them all on ${h.a('feriado-municipal', 'municipal holiday')} and the other saints on ${h.a('santos-populares', 'popular saints')}.</p>`,
     },

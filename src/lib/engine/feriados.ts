@@ -92,7 +92,10 @@ export function dataRegra(y: number, r: Regra): string {
 
 export interface Local { nome: string; regiao: Regiao; feriado?: { regra: Regra; nome: string } | null }
 export interface Feriado { id: string; date: string; name: { pt: string; en: string }; tipo: Tipo }
-export interface Opcoes { local?: Local | null; carnaval?: boolean }
+export interface Opcoes { local?: Local | null; carnaval?: boolean;
+  /** Feriado municipal livre? Facultativo (art. 235.º): só conta como dia livre quando a pessoa diz que o tem.
+   *  `false` = dia de trabalho; omitido = conta (listas e calendário, onde aparece como « municipal »). */
+  municipal?: boolean }
 
 /** Os feriados de um ano, por ordem de data: os 13 nacionais, os regionais do arquipélago do concelho, e — se pedidos —
  *  a terça de Carnaval e o feriado municipal (quando não coincide já com outro). */
@@ -102,7 +105,7 @@ export function feriados(y: number, o: Opcoes = {}): Feriado[] {
   for (const f of REGIONAIS) if (f.regiao === reg && (!f.desde || y >= f.desde)) out.push({ id: f.id, date: f.date(y), name: f.name, tipo: 'regional' });
   if (o.carnaval) out.push({ id: 'carnaval', date: CARNAVAL.date(y), name: CARNAVAL.name, tipo: 'facultativo' });
   const fm = o.local?.feriado;
-  if (o.local && fm) {
+  if (o.local && fm && o.municipal !== false) {
     const d = dataRegra(y, fm.regra);
     if (!out.some((f) => f.date === d)) out.push({ id: 'municipal', date: d, name: { pt: `${fm.nome} (feriado municipal de ${o.local.nome})`, en: `${fm.nome} (municipal holiday in ${o.local.nome})` }, tipo: 'municipal' });
   }

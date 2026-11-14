@@ -116,3 +116,73 @@ describe('Ferramentas e páginas', () => {
     for (const id of PLANNED_GUIDES) expect(ids, id).toContain(id);
   });
 });
+
+/* Testeurs naïfs du 2026-11-14, 2e tour (reports/test-naif-2026-11-14-tour2/synthese.md). */
+import { somaDiasUteis } from '../src/lib/engine/pontes';
+import { phraseFixe } from '../src/lib/mini-specs';
+import { HOME } from '../src/content/home';
+
+describe('Feriado municipal: só conta como dia livre quando a pessoa o diz (tour 2, défaut 1)', () => {
+  const porto = concelhoById('porto')!;
+  it('motor: municipal false = dia de trabalho, nenhuma ponte com o São João', () => {
+    expect(feriados(2027, { local: porto, municipal: false }).some((f) => f.id === 'municipal')).toBe(false);
+    expect(pontes(2027, { local: porto, municipal: false }).some((b) => b.feste.includes('municipal'))).toBe(false);
+    expect(pontes(2027, { local: porto, municipal: true }).some((b) => b.feste.includes('municipal'))).toBe(true);
+  });
+  it('otimizador: por omissão o feriado municipal não entra, e o resultado diz porquê e como o juntar', () => {
+    const fora = runTool('pt', 'pt', { ano: 2027, ferias: 3, concelho: 'porto' });
+    const dentro = runTool('pt', 'pt', { ano: 2027, ferias: 3, concelho: 'porto', municipal: 'sim' });
+    expect(fora.note).toMatch(/não entra na conta: responda « Tenho o dia livre »/);
+    expect(dentro.note ?? '').not.toMatch(/não entra na conta/);
+    expect(Number(dentro.value.split(' ')[0])).toBeGreaterThanOrEqual(Number(fora.value.split(' ')[0]));
+    // A pergunta é visível (fora de « Mais opções ») e só aparece quando o concelho tem data confirmada.
+    const campo = SPECS.pt('pt').inputs.find((i) => i.id === 'municipal')!;
+    expect(campo.adv).toBeFalsy();
+    expect(campo.showIf!({ concelho: 'porto' })).toBe(true);
+    expect(campo.showIf!({ concelho: '' })).toBe(false);
+  });
+  it('página do concelho: a ponte mostra os dois casos', () => {
+    const o = runTool('fm', 'pt', { concelho: 'porto', ano: 2027 });
+    const r = Object.fromEntries(o.rows.map(([a, b]) => [a, b]));
+    expect(r['Ponte, se tiver o dia livre']).toBe('1 dia de férias → 4 dias livres');
+    expect(r['Se trabalhar nesse dia']).toMatch(/nenhuma ponte/);
+    expect(r['É obrigatório?']).toMatch(/^Não por lei/);
+  });
+  it('página geral sem concelho escolhido: nada de Braga por omissão, e quantas datas estão confirmadas', () => {
+    const o = runTool('fm', 'pt', { concelho: '', ano: 2027 });
+    expect(o.value).toBe(`${CONFIRMADOS.length} de ${CONCELHOS.length}`);
+  });
+});
+
+describe('Mini-simuladores: outra pergunta que a ferramenta do topo, e uma frase curta (tour 2, défauts 2 e 3)', () => {
+  const minis: string[] = [];
+  const h = new Proxy({} as Record<string, unknown>, { get: (_t, k) => (k === 'lang' ? 'pt' : k === 'mini' ? (kind: string) => { minis.push(kind); return ''; } : k === 'T' ? (a: string) => a : () => '') });
+  it('o mini-simulador de cada página nunca repete o calculador do topo', () => {
+    for (const g of GUIDES) {
+      minis.length = 0; (g.pt.body as (x: unknown) => string)(h);
+      expect(minis.length, g.id).toBeGreaterThan(0);
+      for (const k of minis) expect(k, `${g.id}: mini ${k} = ferramenta do topo`).not.toBe(g.tool);
+    }
+    minis.length = 0; (HOME.pt.why as (x: unknown) => string)(h);
+    expect(minis).not.toContain('pt');
+  });
+  it('a linha do que a página fixou é curta e não fala de opções escondidas', () => {
+    const f = phraseFixe('pt', 'pt', { ano: 2028, concelho: 'lisboa', ferias: 6, municipal: 'sim' }, ['ano', 'concelho', 'carnaval', 'vesperas']);
+    expect(f).toBe('Conta feita para 2028 em Lisboa.');
+    expect(phraseFixe('pt', 'pt', { ano: 2027, ferias: 4, carnaval: 'sim' }, ['ano', 'concelho', 'municipal', 'carnaval', 'vesperas'])).toBe('Conta feita para 2027, com a terça de Carnaval livre.');
+    expect(phraseFixe('du', 'pt', { ano: 2027 }, ['ano', 'concelho', 'municipal', 'carnaval', 'vesperas'])).not.toMatch(/Trabalha-se|seg-sex/);
+  });
+  it('o gros chiffre de cada ferramenta diz o que mede: dias livres ≠ dias úteis de férias', () => {
+    expect(runTool('pt', 'pt').label).toMatch(/^Dias livres seguidos que ganha nas pontes de 2027/);
+    const fr = runTool('fr', 'pt', { ano: 2027 });
+    expect(fr.value).toBe('22 dias úteis de férias');
+    expect(fr.label).toMatch(/^Dias de férias a que tem direito/);
+    expect(fr.rows.map((r) => r[0]).join(' | ')).not.toMatch(/trocar por dinheiro/);
+  });
+  it('prazo em dias úteis: fins de semana e feriados saltados', () => {
+    expect(somaDiasUteis('2027-01-04', 10).fim).toBe('2027-01-18');
+    const cd = somaDiasUteis('2027-05-26', 1);
+    expect(cd.fim).toBe('2027-05-28');
+    expect(cd.feriadosSaltados).toEqual(['2027-05-27']);
+  });
+});

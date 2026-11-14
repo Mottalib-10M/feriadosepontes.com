@@ -42,7 +42,7 @@ ${tabelaPontes(h, 2026, null, 8)}
 <p>Em 2026 o 25 de Abril e o 15 de Agosto calharam a um sábado e o Dia de Todos os Santos a um domingo: três feriados sem dia livre a mais. Em ${h.a('feriados-2026', 'feriados 2026')} encontra a lista completa com o dia da semana.</p>
 <h2>Natal de 2026 com e sem o dia 31 livre</h2>
 <p>A véspera de Natal e a véspera de Ano Novo não são feriados. Se o contrato, a empresa ou uma tolerância de ponto lhe dão esses dias, escolha « Livres » nas opções da ferramenta: com ${nn(nat26v.ferie, h.lang)} dias de férias chega a ${nn(nat26v.liberi, h.lang)} dias livres. Sem eles precisa de ${nn(nat26.ferie, h.lang)} dias para ${nn(nat26.liberi, h.lang)}.</p>
-${h.mini('pt', { p: ['ferias', 'vesperas'], d: { ano: 2026, ferias: 4 }, c: 'Refaça as pontes do fim de 2026' })}
+${h.mini('fd', { p: ['feriado'], d: { feriado: 'imaculada', ano: 2026 }, c: 'Os feriados do fim de 2026, um a um: que dia tirar?' })}
 <p>Se ainda tem férias de 2026 e não sabe se as usa já, lembre-se do ${h.src('ct', 'artigo 240.º do Código do Trabalho')}: o gozo pode ir até 30 de abril de 2027 em certos casos. A conta das suas férias está na página ${h.a('ferias', 'férias')}; as pontes do próximo ano estão na ${h.a('home', 'página dos feriados 2027')}.</p>
 <h2>2026 comparado</h2>
 <p>O que rende o mesmo número de dias de férias muda muito de um ano para o outro, porque depende de quantos feriados calham em dia útil. Em 2026 foram ${nn(u26, h.lang)}, em 2027 serão ${nn(u27, h.lang)} e em 2028 ${nn(u28, h.lang)}.</p>
@@ -66,7 +66,7 @@ ${tabelaPontes(h, 2026, null, 8)}
 <p>In 2026, 25 April and 15 August fell on a Saturday and All Saints' Day on a Sunday: three holidays with no extra day off. The full list with weekdays is on ${h.a('feriados-2026', 'public holidays 2026')}.</p>
 <h2>Christmas 2026 with and without 31 December off</h2>
 <p>Christmas Eve and New Year's Eve are not public holidays. If your contract, employer or a tolerância de ponto gives them off, choose "Days off" in the tool's options: ${nn(nat26v.ferie, h.lang)} leave days then stretch to ${nn(nat26v.liberi, h.lang)} days off. Without them you need ${nn(nat26.ferie, h.lang)} days for ${nn(nat26.liberi, h.lang)}.</p>
-${h.mini('pt', { p: ['ferias', 'vesperas'], d: { ano: 2026, ferias: 4 }, c: 'Recompute the end-of-2026 bridges' })}
+${h.mini('fd', { p: ['feriado'], d: { feriado: 'imaculada', ano: 2026 }, c: 'The late-2026 holidays one by one: which day to take off?' })}
 <p>If you still have 2026 leave and are unsure whether to use it now, remember ${h.src('ct', 'article 240 of the Labour Code')}: in some cases it can run to 30 April 2027. Your leave entitlement is worked out on the ${h.a('ferias', 'annual leave')} page; next year's bridges are on the ${h.a('home', 'holidays 2027')} page.</p>
 <h2>2026 compared</h2>
 <p>What the same number of leave days buys changes a lot from year to year, because it depends on how many holidays fall on a weekday. In 2026 there were ${nn(u26, h.lang)}, in 2027 there will be ${nn(u27, h.lang)}, in 2028 ${nn(u28, h.lang)}.</p>
@@ -97,7 +97,7 @@ ${tabelaPontes(h, 2028, null, 10)}
 <p>A comparação com os anos vizinhos mostra como 2028 é generoso: com as mesmas férias tem mais dias livres seguidos do que em 2027. A diferença vem toda do calendário, porque os feriados são os mesmos.</p>
 ${tabelaRendimento(h, [2026, 2027, 2028])}
 <p>O feriado municipal do seu concelho pode juntar uma ponte. Em Lisboa, o Santo António calha em 2028 a uma terça-feira, dois dias antes do Corpo de Deus: quem trabalha em Lisboa e tem o feriado no contrato pode fazer uma semana curta com poucos dias de férias. A pesquisa está em ${h.a('feriado-municipal', 'feriado municipal')}.</p>
-${h.mini('pt', { p: ['ferias', 'concelho'], d: { ano: 2028, ferias: 10 }, c: 'O seu plano de férias 2028' })}
+${h.mini('fe', { p: ['concelho'], d: { ano: 2028, concelho: 'lisboa' }, c: 'Os feriados de 2028 no seu concelho' })}
 <p>O mínimo legal continua a ser 22 dias úteis, segundo o ${h.src('ct', 'artigo 238.º do Código do Trabalho')}; quem tem mais dias por convenção coletiva pode usá-los para unir as pontes de abril e de dezembro.</p>`,
     },
     en: {
@@ -120,7 +120,7 @@ ${tabelaPontes(h, 2028, null, 10)}
 <p>The comparison with the neighbouring years shows how generous 2028 is: for the same leave, you get more consecutive days off than in 2027. The difference comes entirely from the calendar, since the holidays are the same.</p>
 ${tabelaRendimento(h, [2026, 2027, 2028])}
 <p>Your municipality's holiday can add a bridge. In Lisbon, St Anthony's Day falls on a Tuesday in 2028, two days before Corpus Christi: anyone working in Lisbon with the holiday in their contract can make a short week with little leave. The search is on the ${h.a('feriado-municipal', 'municipal holiday')} page.</p>
-${h.mini('pt', { p: ['ferias', 'concelho'], d: { ano: 2028, ferias: 10 }, c: 'Your 2028 leave plan' })}
+${h.mini('fe', { p: ['concelho'], d: { ano: 2028, concelho: 'lisboa' }, c: 'The 2028 holidays in your municipality' })}
 <p>The legal minimum is still 22 working days under ${h.src('ct', 'article 238 of the Labour Code')}; if a collective agreement gives you more, use it to join the April and December bridges.</p>`,
     },
   }),

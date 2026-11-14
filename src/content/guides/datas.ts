@@ -35,7 +35,7 @@ export default [
       body: (h) => `<h2>O Corpo de Deus nos próximos anos</h2>
 <p>A tabela da ferramenta mostra a data e a ponte possível nos anos seguintes. Como o Corpo de Deus é sempre uma quinta-feira, todos os anos dá uma ponte de um dia na sexta seguinte; o que muda é o mês. Em ${anosCd.map((x) => `${x.y} calha a ${dmo(x.d, h.lang)}`).join(', ')}.</p>
 <p>Em 2027 a Páscoa é cedo e o Corpo de Deus cai ainda em maio, antes dos santos populares. Em 2028 a Páscoa é tarde e o Corpo de Deus passa para meados de junho, cinco dias depois do 10 de Junho. A lista oficial dos feriados obrigatórios está no ${h.src('ct234', 'artigo 234.º do Código do Trabalho')}, na redação da ${h.src('l8-2016', 'Lei n.º 8/2016')}.</p>
-${h.mini('fd', { p: ['ano'], d: { feriado: 'corpo-deus', ano: 2028 }, c: 'O Corpo de Deus noutro ano' })}
+${h.mini('pt', { p: ['ferias'], d: { ano: 2027, ferias: 3 }, c: 'O Corpo de Deus e as outras pontes de 2027: quantos dias de férias quer usar?' })}
 <h2>Outros feriados de 2027 com ponte</h2>
 <p>A mesma ferramenta mostra qualquer feriado nacional: escolha o Dia de Portugal ou o 5 de Outubro para ver as outras duas pontes de um dia de 2027. A Ascensão, ${h.day(asc)}, quarenta dias depois da Páscoa, não é feriado nacional, mas é feriado municipal em alguns concelhos${melgaco?.feriado ? `, como Melgaço` : ''}: veja ${h.a('feriado-municipal', 'feriado municipal')}. A Páscoa e as datas que dela dependem estão em ${h.a('pascoa-2027', 'Páscoa 2027')}.</p>`,
     },
@@ -54,7 +54,7 @@ ${h.mini('fd', { p: ['ano'], d: { feriado: 'corpo-deus', ano: 2028 }, c: 'O Corp
       body: (h) => `<h2>Corpus Christi in the coming years</h2>
 <p>The tool's table shows the date and possible bridge in the following years. Since Corpus Christi is always a Thursday, it gives a one-day bridge on the following Friday every year; only the month changes. In ${anosCd.map((x) => `${x.y} it falls on ${dmo(x.d, h.lang)}`).join(', ')}.</p>
 <p>In 2027 Easter is early and Corpus Christi still falls in May, before the popular saints' festivals. In 2028 Easter is late and Corpus Christi moves to mid-June, five days after 10 June. The official list of compulsory holidays is in ${h.src('ct234', 'article 234 of the Labour Code')}, as worded by ${h.src('l8-2016', 'Law 8/2016')}.</p>
-${h.mini('fd', { p: ['ano'], d: { feriado: 'corpo-deus', ano: 2028 }, c: 'Corpus Christi in another year' })}
+${h.mini('pt', { p: ['ferias'], d: { ano: 2027, ferias: 3 }, c: 'Corpus Christi and the other 2027 bridges: how many leave days will you use?' })}
 <h2>Other 2027 holidays with a bridge</h2>
 <p>The same tool shows any national holiday: choose Portugal Day or 5 October to see the other two one-day bridges of 2027. Ascension Day, ${h.day(asc)}, forty days after Easter, is not a national holiday, but it is a municipal holiday in some municipalities${melgaco?.feriado ? ', such as Melgaço' : ''}: see ${h.a('feriado-municipal', 'municipal holiday')}. Easter and the dates that depend on it are on ${h.a('pascoa-2027', 'Easter 2027')}.</p>`,
     },
@@ -78,7 +78,7 @@ ${h.mini('fd', { p: ['ano'], d: { feriado: 'corpo-deus', ano: 2028 }, c: 'Corpus
       ],
       body: (h) => `<h2>O cálculo de Gauss, para qualquer ano</h2>
 <p>A tabela da ferramenta mostra as grandezas da fórmula: o século, as correções lunar e solar, a posição do ano no ciclo de dezanove anos da Lua e, no fim, o dia de março em que calha a Páscoa (um valor acima de 31 quer dizer abril). Os testes do sítio comparam o resultado com um segundo algoritmo, de Meeus, para todos os anos de 1600 a 2600.</p>
-${h.mini('pa', { p: ['ano'], d: { ano: 2028 }, c: 'A Páscoa de outro ano' })}
+${h.mini('fd', { p: ['ano'], d: { feriado: 'corpo-deus', ano: 2027 }, c: 'Sessenta dias depois da Páscoa: o Corpo de Deus dá ponte?' })}
 <h2>Páscoa, hora de verão e férias</h2>
 <p>A mudança para a hora de verão faz-se no último domingo de março, segundo a ${h.src('hora', 'Diretiva 2000/84/CE')}; em 2027 é o mesmo dia da Páscoa. A Sexta-Feira Santa dá um fim de semana de três dias; a ${h.src('ct234', 'lei')} permite ainda observá-la noutro dia com significado local no período da Páscoa. Os feriados que dependem da Páscoa estão no ${h.a('calendario-2027', 'calendário 2027')}; o Carnaval em ${h.a('carnaval-2027', 'Carnaval 2027')}.</p>`,
     },
@@ -96,7 +96,7 @@ ${h.mini('pa', { p: ['ano'], d: { ano: 2028 }, c: 'A Páscoa de outro ano' })}
       ],
       body: (h) => `<h2>Gauss’s calculation, for any year</h2>
 <p>The tool's table shows the formula's quantities: the century, the lunar and solar corrections, the year's place in the Moon's nineteen-year cycle and, finally, the day of March on which Easter falls (a value above 31 means April). The site's tests compare the result with a second algorithm, Meeus's, for every year from 1600 to 2600.</p>
-${h.mini('pa', { p: ['ano'], d: { ano: 2028 }, c: 'Easter in another year' })}
+${h.mini('fd', { p: ['ano'], d: { feriado: 'corpo-deus', ano: 2027 }, c: 'Sixty days after Easter: does Corpus Christi give a bridge?' })}
 <h2>Easter, summer time and leave</h2>
 <p>Clocks go forward on the last Sunday of March under ${h.src('hora', 'Directive 2000/84/EC')}; in 2027 that is Easter Sunday itself. Good Friday gives a three-day weekend; the ${h.src('ct234', 'law')} also allows it to be observed on another locally significant day in the Easter period. The holidays that depend on Easter are on ${h.a('calendario-2027', 'calendar 2027')}; Carnival on ${h.a('carnaval-2027', 'Carnival 2027')}.</p>`,
     },
@@ -119,10 +119,10 @@ ${h.mini('pa', { p: ['ano'], d: { ano: 2028 }, c: 'Easter in another year' })}
         { q: 'Em que dia calha o Carnaval de 2028?', a: `Na terça-feira ${dLong(K.carnaval(2028).terca, 'pt')}, porque 2028 é bissexto e a Páscoa calha a ${dmo(K.pascoa(2028), 'pt')}. O Carnaval é sempre quarenta e sete dias antes do Domingo de Páscoa, por isso anda entre o início de fevereiro e o início de março. A tabela da ferramenta acima dá a data de cada ano até 2033.` },
       ],
       body: (h) => `<h2>Carnaval: o que diz a lei</h2>
-<p>O ${h.src('ct', 'artigo 235.º do Código do Trabalho')} diz que, além dos feriados obrigatórios, podem ser observados a título de feriado a terça-feira de Carnaval e o feriado municipal da localidade, por instrumento de regulamentação coletiva ou contrato de trabalho. Pode ser observado outro dia em substituição, por acordo. Ou seja: depende do seu contrato.</p>
-${h.mini('ca', { p: ['ano'], d: { ano: 2028 }, c: 'O Carnaval de outro ano' })}
+<p>O ${h.src('ct', 'artigo 235.º do Código do Trabalho')} diz que, além dos feriados obrigatórios, podem ser observados a título de feriado a terça-feira de Carnaval e o feriado municipal da localidade, se o acordo coletivo do setor (o que sindicatos e patrões assinam) ou o contrato de trabalho o disserem. Pode ser observado outro dia em substituição, por acordo. Ou seja: depende do seu contrato.</p>
+${h.mini('pt', { p: ['ferias'], d: { ano: 2027, ferias: 4, carnaval: 'sim' }, c: 'Se tiver a terça de Carnaval livre: as suas pontes de 2027' })}
 <h2>Usar o Carnaval nas pontes</h2>
-<p>No otimizador da ${h.a('home', 'página dos feriados 2027')}, a opção « Terça de Carnaval: Livre » junta o dia às contas. Com um dia de férias na segunda fica com quatro dias seguidos em fevereiro, antes da ponte da Páscoa. As datas da Páscoa e da Quaresma estão em ${h.a('pascoa-2027', 'Páscoa 2027')}; as regras gerais das férias em ${h.a('ferias', 'férias')}.</p>`,
+<p>No otimizador da ${h.a('home', 'página dos feriados 2027')}, abra « Mais opções » e escolha « Livre » na terça de Carnaval: o dia entra nas contas, como no cálculo acima. Com um dia de férias na segunda fica com quatro dias seguidos em fevereiro, antes da ponte da Páscoa. As datas da Páscoa e da Quaresma estão em ${h.a('pascoa-2027', 'Páscoa 2027')}; as regras gerais das férias em ${h.a('ferias', 'férias')}.</p>`,
     },
     en: {
       slug: 'carnival-2027', nav: 'Carnival 2027', card: 'Tuesday 9 February: is it a holiday?',
@@ -138,9 +138,9 @@ ${h.mini('ca', { p: ['ano'], d: { ano: 2028 }, c: 'O Carnaval de outro ano' })}
       ],
       body: (h) => `<h2>Carnival: what the law says</h2>
 <p>${h.src('ct', 'Article 235 of the Labour Code')} says that, besides the compulsory holidays, Carnival Tuesday and the local municipal holiday may be observed as holidays under a collective agreement or employment contract. Another day can be observed instead, by agreement. In other words: it depends on your contract.</p>
-${h.mini('ca', { p: ['ano'], d: { ano: 2028 }, c: 'Carnival in another year' })}
+${h.mini('pt', { p: ['ferias'], d: { ano: 2027, ferias: 4, carnaval: 'sim' }, c: 'If Carnival Tuesday is off for you: your 2027 long weekends' })}
 <h2>Using Carnival for a long weekend</h2>
-<p>In the planner on the ${h.a('home', 'holidays 2027')} page, the option "Carnival Tuesday: Day off" adds the day to the count. One leave day on the Monday gives four days in a row in February, ahead of the Easter bridge. Easter and Lent dates are on ${h.a('pascoa-2027', 'Easter 2027')}; the general leave rules on ${h.a('ferias', 'annual leave')}.</p>`,
+<p>In the planner on the ${h.a('home', 'holidays 2027')} page, open "More options" and choose "Day off" for Carnival Tuesday: the day joins the count, as in the calculation above. One leave day on the Monday gives four days in a row in February, ahead of the Easter bridge. Easter and Lent dates are on ${h.a('pascoa-2027', 'Easter 2027')}; the general leave rules on ${h.a('ferias', 'annual leave')}.</p>`,
     },
   }),
 ];

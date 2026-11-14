@@ -41,6 +41,8 @@ export default function Calendario({ lang, year, concelho: c0 = '', methodHref, 
     return { name: new Date(first * 864e5).toLocaleDateString(TAG(lang), { month: 'long', timeZone: 'UTC' }), weeks };
   });
   const iso = (d: number) => new Date(d * 864e5).toISOString().slice(0, 10);
+  const sem0 = isoWeek(`${year}-01-01`);
+  const diasAntes = Number(segundaDaSemana(year, 1).slice(8, 10)) - 1;
   const opts = [{ value: '', label: T('Só feriados nacionais', 'National holidays only') }, ...CONCELHOS.map((x) => ({ value: x.id, label: concelhoLabel(x, lang) }))];
   const onde = c ? c.nome : 'Portugal';
   return (
@@ -55,7 +57,11 @@ export default function Calendario({ lang, year, concelho: c0 = '', methodHref, 
           <ShareRow methodHref={methodHref} labels={ui} />
         </ResultCard>
       </div>
-      <div className="kal-grid mt-6">
+      {/* Légende avant les mois et note sur la semaine 53 (testeurs naïfs du 2026-11-14, tour 2 : légende après décembre,
+          « 52 semanas » puis « 53 » au 1er janvier). */}
+      <p className="mt-6 flex flex-wrap gap-x-4 gap-y-1 text-sm text-navy-700"><span><span className="kal-cle ft" aria-hidden="true" />{T('feriado nacional', 'national holiday')}</span><span><span className="kal-cle tf" aria-hidden="true" />{T('feriado regional ou municipal', 'regional or municipal holiday')}</span><span><span className="kal-cle kw-cle" aria-hidden="true">1</span>{T('número da semana', 'week number')}</span></p>
+      {sem0.year !== year && <p data-semana-anterior className="mt-1 text-sm text-navy-700">{T(`${diasAntes === 1 ? 'O 1 de janeiro ainda conta' : `De 1 a ${diasAntes} de janeiro ainda contam`} como semana ${sem0.week} de ${sem0.year}: a semana 1 de ${year} começa a ${dLong(segundaDaSemana(year, 1), lang)}.`, `${diasAntes === 1 ? '1 January still counts' : `1 to ${diasAntes} January still count`} as week ${sem0.week} of ${sem0.year}: week 1 of ${year} starts on ${dLong(segundaDaSemana(year, 1), lang)}.`)}</p>}
+      <div className="kal-grid mt-4">
         {months.map((mo) => (
           <table key={mo.name} data-pas-de-fiches>
             <caption className="mb-1 text-left text-sm font-semibold text-navy-900">{mo.name} {year}</caption>
@@ -76,7 +82,6 @@ export default function Calendario({ lang, year, concelho: c0 = '', methodHref, 
           </table>
         ))}
       </div>
-      <p className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-sm text-navy-700"><span><span className="kal-cle ft" aria-hidden="true" />{T('feriado nacional', 'national holiday')}</span><span><span className="kal-cle tf" aria-hidden="true" />{T('feriado regional ou municipal', 'regional or municipal holiday')}</span><span><span className="kal-cle kw-cle" aria-hidden="true">1</span>{T('número da semana', 'week number')}</span></p>
       <ul className="mt-4 grid gap-x-6 gap-y-1 text-sm text-navy-800 sm:grid-cols-2">
         {list.map((f) => <li key={f.id}><span>{dLong(f.date, lang)}</span> · {f.name[lang]}</li>)}
       </ul>

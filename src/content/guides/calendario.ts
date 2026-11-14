@@ -84,8 +84,9 @@ ${h.mini('du', { p: ['semana'], d: { ano: Y }, c: 'Count the 2027 working days' 
 ${tabelaDiasUteis(h, [2026, 2027, 2028])}
 <h2>Como usar a contagem</h2>
 <p>Para as férias, o ${h.src('ct', 'artigo 238.º do Código do Trabalho')} conta só os dias de segunda a sexta que não são feriado: uma semana com um feriado à quinta gasta quatro dias de férias, não cinco. Por isso as pontes rendem tanto. A conta das suas férias está em ${h.a('ferias', 'férias')}.</p>
-${h.mini('du', { p: ['concelho'], d: { ano: Y }, c: 'Dias úteis 2027 no seu concelho' })}
-<p>Se o seu concelho ainda não tem a data confirmada, a ferramenta avisa e não a desconta: preferimos um dia útil a mais do que uma data inventada. A lista dos concelhos confirmados está em ${h.a('feriado-municipal', 'feriado municipal')}; o calendário completo em ${h.a('calendario-2027', 'calendário 2027')}.</p>`,
+<p>Muitos prazos contam-se em dias úteis: dez dias úteis a partir de uma segunda-feira não acabam na segunda seguinte, e um feriado pelo caminho empurra o fim mais um dia. A ferramenta abaixo diz em que dia acaba o seu prazo.</p>
+${h.mini('pz', { p: ['mes', 'dia', 'n'], d: { ano: Y, mes: 1, dia: 4, n: 10 }, c: 'Um prazo em dias úteis: em que dia acaba?' })}
+<p>Se o seu concelho ainda não tem a data confirmada, a ferramenta do topo avisa e não a desconta: preferimos um dia útil a mais do que uma data inventada. A lista dos concelhos confirmados está em ${h.a('feriado-municipal', 'feriado municipal')}; o calendário completo em ${h.a('calendario-2027', 'calendário 2027')}.</p>`,
     },
     en: {
       slug: 'working-days-2027', nav: 'Working days 2027', card: 'Working days per month, with your municipality',
@@ -104,8 +105,9 @@ ${h.mini('du', { p: ['concelho'], d: { ano: Y }, c: 'Dias úteis 2027 no seu con
 ${tabelaDiasUteis(h, [2026, 2027, 2028])}
 <h2>How to use the count</h2>
 <p>For annual leave, ${h.src('ct', 'article 238 of the Labour Code')} counts only Monday-to-Friday days that are not holidays: a week with a Thursday holiday uses four leave days, not five. That is why bridges pay off so well. Your leave is worked out on ${h.a('ferias', 'annual leave')}.</p>
-${h.mini('du', { p: ['concelho'], d: { ano: Y }, c: '2027 working days in your municipality' })}
-<p>If your municipality's date is not yet confirmed, the tool says so and does not deduct it: we prefer one working day too many to an invented date. The list of confirmed municipalities is on ${h.a('feriado-municipal', 'municipal holiday')}; the full calendar on ${h.a('calendario-2027', 'calendar 2027')}.</p>`,
+<p>Many deadlines are counted in working days: ten working days from a Monday do not end on the following Monday, and a holiday on the way pushes the end back one more day. The tool below tells you the day your deadline ends.</p>
+${h.mini('pz', { p: ['mes', 'dia', 'n'], d: { ano: Y, mes: 1, dia: 4, n: 10 }, c: 'A deadline in working days: when does it end?' })}
+<p>If your municipality's date is not yet confirmed, the tool at the top says so and does not deduct it: we prefer one working day too many to an invented date. The list of confirmed municipalities is on ${h.a('feriado-municipal', 'municipal holiday')}; the full calendar on ${h.a('calendario-2027', 'calendar 2027')}.</p>`,
     },
   }),
 ];
