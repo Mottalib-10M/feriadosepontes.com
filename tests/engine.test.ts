@@ -177,7 +177,7 @@ describe('Mini-simuladores: outra pergunta que a ferramenta do topo, e uma frase
   it('o gros chiffre de cada ferramenta diz o que mede: dias livres ≠ dias úteis de férias', () => {
     // Tour 3 : le total de plusieurs pontes n'est pas « seguidos » ; il est bien la somme des blocs, sans chevauchement.
     const pt = runTool('pt', 'pt');
-    expect(pt.label).toMatch(/^Dias livres no total, somando as pontes de 2027/);
+    expect(pt.label).toMatch(/^Com \d+ dias de férias em 2027, somando as pontes/);
     expect(pt.label).not.toMatch(/seguidos/);
     const pl = otimiza(2027, 8);
     expect(pl.liberi).toBe(pl.blocchi.reduce((a, b) => a + b.liberi, 0));
@@ -185,6 +185,10 @@ describe('Mini-simuladores: outra pergunta que a ferramenta do topo, e uma frase
     expect(pt.value).toBe(`${pl.liberi} dias livres`);
     // Chaque ligne du résultat dit le jour à poser.
     expect(pt.rows[0][0]).toMatch(/tirar férias: /);
+    // Tour 4 : le plan n'est plus répété en tableau ; chaque ligne dit grâce à quel feriado, et toutes les pontes y sont.
+    expect(pt.table).toBeUndefined();
+    expect(pt.rows[0][0]).toMatch(/ · feriado: /);
+    expect(pt.rows.length).toBe(pl.blocchi.length);
     const fr = runTool('fr', 'pt', { ano: 2027 });
     expect(fr.value).toBe('22 dias de férias');
     expect(fr.label).toMatch(/^Por lei, as suas férias por ano/);

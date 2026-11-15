@@ -173,7 +173,7 @@ ${tabelaAno(h, 2027, { nome: 'Madeira', regiao: 'madeira' })}
       ],
       body: (h) => `<h2>Feriado municipal de Lisboa nos próximos anos</h2>
 <p>A ferramenta mostra a ponte do ano escolhido e, por baixo, o dia da semana do 13 de junho nos anos seguintes. Em 2027 Lisboa fica com as pontes do resto do país: as sextas a seguir ao Corpo de Deus e ao Dia de Portugal e a segunda antes do 5 de Outubro.</p>
-${h.mini('pt', { p: ['ferias', 'municipal'], d: { ano: 2028, concelho: 'lisboa', ferias: 6, municipal: 'sim' }, c: 'E em 2028? O Santo António calha a uma terça: as suas pontes em Lisboa' })}
+${h.mini('pt', { p: ['ferias', 'municipal'], d: { ano: 2027, concelho: 'lisboa', ferias: 6, municipal: 'sim' }, c: 'As suas pontes de 2027 em Lisboa' })}
 <h2>De onde vem a data</h2>
 <p>A data foi lida numa página da Assembleia Municipal de Lisboa sobre a procissão de Santo António, que fala do « 13 de junho, feriado municipal e dia de Santo António em Lisboa ». A assembleia é um órgão do próprio município, tal como a câmara. A lista dos municípios vem da ${h.src('anmp', 'Associação Nacional de Municípios Portugueses (ANMP)')}, e o regime do feriado facultativo do ${h.src('ct', 'artigo 235.º do Código do Trabalho')}.</p>
 <p>Os outros santos populares estão em ${h.a('santos-populares', 'santos populares')}; o Porto em ${h.a('feriado-porto', 'feriado do Porto')}.</p>`,
@@ -192,7 +192,7 @@ ${h.mini('pt', { p: ['ferias', 'municipal'], d: { ano: 2028, concelho: 'lisboa',
       ],
       body: (h) => `<h2>Lisbon municipal holiday in the coming years</h2>
 <p>The tool shows the bridge for the chosen year and, below, the weekday of 13 June in the following years. In 2027 Lisbon gets the same bridges as the rest of the country: the Fridays after Corpus Christi and Portugal Day and the Monday before 5 October.</p>
-${h.mini('pt', { p: ['ferias', 'municipal'], d: { ano: 2028, concelho: 'lisboa', ferias: 6, municipal: 'sim' }, c: 'And in 2028? St Anthony falls on a Tuesday: your Lisbon long weekends' })}
+${h.mini('pt', { p: ['ferias', 'municipal'], d: { ano: 2027, concelho: 'lisboa', ferias: 6, municipal: 'sim' }, c: 'Your 2027 long weekends in Lisbon' })}
 <h2>Where the date comes from</h2>
 <p>The date was read on a Lisbon Municipal Assembly page about the St Anthony procession, which speaks of "13 June, municipal holiday and St Anthony's Day in Lisbon". The assembly is a body of the municipality itself, like the council. The list of municipalities comes from the ${h.src('anmp', 'National Association of Portuguese Municipalities (ANMP)')}, and the optional-holiday rules from ${h.src('ct', 'article 235 of the Labour Code')}.</p>
 <p>The other popular saints are on ${h.a('santos-populares', 'popular saints')}; Porto on ${h.a('feriado-porto', 'Porto holiday')}.</p>`,

@@ -84,20 +84,17 @@ function ptSpec(l: Lang, a: Args = {}): ToolSpec {
         // úteis », « 54 », « 27 » sur l'accueil, « je ne sais plus lequel est le mien »).
         // « No total » : le gros chiffre additionne plusieurs pontes séparées (testeurs naïfs du 2026-11-14, tour 3 : « seguidos »
         // faisait croire à 22 jours d'affilée). plano.liberi = somme des blocs choisis, qui ne se chevauchent pas (otimiza).
-        label: T(l, `Dias livres no total, somando as pontes de ${y} ${onde(c, l)}, com ${dias(pedidos, l)} de férias`, `Total days off across the ${y} long weekends ${onde(c, l)}, with ${num(pedidos, l)} leave ${pedidos === 1 ? 'day' : 'days'}`),
+        // Tour 4 : l'hypothèse de l'exemple en tête, collée au total (« 22 / 16 / 12 / 21 dias livres » d'une page à l'autre
+        // paraissaient se contredire : chaque page pré-remplit un nombre de jours différent).
+        label: T(l, `Com ${dias(pedidos, l)} de férias em ${y}, somando as pontes ${onde(c, l)}, tem no total`, `With ${num(pedidos, l)} leave ${pedidos === 1 ? 'day' : 'days'} in ${y}, across the long weekends ${onde(c, l)}, you get in total`),
         value: T(l, `${num(plano.liberi, l)} dias livres`, `${num(plano.liberi, l)} days off`),
         sub: !plano.ferie ? T(l, 'Indique pelo menos um dia de férias.', 'Enter at least one leave day.')
           : plano.resto > 0 ? T(l, `As pontes abaixo usam ${num(plano.ferie, l)} dos seus ${num(pedidos, l)} dias de férias: em média, cada um dá ${formatDecimal(rend, 1, l)} dias livres.`, `The bridges below use ${num(plano.ferie, l)} of your ${num(pedidos, l)} leave days: on average each one gives ${formatDecimal(rend, 1, l)} days off.`)
           : T(l, `Em média, cada dia de férias dá ${formatDecimal(rend, 1, l)} dias livres.`, `On average each leave day gives ${formatDecimal(rend, 1, l)} days off.`),
-        rows: plano.blocchi.slice(0, 6).map((b) => [T(l, `${span(b.liberoDal, b.liberoAl, l)} · tirar férias: ${tirar(b, l)}`, `${span(b.liberoDal, b.liberoAl, l)} · take leave: ${tirar(b, l)}`), troca(b.ferie, b.liberi, l), b.liberi] as [string, string, number]),
-        table: plano.blocchi.length ? {
-          caption: T(l, `O seu plano ${y}: quando tirar férias`, `Your ${y} plan: when to take leave`),
-          headers: [T(l, 'Tirar férias', 'Take leave'), T(l, 'Dias de férias', 'Leave days'), T(l, 'Período livre', 'Time off'), T(l, 'Dias livres', 'Days off'), T(l, 'Graças a', 'Thanks to')],
-          rows: plano.blocchi.map((b) => [tirar(b, l), num(b.ferie, l), span(b.liberoDal, b.liberoAl, l), num(b.liberi, l), b.feste.map((id) => feriadoName(id, l, c)).join(', ')]),
-          align: ['l', 'r', 'l', 'r', 'l'],
-        } : undefined,
+        // Tour 4 : le plan n'est plus répété en tableau sous la liste (mêmes pontes deux fois) ; le feriado passe dans la ligne.
+        rows: plano.blocchi.map((b) => [T(l, `${span(b.liberoDal, b.liberoAl, l)} · tirar férias: ${tirar(b, l)} · feriado: ${b.feste.map((id) => feriadoName(id, l, c)).join(', ')}`, `${span(b.liberoDal, b.liberoAl, l)} · take leave: ${tirar(b, l)} · holiday: ${b.feste.map((id) => feriadoName(id, l, c)).join(', ')}`), troca(b.ferie, b.liberi, l), b.liberi] as [string, string, number]),
         tables: todas.length ? [{
-          caption: T(l, `Ver todas as pontes de ${y} ${onde(c, l)}, da mais rentável`, `See every long weekend in ${y} ${onde(c, l)}, best first`),
+          caption: T(l, `Ver todas as pontes de ${y} ${onde(c, l)}, da mais à menos rentável`, `See every long weekend in ${y} ${onde(c, l)}, best first`),
           headers: [T(l, 'Tirar férias', 'Take leave'), T(l, 'Dias de férias', 'Leave days'), T(l, 'Período livre', 'Time off'), T(l, 'Dias livres', 'Days off'), T(l, 'Feriado', 'Holiday')],
           rows: todas.map((b) => [span(b.ferieDal, b.ferieAl, l), num(b.ferie, l), span(b.liberoDal, b.liberoAl, l), num(b.liberi, l), b.feste.map((id) => feriadoName(id, l, c)).join(', ')]),
           align: ['l', 'r', 'l', 'r', 'l'],

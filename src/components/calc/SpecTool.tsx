@@ -75,7 +75,8 @@ export default function SpecTool({ kind, lang, arg, methodHref, idPrefix = 't' }
       {/* Tableaux du résultat (testeurs naïfs du 2026-11-14) : le script de BaseLayout ne touche pas aux îlots React,
           les tableaux de 5 colonnes restaient coupés à droite sur téléphone. Dès 3 colonnes, le composant pose lui-même
           .empile et data-label (fiches sous 768 px, global.css). Les tableaux en plus (« Todas as pontes ») sont repliés. */}
-      {[out.table, ...(out.tables ?? [])].filter((x) => !!x).map((tb, ti) => {
+      {[out.table, ...(out.tables ?? [])].map((tb, ti) => {
+        if (!tb) return null; // ti = 0 reste le tableau principal ouvert ; les suivants restent repliés même sans lui
         const tableau = (
           <table className={`w-full text-sm ${tb!.headers.length >= 3 ? 'empile' : ''}`}>
             {tb!.caption && ti === 0 && <caption className="mb-2 text-left text-sm font-semibold text-navy-900">{tb!.caption}</caption>}

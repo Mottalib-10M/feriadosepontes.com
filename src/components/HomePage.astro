@@ -8,6 +8,7 @@ import Clamp from './Clamp.astro';
 import Tool from './Tool.astro';
 import Body from './Body.astro';
 import { HOME } from '../content/home';
+import { tabelaAno } from '../lib/bausteine';
 import { route, hasRoute, type Locale } from '../i18n/routes';
 import { GROUPS } from '../i18n/nav';
 import { helpers, sourceList } from '../lib/helpers';
@@ -29,8 +30,11 @@ const who = { pt: 'Quem publica o sítio', en: 'Who runs this site' }[lang];
   <header class="mb-4">
     <h1 class="text-[1.7rem] font-bold text-navy-900 max-sm:leading-tight sm:text-3xl md:text-4xl">{x.h1}</h1>
     <p class="mt-2 text-base text-navy-700 sm:text-lg">{x.intro}</p>
+    <p class="mt-2 text-sm text-navy-800">{x.datas} <a href="#feriados-2027" class="font-medium text-accent-700 underline">{x.datasLink}</a></p>
   </header>
   <div data-outil data-chrome><Tool kind="pt" lang={lang} idPrefix="home" /></div>
+  {/* La liste des 13 feriados juste après l'outil (testeurs naïfs du 2026-11-14, tour 4) : c'est ce que le visiteur vient chercher. */}
+  <section id="feriados-2027" class="mt-6 scroll-mt-20"><Body html={tabelaAno(h, 2027)} path={path} lang={lang} /></section>
   {/* Repères en tuiles (testeurs naïfs du 2026-11-14) : les classes « limits » et « fold » n'avaient aucune règle CSS,
       libellés et valeurs s'affichaient à la suite comme du texte brut. */}
   <dl data-chrome class="my-6 grid grid-cols-2 gap-3 text-sm lg:grid-cols-4">

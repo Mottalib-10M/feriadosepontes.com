@@ -6,7 +6,7 @@ import { dLong, dShort, wdLong, span } from '../lib/tool-specs';
 import { tabelaAno, tabelaRendimento } from '../lib/bausteine';
 
 interface HomeLang {
-  title: string; description: string; h1: string; intro: string; resume: string;
+  title: string; description: string; h1: string; intro: string; resume: string; datas: string; datasLink: string;
   facts: Array<{ k: string; v: string }>; toolsTitle: string; foldTitle: string; faqs: FAQ[];
   why: (h: Helpers) => string; sections: (h: Helpers) => Array<{ title: string; html: string }>;
 }
@@ -33,6 +33,9 @@ const por = K.pontes(Y, { local: porto }).filter((b) => b.feste.includes('munici
 const sem = (x: string) => x.replace(/ \([^)]*\)$/, '');
 const fdsPt = fds.map((f) => `${sem(f.name.pt)} (${dShort(f.date, 'pt')})`).join(', ');
 const fdsEn = fds.map((f) => `${sem(f.name.en)} (${dShort(f.date, 'en')})`).join(', ');
+// Ligne compacte des dates sous le chapeau (testeurs naïfs du 2026-11-14, tour 4 : la liste n'arrivait qu'au 6e écran).
+const MES = { pt: ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'], en: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'] };
+const curta = (l: Lang) => F.map((f) => `${Number(f.date.slice(8))} ${MES[l][Number(f.date.slice(5, 7)) - 1]}`).join(' · ');
 const NUM_PT_M = ['nenhum', 'um', 'dois', 'três', 'quatro', 'cinco', 'seis'];
 const umPt = um.map((b) => dShort(b.ferieDal, 'pt')).join(', '), umEn = um.map((b) => dShort(b.ferieDal, 'en')).join(', ');
 const NUM_PT = ['nenhuma', 'uma', 'duas', 'três', 'quatro', 'cinco', 'seis'], NUM_EN = ['no', 'one', 'two', 'three', 'four', 'five', 'six'];
@@ -42,6 +45,8 @@ const pt: HomeLang = {
   description: 'Feriados 2027 em Portugal: os 13 feriados nacionais, o feriado municipal do seu concelho e o otimizador que põe as férias nas pontes que rendem mais dias.',
   h1: 'Feriados 2027 em Portugal e as pontes que rendem mais',
   intro: 'Escolha o ano, quantos dias de férias quer usar e, se quiser, o seu concelho: o otimizador mostra os feriados 2027, o melhor plano de pontes e quantos dias livres terá no total.',
+  datas: `Os ${n(F.length, 'pt')} feriados de ${Y}: ${curta('pt')}.`,
+  datasLink: `Ver a lista com o dia da semana ↓`,
   resume: `Em ${Y} Portugal tem ${n(F.length, 'pt')} feriados nacionais obrigatórios. O Domingo de Páscoa calha sempre a um domingo; dos outros ${n(F.length - 1, 'pt')}, ${n(uteis, 'pt')} calham de segunda a sexta e ${n(fds.length, 'pt')} perdem-se ao fim de semana, porque em Portugal um feriado ao sábado ou ao domingo não passa para segunda-feira: ${fdsPt}. Em compensação, o ano tem ${NUM_PT[um.length]} pontes clássicas de um só dia de férias: ${umPt}, a seguir ao Corpo de Deus, ao Dia de Portugal e antes do 5 de Outubro. O Ano Novo e a Sexta-Feira Santa calham à sexta e o Dia de Todos os Santos à segunda: três fins de semana de três dias sem gastar férias. Com a melhor distribuição, 5 dias de férias dão ${n(o5.liberi, 'pt')} dias livres no total, 10 dias dão ${n(o10.liberi, 'pt')} e os 22 dias úteis mínimos da lei dão ${n(o22.liberi, 'pt')}. Se juntar o feriado municipal do seu concelho, a terça de Carnaval ou os feriados regionais dos Açores e da Madeira, a ferramenta refaz a conta.`,
   facts: [
     { k: `Páscoa ${Y}`, v: dLong(K.pascoa(Y), 'pt') },
@@ -63,7 +68,6 @@ const pt: HomeLang = {
   why: (h) => `<h2>As pontes de ${Y} que valem mesmo a pena</h2>
 <p>O valor de uma ponte é a relação entre dias livres e dias de férias. As três pontes de um dia de ${Y} dão quatro dias livres por um dia de férias: ${span(cd.liberoDal, cd.liberoAl, 'pt')} com o Corpo de Deus, ${span(pg.liberoDal, pg.liberoAl, 'pt')} com o Dia de Portugal e ${span(rp.liberoDal, rp.liberoAl, 'pt')} com a Implantação da República. Uma semana normal de férias, de segunda a sexta, dá nove dias livres por cinco de férias: tudo o que rende mais do que isso é uma boa ponte.</p>
 <p>Maio e junho são os meses mais generosos. O Corpo de Deus calha a ${h.dm(fd('corpo-deus'))} e o Dia de Portugal a ${h.dm(fd('portugal'))}, ambos à quinta-feira, com duas semanas de intervalo. Em Lisboa o Santo António, a 13 de junho, é um domingo em ${Y}; no Porto e em Braga o São João, a 24 de junho, é uma quinta-feira e dá mais uma ponte de um dia a quem trabalha nesses concelhos. A lista completa está em ${h.a('calendario-2027', 'calendário 2027')}; os dias úteis mês a mês em ${h.a('dias-uteis-2027', 'dias úteis 2027')}.</p>
-${tabelaAno(h, Y)}
 <p>Outra pergunta, diferente da conta das pontes: quantos dias de férias tem por ano. Di-lo primeiro o ${h.src('ct', 'Código do Trabalho, nos artigos sobre as férias')}: pelo menos 22 dias por ano, contando só de segunda a sexta, ganhos a 1 de janeiro pelo trabalho do ano anterior. No ano de admissão são dois dias por cada mês completo de contrato, até vinte. As regras estão na página ${h.a('ferias', 'férias')}.</p>
 ${h.mini('fr', { p: ['caso', 'meses'], c: 'Quantos dias de férias tem por lei em 2027?' })}`,
   sections: (h) => [
@@ -88,6 +92,8 @@ const en: HomeLang = {
   description: 'Public holidays 2027 in Portugal: the 13 national holidays, your municipality’s holiday and a planner that puts your leave on the bridges worth the most.',
   h1: 'Portugal public holidays 2027 and the best long weekends',
   intro: 'Choose the year, how many leave days you want to use and, if you like, your municipality: the planner shows the 2027 holidays, the best long-weekend plan and how many days off you get in total.',
+  datas: `The ${n(F.length, 'en')} holidays of ${Y}: ${curta('en')}.`,
+  datasLink: `See the list with the weekday ↓`,
   resume: `In ${Y} Portugal has ${n(F.length, 'en')} compulsory national public holidays. Easter Sunday is always a Sunday; of the other ${n(F.length - 1, 'en')}, ${n(uteis, 'en')} fall between Monday and Friday and ${n(fds.length, 'en')} are lost to the weekend, because Portugal does not move a Saturday or Sunday holiday to the Monday: ${fdsEn}. On the other hand the year has ${NUM_EN[um.length]} classic long weekends that cost a single leave day: ${umEn}, after Corpus Christi and Portugal Day and before 5 October. New Year's Day and Good Friday fall on a Friday and All Saints' Day on a Monday: three three-day weekends without using leave. With the best spread, 5 leave days give ${n(o5.liberi, 'en')} days off in total, 10 give ${n(o10.liberi, 'en')} and the legal minimum of 22 working days gives ${n(o22.liberi, 'en')}. Add your municipality's holiday, Carnival Tuesday or the regional holidays of the Azores and Madeira and the tool redoes the count.`,
   facts: [
     { k: `Easter Sunday ${Y}`, v: dLong(K.pascoa(Y), 'en') },
@@ -109,7 +115,6 @@ const en: HomeLang = {
   why: (h) => `<h2>The ${Y} long weekends that really pay off</h2>
 <p>The value of a bridge is the ratio of days off to leave days. The three one-day bridges of ${Y} give four days off for one leave day: ${span(cd.liberoDal, cd.liberoAl, 'en')} with Corpus Christi, ${span(pg.liberoDal, pg.liberoAl, 'en')} with Portugal Day and ${span(rp.liberoDal, rp.liberoAl, 'en')} with Republic Day. An ordinary week off, Monday to Friday, gives nine days for five leave days: anything better than that is a good bridge.</p>
 <p>May and June are the most generous months. Corpus Christi falls on ${h.dm(fd('corpo-deus'))} and Portugal Day on ${h.dm(fd('portugal'))}, both Thursdays, two weeks apart. In Lisbon, St Anthony's Day, 13 June, is a Sunday in ${Y}; in Porto and Braga, St John's Day, 24 June, is a Thursday and gives one more one-day bridge to people working there. The full list is on ${h.a('calendario-2027', 'calendar 2027')}; working days month by month on ${h.a('dias-uteis-2027', 'working days 2027')}.</p>
-${tabelaAno(h, Y)}
 <p>A different question from the bridges: how much leave you get each year. It is set first by the ${h.src('ct', 'Labour Code, in the articles on leave')}: at least 22 working days a year, earned on 1 January. In the year you are hired it is two days for each full month under contract, up to twenty. The rules are on the ${h.a('ferias', 'annual leave')} page.</p>
 ${h.mini('fr', { p: ['caso', 'meses'], c: 'How much leave are you owed by law in 2027?' })}`,
   sections: (h) => [
